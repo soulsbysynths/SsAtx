@@ -1,0 +1,17 @@
+[
+  {
+    "Sourcefile": null,
+    "Include": "",
+    "Includepath": "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.14\\cores\\arduino"
+  },
+  {
+    "Sourcefile": null,
+    "Include": "",
+    "Includepath": "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.14\\variants\\arduino_zero"
+  },
+  {
+    "Sourcefile": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\SsAtxController\\SsAtxController\\Output\\Arduino_Zero__Native_USB_Port_\\Debug\\sketch\\SsAtxController.ino.cpp",
+    "Include": "",
+    "Includepath": null
+  }
+]

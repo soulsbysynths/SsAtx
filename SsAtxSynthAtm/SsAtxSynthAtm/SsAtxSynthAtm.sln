@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33829.357
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{803FD0C6-D64E-4E16-9DC3-1DAEC859A3D2}") = "SsAtxSynthAtm", "SsAtxSynthAtm.vgdbproj", "{4299D0B5-EB2C-4B11-80BF-9FFA9B5B0F5E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Arduino_Uno = Debug|Arduino_Uno
+		Release|Arduino_Uno = Release|Arduino_Uno
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4299D0B5-EB2C-4B11-80BF-9FFA9B5B0F5E}.Debug|Arduino_Uno.ActiveCfg = Debug|Arduino_Uno
+		{4299D0B5-EB2C-4B11-80BF-9FFA9B5B0F5E}.Debug|Arduino_Uno.Build.0 = Debug|Arduino_Uno
+		{4299D0B5-EB2C-4B11-80BF-9FFA9B5B0F5E}.Release|Arduino_Uno.ActiveCfg = Release|Arduino_Uno
+		{4299D0B5-EB2C-4B11-80BF-9FFA9B5B0F5E}.Release|Arduino_Uno.Build.0 = Release|Arduino_Uno
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {13A19685-712D-4DC3-9451-728563AC8020}
+	EndGlobalSection
+EndGlobal

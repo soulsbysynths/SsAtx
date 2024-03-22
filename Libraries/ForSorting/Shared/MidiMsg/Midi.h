@@ -1,0 +1,97 @@
+/*
+* Midi.h
+*
+* Created: 21/08/2021 11:17:57
+*  Author: info
+*/
+
+
+#ifndef MIDI_H_
+#define MIDI_H_
+
+namespace midi
+{
+	enum MidiCIN : uint8_t
+	{
+		MCIN_MISC = 0,
+		MCIN_CABLE,
+		MCIN_COMMON2,
+		MCIN_COMMON3,
+		MCIN_SYSEXSTART,
+		MCIN_COMMON1,
+		MCIN_SYSEXEND2,
+		MCIN_SYSEXEND3,
+		MCIN_NOTEOFF,
+		MCIN_NOTEON,
+		MCIN_POLYKEY,
+		MCIN_CC,
+		MCIN_PROGCH,
+		MCIN_CHPRESSURE,
+		MCIN_PBEND,
+		MCIN_BYTE
+	};
+	enum MidiCmd : uint8_t
+	{
+		MCMD_NOTHING = 0x00,
+		MCMD_NOTEOFF = 0x80,
+		MCMD_NOTEON = 0x90,
+		MCMD_POLYKEY = 0xA0,
+		MCMD_CC = 0xB0,
+		MCMD_PROGCH = 0xC0,
+		MCMD_CHPRESSURE = 0xD0,
+		MCMD_PBEND = 0xE0,
+		MCMD_SYSEX = 0xF0,
+		MCMD_MTC = 0xF1,
+		MCMD_SPP = 0xF2,
+		MCMD_SS = 0xF3,
+		MCMD_TUNEREQ = 0xF6,
+		MCMD_SYSEXEND = 0xF7,
+		MCMD_CLOCK = 0xF8,
+		MCMD_START = 0xFA,
+		MCMD_CONT = 0xFB,
+		MCMD_STOP = 0xFC,
+		MCMD_ACTSENSE = 0xFE,
+		MCMD_RESET = 0xFF
+	};
+	enum MidiCC : uint8_t
+	{
+		MCC_BANK = 0x00,
+		MCC_MODWHEEL = 0x01,
+		MCC_DATAENTRYMSB = 0x06,
+		MCC_DATAENTRYLSB = 0x26,
+		MCC_SUSTAINPEDAL = 0x40,
+		MCC_TIMBRE = 0x47,
+		MCC_BRIGHTNESS = 0x4A,
+		MCC_NRPNLSB = 0x62,
+		MCC_NRPNMSB = 0x63,
+		MCC_SOUNDOFF = 0x78,
+		MCC_NOTESOFF = 0x7B
+	};
+	enum MidiSource : uint8_t
+	{
+		MSRC_CONTROLLER = 0,
+		MSRC_SERIAL,
+		MSRC_USB,
+		MSRC_ATXCARD,
+		MSRC_SDCARD,
+		MSRC_SEQ
+	};
+	enum MidiSysexType : uint8_t
+	{
+		MSXT_HELLO = 0,
+		MSXT_SYNTHZONE,
+		MSXT_SYNTHMAP,
+		MSXT_WAVETABLE,
+		MSXT_ARPPATTERN,
+		MSXT_UNUSED = 0xFF
+	};
+	static const uint8_t SYSEX_MAX_SIZE = 32;
+	static const uint8_t SYSEX_MANUFACTURER_ID = 125;
+	static const uint8_t SYSEX_PRODUCT_ID = 1;  //atmegatron was 0
+	static const uint8_t SYSEX_MSG_INDEX = 0;
+	static const uint8_t SYSEX_CC_INDEX = 1;
+}
+
+
+
+#endif /* MIDI_H_ */

@@ -1,0 +1,485 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source files">
+      <UniqueIdentifier>{cf2a2da6-beef-435e-a0f2-f98908315dce}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header files">
+      <UniqueIdentifier>{77106972-7298-411a-9690-9af57839505b}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource files">
+      <UniqueIdentifier>{3b08d24f-9adc-4e41-827d-bd7da909a446}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+    <Filter Include="Source files\Device-specific files">
+      <UniqueIdentifier>{4a16c0f2-0982-40ea-b902-ce2c7259c567}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source files\Device-specific files\AtmelStart">
+      <UniqueIdentifier>{f0d33830-dedd-4007-b380-e9c932f31728}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header files\Device-specific files">
+      <UniqueIdentifier>{23ef6d12-e1ec-45b8-b6a0-8cb342a9cc73}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header files\Device-specific files\AtmelStart">
+      <UniqueIdentifier>{49c3aebe-d8fb-48db-bb5c-63df2199f108}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="VisualGDB settings">
+      <UniqueIdentifier>{3129eb6a-1786-400b-b4f8-6576fdd0808d}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="mcu.props">
+      <Filter>Source files\Device-specific files</Filter>
+    </None>
+    <ClCompile Include="$(BSP_ROOT)\samd21a\gcc\gcc\startup_samd21.c">
+      <Filter>Source files\Device-specific files</Filter>
+    </ClCompile>
+    <ClCompile Include="$(BSP_ROOT)\hal\src\hal_atomic.c">
+      <Filter>Source files\Device-specific files\AtmelStart</Filter>
+    </ClCompile>
+    <ClCompile Include="$(BSP_ROOT)\hal\src\hal_delay.c">
+      <Filter>Source files\Device-specific files\AtmelStart</Filter>
+    </ClCompile>
+    <ClCompile Include="$(BSP_ROOT)\hal\src\hal_flash.c">
+      <Filter>Source files\Device-specific files\AtmelStart</Filter>
+    </ClCompile>
+    <ClCompile Include="$(BSP_ROOT)\hal\src\hal_gpio.c">
+      <Filter>Source files\Device-specific files\AtmelStart</Filter>
+    </ClCompile>
+    <ClCompile Include="$(BSP_ROOT)\hal\src\hal_i2c_m_sync.c">
+      <Filter>Source files\Device-specific files\AtmelStart</Filter>
+    </ClCompile>
+    <ClCompile Include="$(BSP_ROOT)\hal\src\hal_init.c">
+      <Filter>Source files\Device-specific files\AtmelStart</Filter>
+    </ClCompile>
+    <ClCompile Include="$(BSP_ROOT)\hal\src\hal_io.c">
+      <Filter>Source files\Device-specific files\AtmelStart</Filter>
+    </ClCompile>
+    <ClCompile Include="$(BSP_ROOT)\hal\src\hal_sleep.c">
+      <Filter>Source files\Device-specific files\AtmelStart</Filter>
+    </ClCompile>
+    <ClCompile Include="$(BSP_ROOT)\hal\src\hal_usb_device.c">
+      <Filter>Source files\Device-specific files\AtmelStart</Filter>
+    </ClCompile>
+    <ClCompile Include="$(BSP_ROOT)\hal\utils\src\utils_assert.c">
+      <Filter>Source files\Device-specific files\AtmelStart</Filter>
+    </ClCompile>
+    <ClCompile Include="$(BSP_ROOT)\hal\utils\src\utils_event.c">
+      <Filter>Source files\Device-specific files\AtmelStart</Filter>
+    </ClCompile>
+    <ClCompile Include="$(BSP_ROOT)\hal\utils\src\utils_list.c">
+      <Filter>Source files\Device-specific files\AtmelStart</Filter>
+    </ClCompile>
+    <ClCompile Include="$(BSP_ROOT)\hal\utils\src\utils_syscalls.c">
+      <Filter>Source files\Device-specific files\AtmelStart</Filter>
+    </ClCompile>
+    <ClCompile Include="$(BSP_ROOT)\driver_init.c">
+      <Filter>Source files\Device-specific files\AtmelStart</Filter>
+    </ClCompile>
+    <ClCompile Include="$(BSP_ROOT)\examples\driver_examples.c">
+      <Filter>Source files\Device-specific files\AtmelStart</Filter>
+    </ClCompile>
+    <ClCompile Include="$(BSP_ROOT)\hal\src\hal_adc_sync.c">
+      <Filter>Source files\Device-specific files\AtmelStart</Filter>
+    </ClCompile>
+    <ClCompile Include="$(BSP_ROOT)\hal\src\hal_spi_m_sync.c">
+      <Filter>Source files\Device-specific files\AtmelStart</Filter>
+    </ClCompile>
+    <ClCompile Include="$(BSP_ROOT)\hal\src\hal_timer.c">
+      <Filter>Source files\Device-specific files\AtmelStart</Filter>
+    </ClCompile>
+    <ClCompile Include="$(BSP_ROOT)\hpl\adc\hpl_adc.c">
+      <Filter>Source files\Device-specific files\AtmelStart</Filter>
+    </ClCompile>
+    <ClCompile Include="$(BSP_ROOT)\hpl\core\hpl_core_m0plus_base.c">
+      <Filter>Source files\Device-specific files\AtmelStart</Filter>
+    </ClCompile>
+    <ClCompile Include="$(BSP_ROOT)\hpl\core\hpl_init.c">
+      <Filter>Source files\Device-specific files\AtmelStart</Filter>
+    </ClCompile>
+    <ClCompile Include="$(BSP_ROOT)\hpl\dmac\hpl_dmac.c">
+      <Filter>Source files\Device-specific files\AtmelStart</Filter>
+    </ClCompile>
+    <ClCompile Include="$(BSP_ROOT)\hpl\gclk\hpl_gclk.c">
+      <Filter>Source files\Device-specific files\AtmelStart</Filter>
+    </ClCompile>
+    <ClCompile Include="$(BSP_ROOT)\hpl\nvmctrl\hpl_nvmctrl.c">
+      <Filter>Source files\Device-specific files\AtmelStart</Filter>
+    </ClCompile>
+    <ClCompile Include="$(BSP_ROOT)\hpl\pm\hpl_pm.c">
+      <Filter>Source files\Device-specific files\AtmelStart</Filter>
+    </ClCompile>
+    <ClCompile Include="$(BSP_ROOT)\hpl\sercom\hpl_sercom.c">
+      <Filter>Source files\Device-specific files\AtmelStart</Filter>
+    </ClCompile>
+    <ClCompile Include="$(BSP_ROOT)\hpl\sysctrl\hpl_sysctrl.c">
+      <Filter>Source files\Device-specific files\AtmelStart</Filter>
+    </ClCompile>
+    <ClCompile Include="$(BSP_ROOT)\hpl\tc\hpl_tc.c">
+      <Filter>Source files\Device-specific files\AtmelStart</Filter>
+    </ClCompile>
+    <ClCompile Include="$(BSP_ROOT)\hpl\usb\hpl_usb.c">
+      <Filter>Source files\Device-specific files\AtmelStart</Filter>
+    </ClCompile>
+    <ClCompile Include="$(BSP_ROOT)\atmel_start.c">
+      <Filter>Source files\Device-specific files\AtmelStart</Filter>
+    </ClCompile>
+    <ClInclude Include="$(BSP_ROOT)\hal\include\hal_atomic.h">
+      <Filter>Header files\Device-specific files\AtmelStart</Filter>
+    </ClInclude>
+    <ClInclude Include="$(BSP_ROOT)\hal\include\hal_delay.h">
+      <Filter>Header files\Device-specific files\AtmelStart</Filter>
+    </ClInclude>
+    <ClInclude Include="$(BSP_ROOT)\hal\include\hal_flash.h">
+      <Filter>Header files\Device-specific files\AtmelStart</Filter>
+    </ClInclude>
+    <ClInclude Include="$(BSP_ROOT)\hal\include\hal_gpio.h">
+      <Filter>Header files\Device-specific files\AtmelStart</Filter>
+    </ClInclude>
+    <ClInclude Include="$(BSP_ROOT)\hal\include\hal_i2c_m_sync.h">
+      <Filter>Header files\Device-specific files\AtmelStart</Filter>
+    </ClInclude>
+    <ClInclude Include="$(BSP_ROOT)\hal\include\hal_init.h">
+      <Filter>Header files\Device-specific files\AtmelStart</Filter>
+    </ClInclude>
+    <ClInclude Include="$(BSP_ROOT)\hal\include\hal_io.h">
+      <Filter>Header files\Device-specific files\AtmelStart</Filter>
+    </ClInclude>
+    <ClInclude Include="$(BSP_ROOT)\hal\include\hal_sleep.h">
+      <Filter>Header files\Device-specific files\AtmelStart</Filter>
+    </ClInclude>
+    <ClInclude Include="$(BSP_ROOT)\hal\include\hal_spi_m_sync.h">
+      <Filter>Header files\Device-specific files\AtmelStart</Filter>
+    </ClInclude>
+    <ClInclude Include="$(BSP_ROOT)\hal\include\hal_usb_device.h">
+      <Filter>Header files\Device-specific files\AtmelStart</Filter>
+    </ClInclude>
+    <ClInclude Include="$(BSP_ROOT)\hal\include\hpl_adc_dma.h">
+      <Filter>Header files\Device-specific files\AtmelStart</Filter>
+    </ClInclude>
+    <ClInclude Include="$(BSP_ROOT)\hal\include\hpl_core.h">
+      <Filter>Header files\Device-specific files\AtmelStart</Filter>
+    </ClInclude>
+    <ClInclude Include="$(BSP_ROOT)\hal\include\hpl_delay.h">
+      <Filter>Header files\Device-specific files\AtmelStart</Filter>
+    </ClInclude>
+    <ClInclude Include="$(BSP_ROOT)\hal\include\hpl_dma.h">
+      <Filter>Header files\Device-specific files\AtmelStart</Filter>
+    </ClInclude>
+    <ClInclude Include="$(BSP_ROOT)\hal\include\hpl_flash.h">
+      <Filter>Header files\Device-specific files\AtmelStart</Filter>
+    </ClInclude>
+    <ClInclude Include="$(BSP_ROOT)\hal\include\hpl_gpio.h">
+      <Filter>Header files\Device-specific files\AtmelStart</Filter>
+    </ClInclude>
+    <ClInclude Include="$(BSP_ROOT)\hal\include\hpl_i2c_m_async.h">
+      <Filter>Header files\Device-specific files\AtmelStart</Filter>
+    </ClInclude>
+    <ClInclude Include="$(BSP_ROOT)\hal\include\hpl_i2c_m_sync.h">
+      <Filter>Header files\Device-specific files\AtmelStart</Filter>
+    </ClInclude>
+    <ClInclude Include="$(BSP_ROOT)\hal\include\hpl_i2c_s_async.h">
+      <Filter>Header files\Device-specific files\AtmelStart</Filter>
+    </ClInclude>
+    <ClInclude Include="$(BSP_ROOT)\hal\include\hpl_i2c_s_sync.h">
+      <Filter>Header files\Device-specific files\AtmelStart</Filter>
+    </ClInclude>
+    <ClInclude Include="$(BSP_ROOT)\hal\include\hpl_init.h">
+      <Filter>Header files\Device-specific files\AtmelStart</Filter>
+    </ClInclude>
+    <ClInclude Include="$(BSP_ROOT)\hal\include\hpl_irq.h">
+      <Filter>Header files\Device-specific files\AtmelStart</Filter>
+    </ClInclude>
+    <ClInclude Include="$(BSP_ROOT)\hal\include\hpl_sleep.h">
+      <Filter>Header files\Device-specific files\AtmelStart</Filter>
+    </ClInclude>
+    <ClInclude Include="$(BSP_ROOT)\hal\include\hpl_spi.h">
+      <Filter>Header files\Device-specific files\AtmelStart</Filter>
+    </ClInclude>
+    <ClInclude Include="$(BSP_ROOT)\hal\include\hpl_spi_async.h">
+      <Filter>Header files\Device-specific files\AtmelStart</Filter>
+    </ClInclude>
+    <ClInclude Include="$(BSP_ROOT)\hal\include\hpl_spi_dma.h">
+      <Filter>Header files\Device-specific files\AtmelStart</Filter>
+    </ClInclude>
+    <ClInclude Include="$(BSP_ROOT)\hal\include\hpl_spi_sync.h">
+      <Filter>Header files\Device-specific files\AtmelStart</Filter>
+    </ClInclude>
+    <ClInclude Include="$(BSP_ROOT)\hal\include\hpl_usart.h">
+      <Filter>Header files\Device-specific files\AtmelStart</Filter>
+    </ClInclude>
+    <ClInclude Include="$(BSP_ROOT)\hal\include\hpl_usb.h">
+      <Filter>Header files\Device-specific files\AtmelStart</Filter>
+    </ClInclude>
+    <ClInclude Include="$(BSP_ROOT)\hal\include\hpl_usb_device.h">
+      <Filter>Header files\Device-specific files\AtmelStart</Filter>
+    </ClInclude>
+    <ClInclude Include="$(BSP_ROOT)\hal\include\hpl_usb_host.h">
+      <Filter>Header files\Device-specific files\AtmelStart</Filter>
+    </ClInclude>
+    <ClInclude Include="$(BSP_ROOT)\hal\include\hpl_user_area.h">
+      <Filter>Header files\Device-specific files\AtmelStart</Filter>
+    </ClInclude>
+    <ClInclude Include="$(BSP_ROOT)\hal\utils\include\compiler.h">
+      <Filter>Header files\Device-specific files\AtmelStart</Filter>
+    </ClInclude>
+    <ClInclude Include="$(BSP_ROOT)\hal\utils\include\err_codes.h">
+      <Filter>Header files\Device-specific files\AtmelStart</Filter>
+    </ClInclude>
+    <ClInclude Include="$(BSP_ROOT)\hal\utils\include\events.h">
+      <Filter>Header files\Device-specific files\AtmelStart</Filter>
+    </ClInclude>
+    <ClInclude Include="$(BSP_ROOT)\hal\utils\include\utils.h">
+      <Filter>Header files\Device-specific files\AtmelStart</Filter>
+    </ClInclude>
+    <ClInclude Include="$(BSP_ROOT)\hal\utils\include\utils_assert.h">
+      <Filter>Header files\Device-specific files\AtmelStart</Filter>
+    </ClInclude>
+    <ClInclude Include="$(BSP_ROOT)\hal\utils\include\utils_event.h">
+      <Filter>Header files\Device-specific files\AtmelStart</Filter>
+    </ClInclude>
+    <ClInclude Include="$(BSP_ROOT)\hal\utils\include\utils_increment_macro.h">
+      <Filter>Header files\Device-specific files\AtmelStart</Filter>
+    </ClInclude>
+    <ClInclude Include="$(BSP_ROOT)\hal\utils\include\utils_list.h">
+      <Filter>Header files\Device-specific files\AtmelStart</Filter>
+    </ClInclude>
+    <ClInclude Include="$(BSP_ROOT)\hal\utils\include\utils_repeat_macro.h">
+      <Filter>Header files\Device-specific files\AtmelStart</Filter>
+    </ClInclude>
+    <ClInclude Include="$(BSP_ROOT)\hri\hri_ac_d21.h">
+      <Filter>Header files\Device-specific files\AtmelStart</Filter>
+    </ClInclude>
+    <ClInclude Include="$(BSP_ROOT)\hri\hri_adc_d21.h">
+      <Filter>Header files\Device-specific files\AtmelStart</Filter>
+    </ClInclude>
+    <ClInclude Include="$(BSP_ROOT)\hri\hri_d21.h">
+      <Filter>Header files\Device-specific files\AtmelStart</Filter>
+    </ClInclude>
+    <ClInclude Include="$(BSP_ROOT)\hri\hri_dac_d21.h">
+      <Filter>Header files\Device-specific files\AtmelStart</Filter>
+    </ClInclude>
+    <ClInclude Include="$(BSP_ROOT)\hri\hri_dmac_d21.h">
+      <Filter>Header files\Device-specific files\AtmelStart</Filter>
+    </ClInclude>
+    <ClInclude Include="$(BSP_ROOT)\hri\hri_dsu_d21.h">
+      <Filter>Header files\Device-specific files\AtmelStart</Filter>
+    </ClInclude>
+    <ClInclude Include="$(BSP_ROOT)\hri\hri_eic_d21.h">
+      <Filter>Header files\Device-specific files\AtmelStart</Filter>
+    </ClInclude>
+    <ClInclude Include="$(BSP_ROOT)\hri\hri_evsys_d21.h">
+      <Filter>Header files\Device-specific files\AtmelStart</Filter>
+    </ClInclude>
+    <ClInclude Include="$(BSP_ROOT)\hri\hri_gclk_d21.h">
+      <Filter>Header files\Device-specific files\AtmelStart</Filter>
+    </ClInclude>
+    <ClInclude Include="$(BSP_ROOT)\hri\hri_hmatrixb_d21.h">
+      <Filter>Header files\Device-specific files\AtmelStart</Filter>
+    </ClInclude>
+    <ClInclude Include="$(BSP_ROOT)\hri\hri_i2s_d21.h">
+      <Filter>Header files\Device-specific files\AtmelStart</Filter>
+    </ClInclude>
+    <ClInclude Include="$(BSP_ROOT)\hri\hri_mtb_d21.h">
+      <Filter>Header files\Device-specific files\AtmelStart</Filter>
+    </ClInclude>
+    <ClInclude Include="$(BSP_ROOT)\hri\hri_nvic_d21.h">
+      <Filter>Header files\Device-specific files\AtmelStart</Filter>
+    </ClInclude>
+    <ClInclude Include="$(BSP_ROOT)\hri\hri_nvmctrl_d21.h">
+      <Filter>Header files\Device-specific files\AtmelStart</Filter>
+    </ClInclude>
+    <ClInclude Include="$(BSP_ROOT)\hri\hri_pac_d21.h">
+      <Filter>Header files\Device-specific files\AtmelStart</Filter>
+    </ClInclude>
+    <ClInclude Include="$(BSP_ROOT)\hri\hri_pm_d21.h">
+      <Filter>Header files\Device-specific files\AtmelStart</Filter>
+    </ClInclude>
+    <ClInclude Include="$(BSP_ROOT)\hri\hri_port_d21.h">
+      <Filter>Header files\Device-specific files\AtmelStart</Filter>
+    </ClInclude>
+    <ClInclude Include="$(BSP_ROOT)\hri\hri_rtc_d21.h">
+      <Filter>Header files\Device-specific files\AtmelStart</Filter>
+    </ClInclude>
+    <ClInclude Include="$(BSP_ROOT)\hri\hri_sercom_d21.h">
+      <Filter>Header files\Device-specific files\AtmelStart</Filter>
+    </ClInclude>
+    <ClInclude Include="$(BSP_ROOT)\hri\hri_sysctrl_d21.h">
+      <Filter>Header files\Device-specific files\AtmelStart</Filter>
+    </ClInclude>
+    <ClInclude Include="$(BSP_ROOT)\hri\hri_systemcontrol_d21.h">
+      <Filter>Header files\Device-specific files\AtmelStart</Filter>
+    </ClInclude>
+    <ClInclude Include="$(BSP_ROOT)\hri\hri_systick_d21.h">
+      <Filter>Header files\Device-specific files\AtmelStart</Filter>
+    </ClInclude>
+    <ClInclude Include="$(BSP_ROOT)\hri\hri_tc_d21.h">
+      <Filter>Header files\Device-specific files\AtmelStart</Filter>
+    </ClInclude>
+    <ClInclude Include="$(BSP_ROOT)\hri\hri_tcc_d21.h">
+      <Filter>Header files\Device-specific files\AtmelStart</Filter>
+    </ClInclude>
+    <ClInclude Include="$(BSP_ROOT)\hri\hri_usb_d21.h">
+      <Filter>Header files\Device-specific files\AtmelStart</Filter>
+    </ClInclude>
+    <ClInclude Include="$(BSP_ROOT)\hri\hri_wdt_d21.h">
+      <Filter>Header files\Device-specific files\AtmelStart</Filter>
+    </ClInclude>
+    <ClInclude Include="$(BSP_ROOT)\driver_init.h">
+      <Filter>Header files\Device-specific files\AtmelStart</Filter>
+    </ClInclude>
+    <ClInclude Include="$(BSP_ROOT)\atmel_start_pins.h">
+      <Filter>Header files\Device-specific files\AtmelStart</Filter>
+    </ClInclude>
+    <ClInclude Include="$(BSP_ROOT)\examples\driver_examples.h">
+      <Filter>Header files\Device-specific files\AtmelStart</Filter>
+    </ClInclude>
+    <ClInclude Include="$(BSP_ROOT)\hal\include\hal_adc_sync.h">
+      <Filter>Header files\Device-specific files\AtmelStart</Filter>
+    </ClInclude>
+    <ClInclude Include="$(BSP_ROOT)\hal\include\hal_timer.h">
+      <Filter>Header files\Device-specific files\AtmelStart</Filter>
+    </ClInclude>
+    <ClInclude Include="$(BSP_ROOT)\hal\include\hpl_adc_async.h">
+      <Filter>Header files\Device-specific files\AtmelStart</Filter>
+    </ClInclude>
+    <ClInclude Include="$(BSP_ROOT)\hal\include\hpl_adc_sync.h">
+      <Filter>Header files\Device-specific files\AtmelStart</Filter>
+    </ClInclude>
+    <ClInclude Include="$(BSP_ROOT)\hal\include\hpl_missing_features.h">
+      <Filter>Header files\Device-specific files\AtmelStart</Filter>
+    </ClInclude>
+    <ClInclude Include="$(BSP_ROOT)\hal\include\hpl_pwm.h">
+      <Filter>Header files\Device-specific files\AtmelStart</Filter>
+    </ClInclude>
+    <ClInclude Include="$(BSP_ROOT)\hal\include\hpl_reset.h">
+      <Filter>Header files\Device-specific files\AtmelStart</Filter>
+    </ClInclude>
+    <ClInclude Include="$(BSP_ROOT)\hal\include\hpl_spi_m_async.h">
+      <Filter>Header files\Device-specific files\AtmelStart</Filter>
+    </ClInclude>
+    <ClInclude Include="$(BSP_ROOT)\hal\include\hpl_spi_m_dma.h">
+      <Filter>Header files\Device-specific files\AtmelStart</Filter>
+    </ClInclude>
+    <ClInclude Include="$(BSP_ROOT)\hal\include\hpl_spi_m_sync.h">
+      <Filter>Header files\Device-specific files\AtmelStart</Filter>
+    </ClInclude>
+    <ClInclude Include="$(BSP_ROOT)\hal\include\hpl_spi_s_async.h">
+      <Filter>Header files\Device-specific files\AtmelStart</Filter>
+    </ClInclude>
+    <ClInclude Include="$(BSP_ROOT)\hal\include\hpl_spi_s_sync.h">
+      <Filter>Header files\Device-specific files\AtmelStart</Filter>
+    </ClInclude>
+    <ClInclude Include="$(BSP_ROOT)\hal\include\hpl_timer.h">
+      <Filter>Header files\Device-specific files\AtmelStart</Filter>
+    </ClInclude>
+    <ClInclude Include="$(BSP_ROOT)\hal\include\hpl_usart_async.h">
+      <Filter>Header files\Device-specific files\AtmelStart</Filter>
+    </ClInclude>
+    <ClInclude Include="$(BSP_ROOT)\hal\include\hpl_usart_sync.h">
+      <Filter>Header files\Device-specific files\AtmelStart</Filter>
+    </ClInclude>
+    <ClInclude Include="$(BSP_ROOT)\hal\utils\include\parts.h">
+      <Filter>Header files\Device-specific files\AtmelStart</Filter>
+    </ClInclude>
+    <ClInclude Include="$(BSP_ROOT)\hpl\adc\hpl_adc_base.h">
+      <Filter>Header files\Device-specific files\AtmelStart</Filter>
+    </ClInclude>
+    <ClInclude Include="$(BSP_ROOT)\hpl\core\hpl_core_port.h">
+      <Filter>Header files\Device-specific files\AtmelStart</Filter>
+    </ClInclude>
+    <ClInclude Include="$(BSP_ROOT)\hpl\gclk\hpl_gclk_base.h">
+      <Filter>Header files\Device-specific files\AtmelStart</Filter>
+    </ClInclude>
+    <ClInclude Include="$(BSP_ROOT)\hpl\pm\hpl_pm_base.h">
+      <Filter>Header files\Device-specific files\AtmelStart</Filter>
+    </ClInclude>
+    <ClInclude Include="$(BSP_ROOT)\hpl\port\hpl_gpio_base.h">
+      <Filter>Header files\Device-specific files\AtmelStart</Filter>
+    </ClInclude>
+    <ClInclude Include="$(BSP_ROOT)\hpl\tc\hpl_tc_base.h">
+      <Filter>Header files\Device-specific files\AtmelStart</Filter>
+    </ClInclude>
+    <ClInclude Include="$(BSP_ROOT)\atmel_start.h">
+      <Filter>Header files\Device-specific files\AtmelStart</Filter>
+    </ClInclude>
+    <ClInclude Include="$(BSP_ROOT)\config\hpl_adc_config.h">
+      <Filter>Header files\Device-specific files\AtmelStart</Filter>
+    </ClInclude>
+    <ClInclude Include="$(BSP_ROOT)\config\hpl_dmac_config.h">
+      <Filter>Header files\Device-specific files\AtmelStart</Filter>
+    </ClInclude>
+    <ClInclude Include="$(BSP_ROOT)\config\hpl_gclk_config.h">
+      <Filter>Header files\Device-specific files\AtmelStart</Filter>
+    </ClInclude>
+    <ClInclude Include="$(BSP_ROOT)\config\hpl_nvmctrl_config.h">
+      <Filter>Header files\Device-specific files\AtmelStart</Filter>
+    </ClInclude>
+    <ClInclude Include="$(BSP_ROOT)\config\hpl_pm_config.h">
+      <Filter>Header files\Device-specific files\AtmelStart</Filter>
+    </ClInclude>
+    <ClInclude Include="$(BSP_ROOT)\config\hpl_sercom_config.h">
+      <Filter>Header files\Device-specific files\AtmelStart</Filter>
+    </ClInclude>
+    <ClInclude Include="$(BSP_ROOT)\config\hpl_sysctrl_config.h">
+      <Filter>Header files\Device-specific files\AtmelStart</Filter>
+    </ClInclude>
+    <ClInclude Include="$(BSP_ROOT)\config\hpl_tc_config.h">
+      <Filter>Header files\Device-specific files\AtmelStart</Filter>
+    </ClInclude>
+    <ClInclude Include="$(BSP_ROOT)\config\hpl_usb_config.h">
+      <Filter>Header files\Device-specific files\AtmelStart</Filter>
+    </ClInclude>
+    <ClInclude Include="$(BSP_ROOT)\config\peripheral_clk_config.h">
+      <Filter>Header files\Device-specific files\AtmelStart</Filter>
+    </ClInclude>
+    <None Include="SsAtxController-Debug.vgdbsettings">
+      <Filter>VisualGDB settings</Filter>
+    </None>
+    <None Include="SsAtxController-Release.vgdbsettings">
+      <Filter>VisualGDB settings</Filter>
+    </None>
+    <None Include="MCU.xml">
+      <Filter>VisualGDB settings</Filter>
+    </None>
+    <ClCompile Include="AtxC.cpp">
+      <Filter>Source files</Filter>
+    </ClCompile>
+    <ClCompile Include="AtxCHardware.cpp">
+      <Filter>Source files</Filter>
+    </ClCompile>
+    <ClCompile Include="SsAtxController.cpp">
+      <Filter>Source files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Atx.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="AtxC.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="AtxCHardware.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="AtxCHardwareBase.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="Spi.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="WiringDigital.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="SsAtxController.rc">
+      <Filter>Resource files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

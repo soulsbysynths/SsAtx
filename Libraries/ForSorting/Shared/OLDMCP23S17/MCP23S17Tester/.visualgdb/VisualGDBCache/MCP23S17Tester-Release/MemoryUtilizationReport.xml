@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<MemoryUtilizationReport xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Memories>
+    <MemoryUtilization>
+      <MemoryName>rom</MemoryName>
+      <Used>10504</Used>
+      <Total>262144</Total>
+    </MemoryUtilization>
+    <MemoryUtilization>
+      <MemoryName>ram</MemoryName>
+      <Used>8832</Used>
+      <Total>32768</Total>
+    </MemoryUtilization>
+  </Memories>
+</MemoryUtilizationReport>

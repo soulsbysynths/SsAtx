@@ -1,0 +1,77 @@
+<!-- Add this file to source control in order to automatically restore library dependencies when opening the project on another machine -->
+<ArduinoDependencyCollection xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Dependencies>
+    <Dependency>
+      <Type>Platform</Type>
+      <Key>
+        <Packager>arduino</Packager>
+        <Name>samd</Name>
+        <Version>1.8.14</Version>
+      </Key>
+    </Dependency>
+    <Dependency>
+      <Type>Library</Type>
+      <Key>
+        <Packager>Adafruit</Packager>
+        <Name>Adafruit MCP23017 Arduino Library</Name>
+        <Version>2.3.2</Version>
+      </Key>
+    </Dependency>
+    <Dependency>
+      <Type>Library</Type>
+      <Key>
+        <Packager>info</Packager>
+        <Name>Sn74hc138d</Name>
+        <Version>0.0.1</Version>
+      </Key>
+    </Dependency>
+    <Dependency>
+      <Type>Library</Type>
+      <Key>
+        <Packager>Paul Soulsby</Packager>
+        <Name>Ssd1306</Name>
+        <Version>0.0.1</Version>
+      </Key>
+    </Dependency>
+    <Dependency>
+      <Type>Library</Type>
+      <Key>
+        <Packager>Paul Soulsby</Packager>
+        <Name>Graphics</Name>
+        <Version>0.0.1</Version>
+      </Key>
+    </Dependency>
+    <Dependency>
+      <Type>Library</Type>
+      <Key>
+        <Packager>Paul Soulsby</Packager>
+        <Name>Font</Name>
+        <Version>0.0.1</Version>
+      </Key>
+    </Dependency>
+    <Dependency>
+      <Type>Library</Type>
+      <Key>
+        <Packager>Paul Soulsby</Packager>
+        <Name>Canvas</Name>
+        <Version>0.0.1</Version>
+      </Key>
+    </Dependency>
+    <Dependency>
+      <Type>Library</Type>
+      <Key>
+        <Packager>Paul Soulsby</Packager>
+        <Name>Ssd1306Group</Name>
+        <Version>0.0.1</Version>
+      </Key>
+    </Dependency>
+    <Dependency>
+      <Type>Library</Type>
+      <Key>
+        <Packager>Paul Soulsby</Packager>
+        <Name>Label</Name>
+        <Version>0.0.1</Version>
+      </Key>
+    </Dependency>
+  </Dependencies>
+</ArduinoDependencyCollection>

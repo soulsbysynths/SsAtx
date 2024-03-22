@@ -1,0 +1,12 @@
+{
+  "additionalFiles": "",
+  "builtInLibrariesFolders": "",
+  "builtInToolsFolders": "C:\\Users\\info\\AppData\\Local/Arduino15/packages",
+  "compiler.optimization_flags": "-Os",
+  "customBuildProperties": "runtime.tools.avrdude.path=C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\tools\\avrdude\\6.3.0-arduino17,runtime.tools.arduinoOTA.path=C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\tools\\arduinoOTA\\1.3.0,runtime.tools.ctags.path=C:\\Users\\info\\AppData\\Local\\VisualGDB\\Arduino\\tools-builder\\ctags\\5.8-arduino11",
+  "fqbn": "arduino:samd:arduino_zero_native",
+  "hardwareFolders": "C:\\Users\\info\\OneDrive\\Documents\\Arduino\\hardware,C:\\Users\\info\\AppData\\Local\\Arduino15\\packages",
+  "otherLibrariesFolders": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\Arduino,C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths,C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths",
+  "runtime.ide.version": "10600",
+  "sketchLocation": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Ssd1306Tester\\Ssd1306Tester\\sketches\\Ssd1306Tester.ino"
+}

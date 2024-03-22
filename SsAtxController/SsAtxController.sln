@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33829.357
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SsAtxController", "SsAtxController\SsAtxController.vcxproj", "{C4FE5CA2-7837-4E64-971D-F4AC469DC6AF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|VisualGDB = Debug|VisualGDB
+		Release|VisualGDB = Release|VisualGDB
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C4FE5CA2-7837-4E64-971D-F4AC469DC6AF}.Debug|VisualGDB.ActiveCfg = Debug|VisualGDB
+		{C4FE5CA2-7837-4E64-971D-F4AC469DC6AF}.Debug|VisualGDB.Build.0 = Debug|VisualGDB
+		{C4FE5CA2-7837-4E64-971D-F4AC469DC6AF}.Release|VisualGDB.ActiveCfg = Release|VisualGDB
+		{C4FE5CA2-7837-4E64-971D-F4AC469DC6AF}.Release|VisualGDB.Build.0 = Release|VisualGDB
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9051E8B6-B2D0-4597-B867-0562058E3782}
+	EndGlobalSection
+EndGlobal

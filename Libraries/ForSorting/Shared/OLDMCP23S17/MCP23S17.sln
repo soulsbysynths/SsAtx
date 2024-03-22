@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33829.357
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MCP23S17", "MCP23S17\MCP23S17.vcxproj", "{E9B87B1B-A7A2-46FB-8A69-DDDBBA3CD161}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MCP23S17Tester", "MCP23S17Tester\MCP23S17Tester.vcxproj", "{923BE808-266F-4D35-BB6E-8D4D1A11330C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{E9B87B1B-A7A2-46FB-8A69-DDDBBA3CD161} = {E9B87B1B-A7A2-46FB-8A69-DDDBBA3CD161}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|VisualGDB = Debug|VisualGDB
+		Release|VisualGDB = Release|VisualGDB
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E9B87B1B-A7A2-46FB-8A69-DDDBBA3CD161}.Debug|VisualGDB.ActiveCfg = Debug|VisualGDB
+		{E9B87B1B-A7A2-46FB-8A69-DDDBBA3CD161}.Debug|VisualGDB.Build.0 = Debug|VisualGDB
+		{E9B87B1B-A7A2-46FB-8A69-DDDBBA3CD161}.Release|VisualGDB.ActiveCfg = Release|VisualGDB
+		{E9B87B1B-A7A2-46FB-8A69-DDDBBA3CD161}.Release|VisualGDB.Build.0 = Release|VisualGDB
+		{923BE808-266F-4D35-BB6E-8D4D1A11330C}.Debug|VisualGDB.ActiveCfg = Debug|VisualGDB
+		{923BE808-266F-4D35-BB6E-8D4D1A11330C}.Debug|VisualGDB.Build.0 = Debug|VisualGDB
+		{923BE808-266F-4D35-BB6E-8D4D1A11330C}.Release|VisualGDB.ActiveCfg = Release|VisualGDB
+		{923BE808-266F-4D35-BB6E-8D4D1A11330C}.Release|VisualGDB.Build.0 = Release|VisualGDB
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {430257C2-2C30-45EE-8FC2-EE5873E61478}
+	EndGlobalSection
+EndGlobal

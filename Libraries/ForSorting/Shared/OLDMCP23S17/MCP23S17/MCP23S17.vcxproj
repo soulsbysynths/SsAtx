@@ -1,0 +1,217 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|VisualGDB">
+      <Configuration>Debug</Configuration>
+      <Platform>VisualGDB</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|VisualGDB">
+      <Configuration>Release</Configuration>
+      <Platform>VisualGDB</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <ProjectGuid>{E9B87B1B-A7A2-46FB-8A69-DDDBBA3CD161}</ProjectGuid>
+    <BSP_ID>com.sysprogs.atstart.ATSAMD21G18A</BSP_ID>
+    <BSP_VERSION>1.0</BSP_VERSION>
+    <InPlaceBSPSubdir />
+    <RelativeBSPPath />
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">
+    <GNUConfigurationType>Debug</GNUConfigurationType>
+    <ToolchainID>com.visualgdb.arm-eabi</ToolchainID>
+    <ToolchainVersion>10.3.1/10.2.90/r1</ToolchainVersion>
+    <GNUTargetType>StaticLibrary</GNUTargetType>
+    <MCUPropertyListFile>$(ProjectDir)mcu.props</MCUPropertyListFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">
+    <ToolchainID>com.visualgdb.arm-eabi</ToolchainID>
+    <ToolchainVersion>10.3.1/10.2.90/r1</ToolchainVersion>
+    <GNUTargetType>StaticLibrary</GNUTargetType>
+    <MCUPropertyListFile>$(ProjectDir)mcu.props</MCUPropertyListFile>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\info\Documents\GitHub\SsAtx\SsAtxControllerVS\SsAtxController;%(ClCompile.AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>DEBUG=1;%(ClCompile.PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <AdditionalLinkerInputs>;%(Link.AdditionalLinkerInputs)</AdditionalLinkerInputs>
+      <LibrarySearchDirectories>;%(Link.LibrarySearchDirectories)</LibrarySearchDirectories>
+      <AdditionalLibraryNames>;%(Link.AdditionalLibraryNames)</AdditionalLibraryNames>
+      <LinkerScript />
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\info\Documents\GitHub\SsAtx\SsAtxController\SsAtxController;%(ClCompile.AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>NDEBUG=1;RELEASE=1;%(ClCompile.PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <AdditionalLinkerInputs>;%(Link.AdditionalLinkerInputs)</AdditionalLinkerInputs>
+      <LibrarySearchDirectories>;%(Link.LibrarySearchDirectories)</LibrarySearchDirectories>
+      <AdditionalLibraryNames>;%(Link.AdditionalLibraryNames)</AdditionalLibraryNames>
+      <LinkerScript />
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <ItemGroup>
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="MCP23S17.cpp" />
+    <ClInclude Include="MCP23S17.h" />
+    <None Include="mcu.props" />
+    <ClCompile Include="$(BSP_ROOT)\samd21a\gcc\gcc\startup_samd21.c" />
+    <ClCompile Include="$(BSP_ROOT)\hal\src\hal_atomic.c" />
+    <ClCompile Include="$(BSP_ROOT)\hal\src\hal_delay.c" />
+    <ClCompile Include="$(BSP_ROOT)\hal\src\hal_flash.c" />
+    <ClCompile Include="$(BSP_ROOT)\hal\src\hal_gpio.c" />
+    <ClCompile Include="$(BSP_ROOT)\hal\src\hal_i2c_m_sync.c" />
+    <ClCompile Include="$(BSP_ROOT)\hal\src\hal_init.c" />
+    <ClCompile Include="$(BSP_ROOT)\hal\src\hal_io.c" />
+    <ClCompile Include="$(BSP_ROOT)\hal\src\hal_sleep.c" />
+    <ClCompile Include="$(BSP_ROOT)\hal\src\hal_usb_device.c" />
+    <ClCompile Include="$(BSP_ROOT)\hal\utils\src\utils_assert.c" />
+    <ClCompile Include="$(BSP_ROOT)\hal\utils\src\utils_event.c" />
+    <ClCompile Include="$(BSP_ROOT)\hal\utils\src\utils_list.c" />
+    <ClCompile Include="$(BSP_ROOT)\hal\utils\src\utils_syscalls.c" />
+    <ClCompile Include="$(BSP_ROOT)\driver_init.c" />
+    <ClCompile Include="$(BSP_ROOT)\examples\driver_examples.c" />
+    <ClCompile Include="$(BSP_ROOT)\hal\src\hal_adc_sync.c" />
+    <ClCompile Include="$(BSP_ROOT)\hal\src\hal_spi_m_sync.c" />
+    <ClCompile Include="$(BSP_ROOT)\hal\src\hal_timer.c" />
+    <ClCompile Include="$(BSP_ROOT)\hpl\adc\hpl_adc.c" />
+    <ClCompile Include="$(BSP_ROOT)\hpl\core\hpl_core_m0plus_base.c" />
+    <ClCompile Include="$(BSP_ROOT)\hpl\core\hpl_init.c" />
+    <ClCompile Include="$(BSP_ROOT)\hpl\dmac\hpl_dmac.c" />
+    <ClCompile Include="$(BSP_ROOT)\hpl\gclk\hpl_gclk.c" />
+    <ClCompile Include="$(BSP_ROOT)\hpl\nvmctrl\hpl_nvmctrl.c" />
+    <ClCompile Include="$(BSP_ROOT)\hpl\pm\hpl_pm.c" />
+    <ClCompile Include="$(BSP_ROOT)\hpl\sercom\hpl_sercom.c" />
+    <ClCompile Include="$(BSP_ROOT)\hpl\sysctrl\hpl_sysctrl.c" />
+    <ClCompile Include="$(BSP_ROOT)\hpl\tc\hpl_tc.c" />
+    <ClCompile Include="$(BSP_ROOT)\hpl\usb\hpl_usb.c" />
+    <ClCompile Include="$(BSP_ROOT)\atmel_start.c" />
+    <ClInclude Include="$(BSP_ROOT)\hal\include\hal_atomic.h" />
+    <ClInclude Include="$(BSP_ROOT)\hal\include\hal_delay.h" />
+    <ClInclude Include="$(BSP_ROOT)\hal\include\hal_flash.h" />
+    <ClInclude Include="$(BSP_ROOT)\hal\include\hal_gpio.h" />
+    <ClInclude Include="$(BSP_ROOT)\hal\include\hal_i2c_m_sync.h" />
+    <ClInclude Include="$(BSP_ROOT)\hal\include\hal_init.h" />
+    <ClInclude Include="$(BSP_ROOT)\hal\include\hal_io.h" />
+    <ClInclude Include="$(BSP_ROOT)\hal\include\hal_sleep.h" />
+    <ClInclude Include="$(BSP_ROOT)\hal\include\hal_spi_m_sync.h" />
+    <ClInclude Include="$(BSP_ROOT)\hal\include\hal_usb_device.h" />
+    <ClInclude Include="$(BSP_ROOT)\hal\include\hpl_adc_dma.h" />
+    <ClInclude Include="$(BSP_ROOT)\hal\include\hpl_core.h" />
+    <ClInclude Include="$(BSP_ROOT)\hal\include\hpl_delay.h" />
+    <ClInclude Include="$(BSP_ROOT)\hal\include\hpl_dma.h" />
+    <ClInclude Include="$(BSP_ROOT)\hal\include\hpl_flash.h" />
+    <ClInclude Include="$(BSP_ROOT)\hal\include\hpl_gpio.h" />
+    <ClInclude Include="$(BSP_ROOT)\hal\include\hpl_i2c_m_async.h" />
+    <ClInclude Include="$(BSP_ROOT)\hal\include\hpl_i2c_m_sync.h" />
+    <ClInclude Include="$(BSP_ROOT)\hal\include\hpl_i2c_s_async.h" />
+    <ClInclude Include="$(BSP_ROOT)\hal\include\hpl_i2c_s_sync.h" />
+    <ClInclude Include="$(BSP_ROOT)\hal\include\hpl_init.h" />
+    <ClInclude Include="$(BSP_ROOT)\hal\include\hpl_irq.h" />
+    <ClInclude Include="$(BSP_ROOT)\hal\include\hpl_sleep.h" />
+    <ClInclude Include="$(BSP_ROOT)\hal\include\hpl_spi.h" />
+    <ClInclude Include="$(BSP_ROOT)\hal\include\hpl_spi_async.h" />
+    <ClInclude Include="$(BSP_ROOT)\hal\include\hpl_spi_dma.h" />
+    <ClInclude Include="$(BSP_ROOT)\hal\include\hpl_spi_sync.h" />
+    <ClInclude Include="$(BSP_ROOT)\hal\include\hpl_usart.h" />
+    <ClInclude Include="$(BSP_ROOT)\hal\include\hpl_usb.h" />
+    <ClInclude Include="$(BSP_ROOT)\hal\include\hpl_usb_device.h" />
+    <ClInclude Include="$(BSP_ROOT)\hal\include\hpl_usb_host.h" />
+    <ClInclude Include="$(BSP_ROOT)\hal\include\hpl_user_area.h" />
+    <ClInclude Include="$(BSP_ROOT)\hal\utils\include\compiler.h" />
+    <ClInclude Include="$(BSP_ROOT)\hal\utils\include\err_codes.h" />
+    <ClInclude Include="$(BSP_ROOT)\hal\utils\include\events.h" />
+    <ClInclude Include="$(BSP_ROOT)\hal\utils\include\utils.h" />
+    <ClInclude Include="$(BSP_ROOT)\hal\utils\include\utils_assert.h" />
+    <ClInclude Include="$(BSP_ROOT)\hal\utils\include\utils_event.h" />
+    <ClInclude Include="$(BSP_ROOT)\hal\utils\include\utils_increment_macro.h" />
+    <ClInclude Include="$(BSP_ROOT)\hal\utils\include\utils_list.h" />
+    <ClInclude Include="$(BSP_ROOT)\hal\utils\include\utils_repeat_macro.h" />
+    <ClInclude Include="$(BSP_ROOT)\hri\hri_ac_d21.h" />
+    <ClInclude Include="$(BSP_ROOT)\hri\hri_adc_d21.h" />
+    <ClInclude Include="$(BSP_ROOT)\hri\hri_d21.h" />
+    <ClInclude Include="$(BSP_ROOT)\hri\hri_dac_d21.h" />
+    <ClInclude Include="$(BSP_ROOT)\hri\hri_dmac_d21.h" />
+    <ClInclude Include="$(BSP_ROOT)\hri\hri_dsu_d21.h" />
+    <ClInclude Include="$(BSP_ROOT)\hri\hri_eic_d21.h" />
+    <ClInclude Include="$(BSP_ROOT)\hri\hri_evsys_d21.h" />
+    <ClInclude Include="$(BSP_ROOT)\hri\hri_gclk_d21.h" />
+    <ClInclude Include="$(BSP_ROOT)\hri\hri_hmatrixb_d21.h" />
+    <ClInclude Include="$(BSP_ROOT)\hri\hri_i2s_d21.h" />
+    <ClInclude Include="$(BSP_ROOT)\hri\hri_mtb_d21.h" />
+    <ClInclude Include="$(BSP_ROOT)\hri\hri_nvic_d21.h" />
+    <ClInclude Include="$(BSP_ROOT)\hri\hri_nvmctrl_d21.h" />
+    <ClInclude Include="$(BSP_ROOT)\hri\hri_pac_d21.h" />
+    <ClInclude Include="$(BSP_ROOT)\hri\hri_pm_d21.h" />
+    <ClInclude Include="$(BSP_ROOT)\hri\hri_port_d21.h" />
+    <ClInclude Include="$(BSP_ROOT)\hri\hri_rtc_d21.h" />
+    <ClInclude Include="$(BSP_ROOT)\hri\hri_sercom_d21.h" />
+    <ClInclude Include="$(BSP_ROOT)\hri\hri_sysctrl_d21.h" />
+    <ClInclude Include="$(BSP_ROOT)\hri\hri_systemcontrol_d21.h" />
+    <ClInclude Include="$(BSP_ROOT)\hri\hri_systick_d21.h" />
+    <ClInclude Include="$(BSP_ROOT)\hri\hri_tc_d21.h" />
+    <ClInclude Include="$(BSP_ROOT)\hri\hri_tcc_d21.h" />
+    <ClInclude Include="$(BSP_ROOT)\hri\hri_usb_d21.h" />
+    <ClInclude Include="$(BSP_ROOT)\hri\hri_wdt_d21.h" />
+    <ClInclude Include="$(BSP_ROOT)\driver_init.h" />
+    <ClInclude Include="$(BSP_ROOT)\atmel_start_pins.h" />
+    <ClInclude Include="$(BSP_ROOT)\examples\driver_examples.h" />
+    <ClInclude Include="$(BSP_ROOT)\hal\include\hal_adc_sync.h" />
+    <ClInclude Include="$(BSP_ROOT)\hal\include\hal_timer.h" />
+    <ClInclude Include="$(BSP_ROOT)\hal\include\hpl_adc_async.h" />
+    <ClInclude Include="$(BSP_ROOT)\hal\include\hpl_adc_sync.h" />
+    <ClInclude Include="$(BSP_ROOT)\hal\include\hpl_missing_features.h" />
+    <ClInclude Include="$(BSP_ROOT)\hal\include\hpl_pwm.h" />
+    <ClInclude Include="$(BSP_ROOT)\hal\include\hpl_reset.h" />
+    <ClInclude Include="$(BSP_ROOT)\hal\include\hpl_spi_m_async.h" />
+    <ClInclude Include="$(BSP_ROOT)\hal\include\hpl_spi_m_dma.h" />
+    <ClInclude Include="$(BSP_ROOT)\hal\include\hpl_spi_m_sync.h" />
+    <ClInclude Include="$(BSP_ROOT)\hal\include\hpl_spi_s_async.h" />
+    <ClInclude Include="$(BSP_ROOT)\hal\include\hpl_spi_s_sync.h" />
+    <ClInclude Include="$(BSP_ROOT)\hal\include\hpl_timer.h" />
+    <ClInclude Include="$(BSP_ROOT)\hal\include\hpl_usart_async.h" />
+    <ClInclude Include="$(BSP_ROOT)\hal\include\hpl_usart_sync.h" />
+    <ClInclude Include="$(BSP_ROOT)\hal\utils\include\parts.h" />
+    <ClInclude Include="$(BSP_ROOT)\hpl\adc\hpl_adc_base.h" />
+    <ClInclude Include="$(BSP_ROOT)\hpl\core\hpl_core_port.h" />
+    <ClInclude Include="$(BSP_ROOT)\hpl\gclk\hpl_gclk_base.h" />
+    <ClInclude Include="$(BSP_ROOT)\hpl\pm\hpl_pm_base.h" />
+    <ClInclude Include="$(BSP_ROOT)\hpl\port\hpl_gpio_base.h" />
+    <ClInclude Include="$(BSP_ROOT)\hpl\tc\hpl_tc_base.h" />
+    <ClInclude Include="$(BSP_ROOT)\atmel_start.h" />
+    <ClInclude Include="$(BSP_ROOT)\config\hpl_adc_config.h" />
+    <ClInclude Include="$(BSP_ROOT)\config\hpl_dmac_config.h" />
+    <ClInclude Include="$(BSP_ROOT)\config\hpl_gclk_config.h" />
+    <ClInclude Include="$(BSP_ROOT)\config\hpl_nvmctrl_config.h" />
+    <ClInclude Include="$(BSP_ROOT)\config\hpl_pm_config.h" />
+    <ClInclude Include="$(BSP_ROOT)\config\hpl_sercom_config.h" />
+    <ClInclude Include="$(BSP_ROOT)\config\hpl_sysctrl_config.h" />
+    <ClInclude Include="$(BSP_ROOT)\config\hpl_tc_config.h" />
+    <ClInclude Include="$(BSP_ROOT)\config\hpl_usb_config.h" />
+    <ClInclude Include="$(BSP_ROOT)\config\peripheral_clk_config.h" />
+    <None Include="MCP23S17-Debug.vgdbsettings" />
+    <None Include="MCP23S17-Release.vgdbsettings" />
+    <None Include="MCU.xml" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,87 @@
+[
+  {
+    "Sourcefile": null,
+    "Include": "",
+    "Includepath": "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.14\\cores\\arduino"
+  },
+  {
+    "Sourcefile": null,
+    "Include": "",
+    "Includepath": "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.14\\variants\\arduino_zero"
+  },
+  {
+    "Sourcefile": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Sn74hc138dTester\\Sn74hc138dTester\\Output\\Arduino_Zero__Native_USB_Port_\\Debug\\sketch\\Sn74hc138dTester.ino.cpp",
+    "Include": "Sn74hc138d.h",
+    "Includepath": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Sn74hc138d\\src"
+  },
+  {
+    "Sourcefile": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Sn74hc138dTester\\Sn74hc138dTester\\Output\\Arduino_Zero__Native_USB_Port_\\Debug\\sketch\\Sn74hc138dTester.ino.cpp",
+    "Include": "Adafruit_BusIO_Register.h",
+    "Includepath": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\Arduino\\Adafruit_BusIO"
+  },
+  {
+    "Sourcefile": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Sn74hc138dTester\\Sn74hc138dTester\\Output\\Arduino_Zero__Native_USB_Port_\\Debug\\sketch\\Sn74hc138dTester.ino.cpp",
+    "Include": "Wire.h",
+    "Includepath": "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.14\\libraries\\Wire"
+  },
+  {
+    "Sourcefile": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Sn74hc138dTester\\Sn74hc138dTester\\Output\\Arduino_Zero__Native_USB_Port_\\Debug\\sketch\\Sn74hc138dTester.ino.cpp",
+    "Include": "SPI.h",
+    "Includepath": "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.14\\libraries\\SPI"
+  },
+  {
+    "Sourcefile": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Sn74hc138dTester\\Sn74hc138dTester\\Output\\Arduino_Zero__Native_USB_Port_\\Debug\\sketch\\Sn74hc138dTester.ino.cpp",
+    "Include": "Adafruit_MCP23X08.h",
+    "Includepath": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\Arduino\\Adafruit_MCP23017_Arduino_Library\\src"
+  },
+  {
+    "Sourcefile": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Sn74hc138dTester\\Sn74hc138dTester\\Output\\Arduino_Zero__Native_USB_Port_\\Debug\\sketch\\Sn74hc138dTester.ino.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Sn74hc138d\\src\\Sn74hc138d.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\Arduino\\Adafruit_BusIO\\Adafruit_BusIO_Register.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\Arduino\\Adafruit_BusIO\\Adafruit_I2CDevice.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\Arduino\\Adafruit_BusIO\\Adafruit_SPIDevice.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.14\\libraries\\Wire\\Wire.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.14\\libraries\\SPI\\SPI.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\Arduino\\Adafruit_MCP23017_Arduino_Library\\src\\Adafruit_MCP23X08.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\Arduino\\Adafruit_MCP23017_Arduino_Library\\src\\Adafruit_MCP23X17.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\Arduino\\Adafruit_MCP23017_Arduino_Library\\src\\Adafruit_MCP23XXX.cpp",
+    "Include": "",
+    "Includepath": null
+  }
+]

@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33829.357
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{803FD0C6-D64E-4E16-9DC3-1DAEC859A3D2}") = "Mcp23s17Tester", "Mcp23s17Tester.vgdbproj", "{CEB4C332-F209-4B0F-911F-9476E98E4864}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Arduino_Zero_(Native_USB_Port) = Debug|Arduino_Zero_(Native_USB_Port)
+		Release|Arduino_Zero_(Native_USB_Port) = Release|Arduino_Zero_(Native_USB_Port)
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CEB4C332-F209-4B0F-911F-9476E98E4864}.Debug|Arduino_Zero_(Native_USB_Port).ActiveCfg = Debug|Arduino_Zero_(Native_USB_Port)
+		{CEB4C332-F209-4B0F-911F-9476E98E4864}.Debug|Arduino_Zero_(Native_USB_Port).Build.0 = Debug|Arduino_Zero_(Native_USB_Port)
+		{CEB4C332-F209-4B0F-911F-9476E98E4864}.Release|Arduino_Zero_(Native_USB_Port).ActiveCfg = Release|Arduino_Zero_(Native_USB_Port)
+		{CEB4C332-F209-4B0F-911F-9476E98E4864}.Release|Arduino_Zero_(Native_USB_Port).Build.0 = Release|Arduino_Zero_(Native_USB_Port)
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A0F89D48-D2E4-4000-8DCE-A07615FDF348}
+	EndGlobalSection
+EndGlobal

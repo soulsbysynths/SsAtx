@@ -2,7 +2,6 @@
 #define _SSD1306_H_
 
 #include <Adafruit_GFX.h>
-#include <Graphics.h>
 #include <Canvas.h>
 #include <stdint.h>
 

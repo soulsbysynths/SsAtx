@@ -1,5 +1,4 @@
 #pragma once
-#include <Canvas.h>
 #include <Graphics.h>
 #include <string>
 #include <Font.h>

@@ -1,24 +1,21 @@
+#include <Graphics.h>
 #include <Adafruit_BusIO_Register.h>
 #include <Adafruit_I2CDevice.h>
 #include <Adafruit_I2CRegister.h>
 #include <Adafruit_SPIDevice.h>
-#include <Adafruit_GFX.h>
-#include <Adafruit_GrayOLED.h>
 #include <Adafruit_SPITFT.h>
 #include <Adafruit_SPITFT_Macros.h>
 #include <Adafruit_MCP23X08.h>
 #include <Adafruit_MCP23X17.h>
 #include <Adafruit_MCP23XXX.h>
-#include <gfxfont.h>
 #include <Sn74hc138d.h>
 #include <Ssd1306.h>
 #include "Ssd1306OledSettings.h"
 #include <Ssd1306Group.h>
-#include <Graphics.h>
 #include <Font.h>
-#include <Canvas.h>
 #include "DinMittel8x16Regular.h"
 #include <Label.h>
+
 
 void initialiseDtrMux();
 void setDtrMuxInhibit(bool inhibit);
@@ -217,7 +214,7 @@ void writeRandomCharFullScreen(Ssd1306* ssd)
 
 void writeRandomLabel(Ssd1306* ssd)
 {
-	Label label(getRandomRect(),"HELLO WORLD!",dinMittel8x16Regular)
+	//Label label(getRandomRect(),"HELLO WORLD!",dinMittel8x16Regular)
 }
 
 void initialiseDtrMux()

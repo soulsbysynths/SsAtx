@@ -12,6 +12,22 @@
     <Dependency>
       <Type>Library</Type>
       <Key>
+        <Packager>Paul Soulsby</Packager>
+        <Name>Graphics</Name>
+        <Version>0.0.1</Version>
+      </Key>
+    </Dependency>
+    <Dependency>
+      <Type>Library</Type>
+      <Key>
+        <Packager>Paul Soulsby</Packager>
+        <Name>Font</Name>
+        <Version>0.0.1</Version>
+      </Key>
+    </Dependency>
+    <Dependency>
+      <Type>Library</Type>
+      <Key>
         <Packager>Adafruit</Packager>
         <Name>Adafruit MCP23017 Arduino Library</Name>
         <Version>2.3.2</Version>
@@ -37,39 +53,7 @@
       <Type>Library</Type>
       <Key>
         <Packager>Paul Soulsby</Packager>
-        <Name>Graphics</Name>
-        <Version>0.0.1</Version>
-      </Key>
-    </Dependency>
-    <Dependency>
-      <Type>Library</Type>
-      <Key>
-        <Packager>Paul Soulsby</Packager>
-        <Name>Font</Name>
-        <Version>0.0.1</Version>
-      </Key>
-    </Dependency>
-    <Dependency>
-      <Type>Library</Type>
-      <Key>
-        <Packager>Paul Soulsby</Packager>
-        <Name>Canvas</Name>
-        <Version>0.0.1</Version>
-      </Key>
-    </Dependency>
-    <Dependency>
-      <Type>Library</Type>
-      <Key>
-        <Packager>Paul Soulsby</Packager>
         <Name>Ssd1306Group</Name>
-        <Version>0.0.1</Version>
-      </Key>
-    </Dependency>
-    <Dependency>
-      <Type>Library</Type>
-      <Key>
-        <Packager>Paul Soulsby</Packager>
-        <Name>Label</Name>
         <Version>0.0.1</Version>
       </Key>
     </Dependency>

@@ -11,6 +11,16 @@
   },
   {
     "Sourcefile": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Ssd1306Tester\\Ssd1306Tester\\Output\\Arduino_Zero__Native_USB_Port_\\Debug\\sketch\\Ssd1306Tester.ino.cpp",
+    "Include": "Graphics.h",
+    "Includepath": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Graphics\\src"
+  },
+  {
+    "Sourcefile": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Ssd1306Tester\\Ssd1306Tester\\Output\\Arduino_Zero__Native_USB_Port_\\Debug\\sketch\\Ssd1306Tester.ino.cpp",
+    "Include": "Font.h",
+    "Includepath": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Font\\src"
+  },
+  {
+    "Sourcefile": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Ssd1306Tester\\Ssd1306Tester\\Output\\Arduino_Zero__Native_USB_Port_\\Debug\\sketch\\Ssd1306Tester.ino.cpp",
     "Include": "Adafruit_BusIO_Register.h",
     "Includepath": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\Arduino\\Adafruit_BusIO"
   },
@@ -26,7 +36,7 @@
   },
   {
     "Sourcefile": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Ssd1306Tester\\Ssd1306Tester\\Output\\Arduino_Zero__Native_USB_Port_\\Debug\\sketch\\Ssd1306Tester.ino.cpp",
-    "Include": "Adafruit_GFX.h",
+    "Include": "Adafruit_SPITFT.h",
     "Includepath": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\Arduino\\Adafruit_GFX_Library"
   },
   {
@@ -46,16 +56,6 @@
   },
   {
     "Sourcefile": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Ssd1306Tester\\Ssd1306Tester\\Output\\Arduino_Zero__Native_USB_Port_\\Debug\\sketch\\Ssd1306Tester.ino.cpp",
-    "Include": "Graphics.h",
-    "Includepath": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Graphics\\src"
-  },
-  {
-    "Sourcefile": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Ssd1306Tester\\Ssd1306Tester\\Output\\Arduino_Zero__Native_USB_Port_\\Debug\\sketch\\Ssd1306Tester.ino.cpp",
-    "Include": "Font.h",
-    "Includepath": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Font\\src"
-  },
-  {
-    "Sourcefile": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Ssd1306Tester\\Ssd1306Tester\\Output\\Arduino_Zero__Native_USB_Port_\\Debug\\sketch\\Ssd1306Tester.ino.cpp",
     "Include": "Canvas.h",
     "Includepath": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Canvas\\src"
   },
@@ -71,6 +71,11 @@
   },
   {
     "Sourcefile": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Ssd1306Tester\\Ssd1306Tester\\Output\\Arduino_Zero__Native_USB_Port_\\Debug\\sketch\\Ssd1306Tester.ino.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Graphics\\src\\Graphics.cpp",
     "Include": "",
     "Includepath": null
   },
@@ -141,11 +146,6 @@
   },
   {
     "Sourcefile": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Ssd1306\\src\\Ssd1306.cpp",
-    "Include": "",
-    "Includepath": null
-  },
-  {
-    "Sourcefile": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Graphics\\src\\Graphics.cpp",
     "Include": "",
     "Includepath": null
   },

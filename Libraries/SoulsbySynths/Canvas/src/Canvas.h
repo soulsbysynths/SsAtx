@@ -1,37 +1,8 @@
 #ifndef _CANVAS_H_
 #define _CANVAS_H_
-#include <Graphics.h>
-#include <string.h>
-
+#include <GraphicsTypes.h>
 namespace graphics
 {
-	typedef struct Point
-	{
-		int x;
-		int y;
-	} Point;
-	
-	typedef struct Size
-	{
-		int width;
-		int height;
-	} Size;
-	
-	typedef struct Rect
-	{
-		int x;
-		int y;
-		int width;
-		int height;
-	} Rect;
-
-	enum DrawMode
-	{
-		DM_WHITE  = 0,
-		DM_BLACK,
-		DM_INVERT
-	};
-	
 	class Canvas
 	{
 		public:
@@ -177,7 +148,4 @@ namespace graphics
 		const Rect RECT_;
 	};	 
 }
-
-
-
 #endif // _CANVAS_H_

@@ -66,11 +66,11 @@ void Ssd1306::clearDisplay()
 	
 }
 
-void Ssd1306::writeCanvas(const graphics::Canvas* canvas)
+void Ssd1306::writeGraphics(const graphics::Graphics* graphics)
 {
 	using namespace graphics;
 	
-	const Rect* rect = canvas->getRectPtr();
+	const Rect* rect = graphics->getRectPtr();
 		
 	uint8_t x = rect->x + SETTINGS_->columnOffset;
 	uint8_t y = rect->y >> 3;
@@ -91,7 +91,7 @@ void Ssd1306::writeCanvas(const graphics::Canvas* canvas)
 	writeCommand((y + h - 1) & 0x07);
 	
 	uint16_t size = (uint16_t)w * h;
-	writeData(canvas->getBufferPtr(), size);
+	writeData(graphics->getBufferPtr(), size);
 }
 
 void Ssd1306::writeCommand(uint8_t command)

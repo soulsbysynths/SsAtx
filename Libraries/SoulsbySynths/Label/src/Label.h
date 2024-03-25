@@ -7,32 +7,27 @@ class Label
 {
 	public:
 	Label(graphics::Rect rect, 
-	      graphics::Size outputSize,
 	      std::string text, 
 	      const Font* font, 
 	      graphics::StringAlignment alignment = graphics::SA_NEAR,
 	      graphics::StringAlignment lineAlignment = graphics::SA_NEAR,
 	      bool border = false, 
 	      graphics::DrawMode drawMode = graphics::DM_WHITE, 
-	      void(*paint)(Label*) = NULL,
-	      graphics::Rect quantizeRectBitShift = { 0, 3, 0, 3 });
+	      void(*paint)(Label*, graphics::Graphics*) = NULL);
 	
 	~Label(void);
 	
 	inline int getWidth()
 	{
-		return canvas_->getWidth();
+		return rect_.width;
 	}
 	
 	inline int getHeight()
 	{
-		return canvas_->getHeight();
+		return rect_.height;
 	}
 	
-	inline int setText(std::string text)
-	{
-		text_ = text;
-	}
+	void setText(std::string text);
 	
 	inline std::string getText()
 	{
@@ -41,10 +36,10 @@ class Label
 	
 	private:
 	void paint();
+	graphics::Rect rect_;
 	std::string text_ = "";
 	const Font* font_ = NULL;
-	void(*paint_)(Label*) = NULL;
-	graphics::Canvas* canvas_ = NULL;
+	void(*paint_)(Label*, graphics::Graphics*) = NULL;
 	bool border_ = false;
 	graphics::StringAlignment alignment_ = graphics::SA_NEAR;
 	graphics::StringAlignment lineAlignment_ = graphics::SA_NEAR;

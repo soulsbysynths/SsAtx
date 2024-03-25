@@ -45,7 +45,7 @@ enum GraphicsTest
 	GT_CHAR_FULLSCREEN
 };
 
-static const GraphicsTest GRAPHICS_TEST = GT_CHAR;
+static const GraphicsTest GRAPHICS_TEST = GT_RECTS_FULLSCREEN;
 static const int DELAY = 500;
 static const uint8_t PIN_CLK = 6;
 static const uint8_t PIN_DC = 7;
@@ -127,6 +127,7 @@ void writeGraphicsTest(uint8_t stage)
 			case GT_RECTS_FULLSCREEN:
 				{
 					writeRandomRectFullScreen(ssd);
+					break;
 				}
 			case GT_CHAR:
 				{
@@ -147,23 +148,23 @@ void writeRandomBuffer(Ssd1306* ssd, uint8_t bufferData)
 {
 	using namespace graphics;
 	
-	Canvas canvas(getRandomRect(ssd), ssd->SIZE, bufferData);
+	Graphics graphics(getRandomRect(ssd), ssd->SIZE, bufferData);
 
-	ssd->writeCanvas(&canvas);	
+	ssd->writeGraphics(&graphics);	
 }
 
 void writeRandomRect(Ssd1306* ssd)
 {
 	using namespace graphics;
 
-	Canvas canvas(getRandomRect(ssd), ssd->SIZE);
+	Graphics graphics(getRandomRect(ssd), ssd->SIZE);
 
-	const Rect* rect = canvas.getRectPtr();
+	const Rect* rect = graphics.getRectPtr();
 
-	Graphics::drawRect(&canvas, Rect{ 0, 0, rect->width, rect->height });
-	Graphics::drawLine(&canvas, Point{ 0, 0 }, Point{ rect->width, rect->height });
-	Graphics::drawLine(&canvas, Point{ 0, rect->height }, Point{ rect->width, 0 });
-	ssd->writeCanvas(&canvas);
+	graphics.drawRect(Rect{ 0, 0, rect->width, rect->height });
+	graphics.drawLine(Point{ 0, 0 }, Point{ rect->width, rect->height });
+	graphics.drawLine(Point{ 0, rect->height }, Point{ rect->width, 0 });
+	ssd->writeGraphics(&graphics);
 	
 }
 
@@ -171,7 +172,7 @@ void writeRandomRectFullScreen(Ssd1306* ssd)
 {
 	using namespace graphics;
 
-	Canvas canvas(Rect{ 0, 0, ssd->SIZE.width, ssd->SIZE.height }, ssd->SIZE);
+	Graphics graphics(Rect{ 0, 0, ssd->SIZE.width, ssd->SIZE.height }, ssd->SIZE);
 	
 	Rect rect = getRandomRect(ssd);
 	//	Rect rect
@@ -180,10 +181,10 @@ void writeRandomRectFullScreen(Ssd1306* ssd)
 	//	}
 	//	;
 	
-	Graphics::drawRect(&canvas, rect);
-	Graphics::drawLine(&canvas, Point{ rect.x, rect.y }, Point{ rect.x + rect.width - 1, rect.y + rect.height - 1 });
-	Graphics::drawLine(&canvas, Point{ rect.x, rect.y + rect.height - 1 }, Point{ rect.x + rect.width - 1, rect.y });
-	ssd->writeCanvas(&canvas);
+	graphics.drawRect(rect);
+	graphics.drawLine(Point{ rect.x, rect.y }, Point{ rect.x + rect.width - 1, rect.y + rect.height - 1 });
+	graphics.drawLine(Point{ rect.x, rect.y + rect.height - 1 }, Point{ rect.x + rect.width - 1, rect.y });
+	ssd->writeGraphics(&graphics);
 	
 }
 
@@ -197,10 +198,10 @@ void writeRandomChar(Ssd1306* ssd)
 	rect.y = random(ssd->SIZE.height);
 	rect.width = dinMittel8x16Regular.getWidth();
 	rect.height = dinMittel8x16Regular.getHeight();
-	Canvas canvas(rect, ssd->SIZE);
+	Graphics graphics(rect, ssd->SIZE);
 	
-	Graphics::drawCharacter(&canvas, Point{ 0, 0 }, &dinMittel8x16Regular, randomChar);
-	ssd->writeCanvas(&canvas);
+	graphics.drawCharacter(Point{ 0, 0 }, &dinMittel8x16Regular, randomChar);
+	ssd->writeGraphics(&graphics);
 }
 
 void writeRandomCharFullScreen(Ssd1306* ssd)
@@ -213,10 +214,10 @@ void writeRandomCharFullScreen(Ssd1306* ssd)
 	point.x = random(ssd->SIZE.width - dinMittel8x16Regular.getWidth());
 	point.y = random(ssd->SIZE.height - dinMittel8x16Regular.getHeight());
 
-	Canvas canvas(Rect{ 0, 0, ssd->SIZE.width, ssd->SIZE.height }, ssd->SIZE);
+	Graphics graphics(Rect{ 0, 0, ssd->SIZE.width, ssd->SIZE.height }, ssd->SIZE);
 	
-	Graphics::drawCharacter(&canvas, point, &dinMittel8x16Regular, randomChar);
-	ssd->writeCanvas(&canvas);
+	graphics.drawCharacter(point, &dinMittel8x16Regular, randomChar);
+	ssd->writeGraphics(&graphics);
 }
 
 void writeRandomLabel(Ssd1306* ssd)

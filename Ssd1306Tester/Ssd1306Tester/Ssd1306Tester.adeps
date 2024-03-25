@@ -57,5 +57,13 @@
         <Version>0.0.1</Version>
       </Key>
     </Dependency>
+    <Dependency>
+      <Type>Library</Type>
+      <Key>
+        <Packager>Paul Soulsby</Packager>
+        <Name>Label</Name>
+        <Version>0.0.1</Version>
+      </Key>
+    </Dependency>
   </Dependencies>
 </ArduinoDependencyCollection>

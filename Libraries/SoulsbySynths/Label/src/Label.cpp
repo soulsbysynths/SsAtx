@@ -1,14 +1,12 @@
 #include "Label.h"
-Label::Label(graphics::Rect rect, 
-             graphics::Size outputSize,
+Label::Label(graphics::Rect rect,
              std::string text, 
              const Font* font, 
              graphics::StringAlignment alignment,
              graphics::StringAlignment lineAlignment,
              bool border, 
              graphics::DrawMode drawMode, 
-             void(*paint)(Label*),
-             graphics::Rect quantizeRectBitShift)
+             void(*paint)(Label*, graphics::Graphics*))
 	: text_(text)
 	, font_(font)
 	, border_(border)
@@ -18,13 +16,11 @@ Label::Label(graphics::Rect rect,
 	, paint_(paint)
 {
 	using namespace graphics;
-	
-	canvas_ = new Canvas(rect, outputSize, 0x00, quantizeRectBitShift);
 }
 
 Label::~Label(void) 
 {
-	delete canvas_;
+
 }
 
 void Label::paint()

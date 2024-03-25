@@ -2,7 +2,7 @@
 #define _SSD1306_H_
 
 #include <Adafruit_GFX.h>
-#include <Canvas.h>
+#include <Graphics.h>
 #include <stdint.h>
 
 class Ssd1306
@@ -50,7 +50,7 @@ class Ssd1306
 		return contrast_;
 	}	
 	void clearDisplay();
-	void writeCanvas(const graphics::Canvas* canvas);
+	void writeGraphics(const graphics::Graphics* graphics);
 	const uint8_t ID = 0;
 	const graphics::Size SIZE = { 0, 0 };
 	private:

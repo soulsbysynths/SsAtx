@@ -34,6 +34,7 @@ namespace graphics
 	enum DrawMode
 	{
 		DM_WHITE  = 0,
+		DM_GREY,
 		DM_BLACK,
 		DM_INVERT
 	};

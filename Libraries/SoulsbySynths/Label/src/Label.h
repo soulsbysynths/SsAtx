@@ -1,45 +1,58 @@
 #pragma once
 #include <Graphics.h>
 #include <string>
+#include <vector>
 #include <Font.h>
 
 class Label
 {
 	public:
-	Label(graphics::Rect rect, 
-	      std::string text, 
+	Label(const uint8_t id,
 	      const Font* font, 
+	      graphics::Size constrainSize, 
+	      graphics::Rect rect,
+	      std::string text, 
+	      void(*paintLabel)(Label*, graphics::Graphics*),
 	      graphics::StringAlignment alignment = graphics::SA_NEAR,
 	      graphics::StringAlignment lineAlignment = graphics::SA_NEAR,
 	      bool border = false, 
-	      graphics::DrawMode drawMode = graphics::DM_WHITE, 
-	      void(*paint)(Label*, graphics::Graphics*) = NULL);
+	      graphics::DrawMode drawMode = graphics::DM_WHITE,
+	      const uint8_t zOrder = 0);
 	
 	~Label(void);
 	
-	inline int getWidth()
+	inline const graphics::Point getLocation() const
 	{
-		return rect_.width;
+		return { RECT_.x, RECT_.y };
 	}
 	
-	inline int getHeight()
+	inline const graphics::Size getSize() const
 	{
-		return rect_.height;
+		return { RECT_.width, RECT_.height };
 	}
 	
 	void setText(std::string text);
-	
-	inline std::string getText()
+	inline void paint()
 	{
-		return text_;
+		paint({ 0, 0, RECT_.width, RECT_.height });
 	}
 	
+	void paint(graphics::Rect rect);
+	const uint8_t ID;
+	const uint8_t Z_ORDER;
+	
+	protected:
+	
+	
 	private:
-	void paint();
-	graphics::Rect rect_;
-	std::string text_ = "";
-	const Font* font_ = NULL;
-	void(*paint_)(Label*, graphics::Graphics*) = NULL;
+	graphics::Rect initRect(graphics::Rect* rect);
+	void(*paintLabel_)(Label*, graphics::Graphics*) = NULL;
+	const Font* FONT_ = NULL;
+	const graphics::Size CONSTRAIN_SIZE_;
+	const graphics::Rect RECT_;
+	char** charMap_ = NULL;
+	const int COLUMNS_ = 0;
+	const int ROWS_ = 0;
 	bool border_ = false;
 	graphics::StringAlignment alignment_ = graphics::SA_NEAR;
 	graphics::StringAlignment lineAlignment_ = graphics::SA_NEAR;

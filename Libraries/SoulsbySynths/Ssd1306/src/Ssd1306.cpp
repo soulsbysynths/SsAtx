@@ -7,8 +7,7 @@ Ssd1306::Ssd1306(const uint8_t id,
                  void(*writeSelect)(Ssd1306*, uint8_t),
                  void(*writeDc)(Ssd1306*, uint8_t),
                  const Settings* settings)
-	: ID(id)
-	, SIZE(size)
+	: Display(id, size) 
 	, spi_(spi)
 	, writeSelect_(writeSelect)
 	, writeDc_(writeDc)

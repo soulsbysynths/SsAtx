@@ -471,45 +471,6 @@
             },
             {
                 "GCC": "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\tools\\arm-none-eabi-gcc\\7-2017q4/bin/arm-none-eabi-gcc",
-                "InputFile": "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.14\\cores\\arduino\\wiring_private.c",
-                "ObjectFile": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Ssd1306Tester\\Ssd1306Tester\\Output\\Arduino_Zero__Native_USB_Port_\\Debug\\core\\wiring_private.c.o",
-                "Arguments": [
-                    "-mcpu=cortex-m0plus",
-                    "-mthumb",
-                    "-c",
-                    "-g",
-                    "-Os",
-                    "-w",
-                    "-std=gnu11",
-                    "-ffunction-sections",
-                    "-fdata-sections",
-                    "-nostdlib",
-                    "--param",
-                    "max-inline-insns-single=500",
-                    "-MMD",
-                    "-DF_CPU=48000000L",
-                    "-DARDUINO=10600",
-                    "-DARDUINO_SAMD_ZERO",
-                    "-DARDUINO_ARCH_SAMD",
-                    "-D__SAMD21G18A__",
-                    "-DUSB_VID=0x2341",
-                    "-DUSB_PID=0x804d",
-                    "-DUSBCON",
-                    "-DUSB_MANUFACTURER=\"Arduino LLC\"",
-                    "-DUSB_PRODUCT=\"Arduino Zero\"",
-                    "-IC:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\tools\\CMSIS\\4.5.0/CMSIS/Include/",
-                    "-IC:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\tools\\CMSIS-Atmel\\1.2.0/CMSIS/Device/ATMEL/",
-                    "-IC:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.14\\cores\\arduino/api/deprecated",
-                    "-IC:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.14\\cores\\arduino/api/deprecated-avr-comp",
-                    "-IC:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.14\\cores\\arduino",
-                    "-IC:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.14\\variants\\arduino_zero",
-                    "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.14\\cores\\arduino\\wiring_private.c",
-                    "-o",
-                    "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Ssd1306Tester\\Ssd1306Tester\\Output\\Arduino_Zero__Native_USB_Port_\\Debug\\core\\wiring_private.c.o"
-                ]
-            },
-            {
-                "GCC": "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\tools\\arm-none-eabi-gcc\\7-2017q4/bin/arm-none-eabi-gcc",
                 "InputFile": "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.14\\cores\\arduino\\wiring_shift.c",
                 "ObjectFile": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Ssd1306Tester\\Ssd1306Tester\\Output\\Arduino_Zero__Native_USB_Port_\\Debug\\core\\wiring_shift.c.o",
                 "Arguments": [
@@ -623,6 +584,45 @@
                     "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.14\\cores\\arduino\\compact\\dtostrf.c",
                     "-o",
                     "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Ssd1306Tester\\Ssd1306Tester\\Output\\Arduino_Zero__Native_USB_Port_\\Debug\\core\\compact\\dtostrf.c.o"
+                ]
+            },
+            {
+                "GCC": "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\tools\\arm-none-eabi-gcc\\7-2017q4/bin/arm-none-eabi-gcc",
+                "InputFile": "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.14\\cores\\arduino\\wiring_private.c",
+                "ObjectFile": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Ssd1306Tester\\Ssd1306Tester\\Output\\Arduino_Zero__Native_USB_Port_\\Debug\\core\\wiring_private.c.o",
+                "Arguments": [
+                    "-mcpu=cortex-m0plus",
+                    "-mthumb",
+                    "-c",
+                    "-g",
+                    "-Os",
+                    "-w",
+                    "-std=gnu11",
+                    "-ffunction-sections",
+                    "-fdata-sections",
+                    "-nostdlib",
+                    "--param",
+                    "max-inline-insns-single=500",
+                    "-MMD",
+                    "-DF_CPU=48000000L",
+                    "-DARDUINO=10600",
+                    "-DARDUINO_SAMD_ZERO",
+                    "-DARDUINO_ARCH_SAMD",
+                    "-D__SAMD21G18A__",
+                    "-DUSB_VID=0x2341",
+                    "-DUSB_PID=0x804d",
+                    "-DUSBCON",
+                    "-DUSB_MANUFACTURER=\"Arduino LLC\"",
+                    "-DUSB_PRODUCT=\"Arduino Zero\"",
+                    "-IC:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\tools\\CMSIS\\4.5.0/CMSIS/Include/",
+                    "-IC:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\tools\\CMSIS-Atmel\\1.2.0/CMSIS/Device/ATMEL/",
+                    "-IC:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.14\\cores\\arduino/api/deprecated",
+                    "-IC:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.14\\cores\\arduino/api/deprecated-avr-comp",
+                    "-IC:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.14\\cores\\arduino",
+                    "-IC:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.14\\variants\\arduino_zero",
+                    "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.14\\cores\\arduino\\wiring_private.c",
+                    "-o",
+                    "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Ssd1306Tester\\Ssd1306Tester\\Output\\Arduino_Zero__Native_USB_Port_\\Debug\\core\\wiring_private.c.o"
                 ]
             },
             {
@@ -921,8 +921,8 @@
             },
             {
                 "GCC": "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\tools\\arm-none-eabi-gcc\\7-2017q4/bin/arm-none-eabi-g++",
-                "InputFile": "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.14\\cores\\arduino\\new.cpp",
-                "ObjectFile": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Ssd1306Tester\\Ssd1306Tester\\Output\\Arduino_Zero__Native_USB_Port_\\Debug\\core\\new.cpp.o",
+                "InputFile": "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.14\\cores\\arduino\\USB\\CDC.cpp",
+                "ObjectFile": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Ssd1306Tester\\Ssd1306Tester\\Output\\Arduino_Zero__Native_USB_Port_\\Debug\\core\\USB\\CDC.cpp.o",
                 "Arguments": [
                     "-mcpu=cortex-m0plus",
                     "-mthumb",
@@ -956,9 +956,9 @@
                     "-IC:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.14\\cores\\arduino/api/deprecated-avr-comp",
                     "-IC:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.14\\cores\\arduino",
                     "-IC:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.14\\variants\\arduino_zero",
-                    "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.14\\cores\\arduino\\new.cpp",
+                    "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.14\\cores\\arduino\\USB\\CDC.cpp",
                     "-o",
-                    "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Ssd1306Tester\\Ssd1306Tester\\Output\\Arduino_Zero__Native_USB_Port_\\Debug\\core\\new.cpp.o"
+                    "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Ssd1306Tester\\Ssd1306Tester\\Output\\Arduino_Zero__Native_USB_Port_\\Debug\\core\\USB\\CDC.cpp.o"
                 ]
             },
             {
@@ -1341,8 +1341,8 @@
             },
             {
                 "GCC": "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\tools\\arm-none-eabi-gcc\\7-2017q4/bin/arm-none-eabi-g++",
-                "InputFile": "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.14\\cores\\arduino\\USB\\CDC.cpp",
-                "ObjectFile": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Ssd1306Tester\\Ssd1306Tester\\Output\\Arduino_Zero__Native_USB_Port_\\Debug\\core\\USB\\CDC.cpp.o",
+                "InputFile": "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.14\\cores\\arduino\\new.cpp",
+                "ObjectFile": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Ssd1306Tester\\Ssd1306Tester\\Output\\Arduino_Zero__Native_USB_Port_\\Debug\\core\\new.cpp.o",
                 "Arguments": [
                     "-mcpu=cortex-m0plus",
                     "-mthumb",
@@ -1376,9 +1376,9 @@
                     "-IC:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.14\\cores\\arduino/api/deprecated-avr-comp",
                     "-IC:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.14\\cores\\arduino",
                     "-IC:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.14\\variants\\arduino_zero",
-                    "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.14\\cores\\arduino\\USB\\CDC.cpp",
+                    "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.14\\cores\\arduino\\new.cpp",
                     "-o",
-                    "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Ssd1306Tester\\Ssd1306Tester\\Output\\Arduino_Zero__Native_USB_Port_\\Debug\\core\\USB\\CDC.cpp.o"
+                    "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Ssd1306Tester\\Ssd1306Tester\\Output\\Arduino_Zero__Native_USB_Port_\\Debug\\core\\new.cpp.o"
                 ]
             }
         ]
@@ -1434,6 +1434,7 @@
                     "-IC:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\Arduino\\Adafruit_MCP23017_Arduino_Library\\src",
                     "-IC:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Sn74hc138d\\src",
                     "-IC:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Ssd1306\\src",
+                    "-IC:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Display\\src",
                     "-IC:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Ssd1306Group\\src",
                     "-IC:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Label\\src",
                     "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Ssd1306Tester\\Ssd1306Tester\\Output\\Arduino_Zero__Native_USB_Port_\\Debug\\sketch\\Ssd1306Tester.ino.cpp",
@@ -1495,6 +1496,7 @@
                         "-IC:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\Arduino\\Adafruit_MCP23017_Arduino_Library\\src",
                         "-IC:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Sn74hc138d\\src",
                         "-IC:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Ssd1306\\src",
+                        "-IC:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Display\\src",
                         "-IC:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Ssd1306Group\\src",
                         "-IC:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Label\\src",
                         "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Graphics\\src\\Graphics.cpp",
@@ -1561,6 +1563,7 @@
                         "-IC:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\Arduino\\Adafruit_MCP23017_Arduino_Library\\src",
                         "-IC:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Sn74hc138d\\src",
                         "-IC:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Ssd1306\\src",
+                        "-IC:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Display\\src",
                         "-IC:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Ssd1306Group\\src",
                         "-IC:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Label\\src",
                         "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\Arduino\\Adafruit_BusIO\\Adafruit_BusIO_Register.cpp",
@@ -1614,6 +1617,7 @@
                         "-IC:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\Arduino\\Adafruit_MCP23017_Arduino_Library\\src",
                         "-IC:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Sn74hc138d\\src",
                         "-IC:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Ssd1306\\src",
+                        "-IC:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Display\\src",
                         "-IC:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Ssd1306Group\\src",
                         "-IC:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Label\\src",
                         "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\Arduino\\Adafruit_BusIO\\Adafruit_I2CDevice.cpp",
@@ -1667,6 +1671,7 @@
                         "-IC:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\Arduino\\Adafruit_MCP23017_Arduino_Library\\src",
                         "-IC:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Sn74hc138d\\src",
                         "-IC:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Ssd1306\\src",
+                        "-IC:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Display\\src",
                         "-IC:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Ssd1306Group\\src",
                         "-IC:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Label\\src",
                         "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\Arduino\\Adafruit_BusIO\\Adafruit_SPIDevice.cpp",
@@ -1727,6 +1732,7 @@
                         "-IC:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\Arduino\\Adafruit_MCP23017_Arduino_Library\\src",
                         "-IC:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Sn74hc138d\\src",
                         "-IC:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Ssd1306\\src",
+                        "-IC:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Display\\src",
                         "-IC:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Ssd1306Group\\src",
                         "-IC:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Label\\src",
                         "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.14\\libraries\\Wire\\Wire.cpp",
@@ -1787,6 +1793,7 @@
                         "-IC:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\Arduino\\Adafruit_MCP23017_Arduino_Library\\src",
                         "-IC:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Sn74hc138d\\src",
                         "-IC:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Ssd1306\\src",
+                        "-IC:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Display\\src",
                         "-IC:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Ssd1306Group\\src",
                         "-IC:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Label\\src",
                         "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.14\\libraries\\SPI\\SPI.cpp",
@@ -1844,6 +1851,7 @@
                         "-IC:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\Arduino\\Adafruit_MCP23017_Arduino_Library\\src",
                         "-IC:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Sn74hc138d\\src",
                         "-IC:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Ssd1306\\src",
+                        "-IC:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Display\\src",
                         "-IC:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Ssd1306Group\\src",
                         "-IC:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Label\\src",
                         "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\Arduino\\Adafruit_GFX_Library\\glcdfont.c",
@@ -1897,6 +1905,7 @@
                         "-IC:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\Arduino\\Adafruit_MCP23017_Arduino_Library\\src",
                         "-IC:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Sn74hc138d\\src",
                         "-IC:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Ssd1306\\src",
+                        "-IC:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Display\\src",
                         "-IC:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Ssd1306Group\\src",
                         "-IC:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Label\\src",
                         "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\Arduino\\Adafruit_GFX_Library\\Adafruit_GFX.cpp",
@@ -1950,6 +1959,7 @@
                         "-IC:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\Arduino\\Adafruit_MCP23017_Arduino_Library\\src",
                         "-IC:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Sn74hc138d\\src",
                         "-IC:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Ssd1306\\src",
+                        "-IC:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Display\\src",
                         "-IC:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Ssd1306Group\\src",
                         "-IC:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Label\\src",
                         "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\Arduino\\Adafruit_GFX_Library\\Adafruit_GrayOLED.cpp",
@@ -2003,6 +2013,7 @@
                         "-IC:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\Arduino\\Adafruit_MCP23017_Arduino_Library\\src",
                         "-IC:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Sn74hc138d\\src",
                         "-IC:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Ssd1306\\src",
+                        "-IC:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Display\\src",
                         "-IC:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Ssd1306Group\\src",
                         "-IC:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Label\\src",
                         "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\Arduino\\Adafruit_GFX_Library\\Adafruit_SPITFT.cpp",
@@ -2063,6 +2074,7 @@
                         "-IC:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\Arduino\\Adafruit_MCP23017_Arduino_Library\\src",
                         "-IC:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Sn74hc138d\\src",
                         "-IC:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Ssd1306\\src",
+                        "-IC:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Display\\src",
                         "-IC:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Ssd1306Group\\src",
                         "-IC:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Label\\src",
                         "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\Arduino\\Adafruit_MCP23017_Arduino_Library\\src\\Adafruit_MCP23X08.cpp",
@@ -2116,6 +2128,7 @@
                         "-IC:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\Arduino\\Adafruit_MCP23017_Arduino_Library\\src",
                         "-IC:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Sn74hc138d\\src",
                         "-IC:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Ssd1306\\src",
+                        "-IC:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Display\\src",
                         "-IC:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Ssd1306Group\\src",
                         "-IC:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Label\\src",
                         "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\Arduino\\Adafruit_MCP23017_Arduino_Library\\src\\Adafruit_MCP23X17.cpp",
@@ -2169,6 +2182,7 @@
                         "-IC:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\Arduino\\Adafruit_MCP23017_Arduino_Library\\src",
                         "-IC:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Sn74hc138d\\src",
                         "-IC:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Ssd1306\\src",
+                        "-IC:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Display\\src",
                         "-IC:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Ssd1306Group\\src",
                         "-IC:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Label\\src",
                         "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\Arduino\\Adafruit_MCP23017_Arduino_Library\\src\\Adafruit_MCP23XXX.cpp",
@@ -2229,6 +2243,7 @@
                         "-IC:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\Arduino\\Adafruit_MCP23017_Arduino_Library\\src",
                         "-IC:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Sn74hc138d\\src",
                         "-IC:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Ssd1306\\src",
+                        "-IC:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Display\\src",
                         "-IC:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Ssd1306Group\\src",
                         "-IC:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Label\\src",
                         "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Sn74hc138d\\src\\Sn74hc138d.cpp",
@@ -2289,6 +2304,7 @@
                         "-IC:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\Arduino\\Adafruit_MCP23017_Arduino_Library\\src",
                         "-IC:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Sn74hc138d\\src",
                         "-IC:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Ssd1306\\src",
+                        "-IC:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Display\\src",
                         "-IC:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Ssd1306Group\\src",
                         "-IC:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Label\\src",
                         "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Ssd1306\\src\\Ssd1306.cpp",
@@ -2297,6 +2313,12 @@
                     ]
                 }
             ]
+        },
+        {
+            "Name": "Display",
+            "SourceDirectory": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Display\\src",
+            "ArchiveFile": "",
+            "Invocations": null
         },
         {
             "Name": "Ssd1306Group",
@@ -2349,6 +2371,7 @@
                         "-IC:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\Arduino\\Adafruit_MCP23017_Arduino_Library\\src",
                         "-IC:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Sn74hc138d\\src",
                         "-IC:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Ssd1306\\src",
+                        "-IC:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Display\\src",
                         "-IC:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Ssd1306Group\\src",
                         "-IC:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Label\\src",
                         "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Ssd1306Group\\src\\Ssd1306Group.cpp",
@@ -2409,6 +2432,7 @@
                         "-IC:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\Arduino\\Adafruit_MCP23017_Arduino_Library\\src",
                         "-IC:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Sn74hc138d\\src",
                         "-IC:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Ssd1306\\src",
+                        "-IC:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Display\\src",
                         "-IC:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Ssd1306Group\\src",
                         "-IC:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Label\\src",
                         "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Label\\src\\Label.cpp",
@@ -2421,253 +2445,13 @@
     ],
     "KnownHeaders": [
         {
-            "Name": "SBU.h",
-            "LibraryDirectories": [
-                "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.14\\libraries\\SBU\\src"
-            ]
-        },
-        {
-            "Name": "DinMittel8x16Regular.h",
-            "LibraryDirectories": [
-                "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Font\\src"
-            ]
-        },
-        {
-            "Name": "SPI.h",
-            "LibraryDirectories": [
-                "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.14\\libraries\\SPI"
-            ]
-        },
-        {
-            "Name": "Ssd1306.h",
-            "LibraryDirectories": [
-                "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Ssd1306\\src"
-            ]
-        },
-        {
-            "Name": "MouseController.h",
+            "Name": "hidusagestr.h",
             "LibraryDirectories": [
                 "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.14\\libraries\\USBHost\\src"
-            ]
-        },
-        {
-            "Name": "confdescparser.h",
-            "LibraryDirectories": [
-                "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.14\\libraries\\USBHost\\src"
-            ]
-        },
-        {
-            "Name": "gfxfont.h",
-            "LibraryDirectories": [
-                "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\Arduino\\Adafruit_GFX_Library"
-            ]
-        },
-        {
-            "Name": "hidboot.h",
-            "LibraryDirectories": [
-                "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.14\\libraries\\USBHost\\src"
-            ]
-        },
-        {
-            "Name": "usbhub.h",
-            "LibraryDirectories": [
-                "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.14\\libraries\\USBHost\\src"
-            ]
-        },
-        {
-            "Name": "Adafruit_I2CRegister.h",
-            "LibraryDirectories": [
-                "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\Arduino\\Adafruit_BusIO"
-            ]
-        },
-        {
-            "Name": "Adafruit_GFX.h",
-            "LibraryDirectories": [
-                "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\Arduino\\Adafruit_GFX_Library"
-            ]
-        },
-        {
-            "Name": "Adafruit_SPITFT_Macros.h",
-            "LibraryDirectories": [
-                "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\Arduino\\Adafruit_GFX_Library"
-            ]
-        },
-        {
-            "Name": "address.h",
-            "LibraryDirectories": [
-                "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.14\\libraries\\USBHost\\src"
-            ]
-        },
-        {
-            "Name": "SSU.h",
-            "LibraryDirectories": [
-                "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.14\\libraries\\SSU\\src"
-            ]
-        },
-        {
-            "Name": "Adafruit_I2CDevice.h",
-            "LibraryDirectories": [
-                "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\Arduino\\Adafruit_BusIO"
-            ]
-        },
-        {
-            "Name": "Adafruit_SPIDevice.h",
-            "LibraryDirectories": [
-                "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\Arduino\\Adafruit_BusIO"
-            ]
-        },
-        {
-            "Name": "Adafruit_GrayOLED.h",
-            "LibraryDirectories": [
-                "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\Arduino\\Adafruit_GFX_Library"
-            ]
-        },
-        {
-            "Name": "Adafruit_MCP23X17.h",
-            "LibraryDirectories": [
-                "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\Arduino\\Adafruit_MCP23017_Arduino_Library\\src"
-            ]
-        },
-        {
-            "Name": "macros.h",
-            "LibraryDirectories": [
-                "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.14\\libraries\\USBHost\\src"
-            ]
-        },
-        {
-            "Name": "Graphics.h",
-            "LibraryDirectories": [
-                "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Graphics\\src"
-            ]
-        },
-        {
-            "Name": "Adafruit_BusIO_Register.h",
-            "LibraryDirectories": [
-                "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\Arduino\\Adafruit_BusIO"
-            ]
-        },
-        {
-            "Name": "GraphicsTypes.h",
-            "LibraryDirectories": [
-                "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Graphics\\src"
-            ]
-        },
-        {
-            "Name": "SDU.h",
-            "LibraryDirectories": [
-                "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.14\\libraries\\SDU\\src"
-            ]
-        },
-        {
-            "Name": "hid.h",
-            "LibraryDirectories": [
-                "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.14\\libraries\\USBHost\\src"
-            ]
-        },
-        {
-            "Name": "Wire.h",
-            "LibraryDirectories": [
-                "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.14\\libraries\\Wire"
-            ]
-        },
-        {
-            "Name": "OutputFlasher.h",
-            "LibraryDirectories": [
-                "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\OutputFlasher\\src"
-            ]
-        },
-        {
-            "Name": "adk.h",
-            "LibraryDirectories": [
-                "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.14\\libraries\\USBHost\\src"
-            ]
-        },
-        {
-            "Name": "SNU.h",
-            "LibraryDirectories": [
-                "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.14\\libraries\\SNU\\src"
-            ]
-        },
-        {
-            "Name": "SAMD_AnalogCorrection.h",
-            "LibraryDirectories": [
-                "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.14\\libraries\\SAMD_AnalogCorrection\\src"
-            ]
-        },
-        {
-            "Name": "UsbCore.h",
-            "LibraryDirectories": [
-                "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.14\\libraries\\USBHost\\src"
-            ]
-        },
-        {
-            "Name": "hidescriptorparser.h",
-            "LibraryDirectories": [
-                "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.14\\libraries\\USBHost\\src"
-            ]
-        },
-        {
-            "Name": "printhex.h",
-            "LibraryDirectories": [
-                "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.14\\libraries\\USBHost\\src"
-            ]
-        },
-        {
-            "Name": "Adafruit_SPITFT.h",
-            "LibraryDirectories": [
-                "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\Arduino\\Adafruit_GFX_Library"
-            ]
-        },
-        {
-            "Name": "Label.h",
-            "LibraryDirectories": [
-                "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Label\\src"
-            ]
-        },
-        {
-            "Name": "HID.h",
-            "LibraryDirectories": [
-                "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.14\\libraries\\HID"
             ]
         },
         {
             "Name": "message.h",
-            "LibraryDirectories": [
-                "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.14\\libraries\\USBHost\\src"
-            ]
-        },
-        {
-            "Name": "I2S.h",
-            "LibraryDirectories": [
-                "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.14\\libraries\\I2S\\src"
-            ]
-        },
-        {
-            "Name": "Sn74hc138d.h",
-            "LibraryDirectories": [
-                "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Sn74hc138d\\src"
-            ]
-        },
-        {
-            "Name": "KeyboardController.h",
-            "LibraryDirectories": [
-                "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.14\\libraries\\USBHost\\src"
-            ]
-        },
-        {
-            "Name": "SAMD_BootloaderUpdater.h",
-            "LibraryDirectories": [
-                "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.14\\libraries\\SAMD_BootloaderUpdater\\src"
-            ]
-        },
-        {
-            "Name": "Adafruit_MCP23X08.h",
-            "LibraryDirectories": [
-                "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\Arduino\\Adafruit_MCP23017_Arduino_Library\\src"
-            ]
-        },
-        {
-            "Name": "Usb.h",
             "LibraryDirectories": [
                 "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.14\\libraries\\USBHost\\src"
             ]
@@ -2679,7 +2463,91 @@
             ]
         },
         {
-            "Name": "hexdump.h",
+            "Name": "Sn74hc138d.h",
+            "LibraryDirectories": [
+                "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Sn74hc138d\\src"
+            ]
+        },
+        {
+            "Name": "Adafruit_MCP23X17.h",
+            "LibraryDirectories": [
+                "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\Arduino\\Adafruit_MCP23017_Arduino_Library\\src"
+            ]
+        },
+        {
+            "Name": "Ssd1306Group.h",
+            "LibraryDirectories": [
+                "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Ssd1306Group\\src"
+            ]
+        },
+        {
+            "Name": "address.h",
+            "LibraryDirectories": [
+                "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.14\\libraries\\USBHost\\src"
+            ]
+        },
+        {
+            "Name": "hiduniversal.h",
+            "LibraryDirectories": [
+                "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.14\\libraries\\USBHost\\src"
+            ]
+        },
+        {
+            "Name": "printhex.h",
+            "LibraryDirectories": [
+                "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.14\\libraries\\USBHost\\src"
+            ]
+        },
+        {
+            "Name": "SSU.h",
+            "LibraryDirectories": [
+                "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.14\\libraries\\SSU\\src"
+            ]
+        },
+        {
+            "Name": "Font.h",
+            "LibraryDirectories": [
+                "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Font\\src"
+            ]
+        },
+        {
+            "Name": "KeyboardController.h",
+            "LibraryDirectories": [
+                "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.14\\libraries\\USBHost\\src"
+            ]
+        },
+        {
+            "Name": "SDU.h",
+            "LibraryDirectories": [
+                "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.14\\libraries\\SDU\\src"
+            ]
+        },
+        {
+            "Name": "Adafruit_GFX.h",
+            "LibraryDirectories": [
+                "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\Arduino\\Adafruit_GFX_Library"
+            ]
+        },
+        {
+            "Name": "Adafruit_SPITFT.h",
+            "LibraryDirectories": [
+                "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\Arduino\\Adafruit_GFX_Library"
+            ]
+        },
+        {
+            "Name": "Adafruit_BusIO_Register.h",
+            "LibraryDirectories": [
+                "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\Arduino\\Adafruit_BusIO"
+            ]
+        },
+        {
+            "Name": "hid.h",
+            "LibraryDirectories": [
+                "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.14\\libraries\\USBHost\\src"
+            ]
+        },
+        {
+            "Name": "Usb.h",
             "LibraryDirectories": [
                 "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.14\\libraries\\USBHost\\src"
             ]
@@ -2697,9 +2565,63 @@
             ]
         },
         {
-            "Name": "Canvas.h",
+            "Name": "OutputFlasher.h",
             "LibraryDirectories": [
-                "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Canvas\\src"
+                "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\OutputFlasher\\src"
+            ]
+        },
+        {
+            "Name": "Adafruit_SPITFT_Macros.h",
+            "LibraryDirectories": [
+                "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\Arduino\\Adafruit_GFX_Library"
+            ]
+        },
+        {
+            "Name": "gfxfont.h",
+            "LibraryDirectories": [
+                "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\Arduino\\Adafruit_GFX_Library"
+            ]
+        },
+        {
+            "Name": "hidboot.h",
+            "LibraryDirectories": [
+                "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.14\\libraries\\USBHost\\src"
+            ]
+        },
+        {
+            "Name": "Adafruit_I2CDevice.h",
+            "LibraryDirectories": [
+                "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\Arduino\\Adafruit_BusIO"
+            ]
+        },
+        {
+            "Name": "confdescparser.h",
+            "LibraryDirectories": [
+                "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.14\\libraries\\USBHost\\src"
+            ]
+        },
+        {
+            "Name": "hexdump.h",
+            "LibraryDirectories": [
+                "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.14\\libraries\\USBHost\\src"
+            ]
+        },
+        {
+            "Name": "Adafruit_SPIDevice.h",
+            "LibraryDirectories": [
+                "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\Arduino\\Adafruit_BusIO"
+            ]
+        },
+        {
+            "Name": "I2S.h",
+            "LibraryDirectories": [
+                "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.14\\libraries\\I2S\\src"
+            ]
+        },
+        {
+            "Name": "Adafruit_GrayOLED.h",
+            "LibraryDirectories": [
+                "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\Arduino\\Adafruit_GFX_Library"
             ]
         },
         {
@@ -2709,21 +2631,45 @@
             ]
         },
         {
-            "Name": "SFU.h",
+            "Name": "UsbCore.h",
             "LibraryDirectories": [
-                "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.14\\libraries\\SFU\\src"
+                "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.14\\libraries\\USBHost\\src"
             ]
         },
         {
-            "Name": "Font.h",
+            "Name": "usbhub.h",
+            "LibraryDirectories": [
+                "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.14\\libraries\\USBHost\\src"
+            ]
+        },
+        {
+            "Name": "DinMittel8x16Regular.h",
             "LibraryDirectories": [
                 "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Font\\src"
             ]
         },
         {
-            "Name": "hidusagestr.h",
+            "Name": "GraphicsTypes.h",
+            "LibraryDirectories": [
+                "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Graphics\\src"
+            ]
+        },
+        {
+            "Name": "macros.h",
             "LibraryDirectories": [
                 "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.14\\libraries\\USBHost\\src"
+            ]
+        },
+        {
+            "Name": "Adafruit_I2CRegister.h",
+            "LibraryDirectories": [
+                "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\Arduino\\Adafruit_BusIO"
+            ]
+        },
+        {
+            "Name": "Ssd1306.h",
+            "LibraryDirectories": [
+                "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Ssd1306\\src"
             ]
         },
         {
@@ -2733,15 +2679,93 @@
             ]
         },
         {
-            "Name": "Ssd1306Group.h",
+            "Name": "SPI.h",
             "LibraryDirectories": [
-                "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Ssd1306Group\\src"
+                "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.14\\libraries\\SPI"
             ]
         },
         {
-            "Name": "hiduniversal.h",
+            "Name": "Label.h",
+            "LibraryDirectories": [
+                "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Label\\src"
+            ]
+        },
+        {
+            "Name": "Adafruit_MCP23X08.h",
+            "LibraryDirectories": [
+                "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\Arduino\\Adafruit_MCP23017_Arduino_Library\\src"
+            ]
+        },
+        {
+            "Name": "Graphics.h",
+            "LibraryDirectories": [
+                "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Graphics\\src"
+            ]
+        },
+        {
+            "Name": "adk.h",
             "LibraryDirectories": [
                 "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.14\\libraries\\USBHost\\src"
+            ]
+        },
+        {
+            "Name": "SBU.h",
+            "LibraryDirectories": [
+                "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.14\\libraries\\SBU\\src"
+            ]
+        },
+        {
+            "Name": "hidescriptorparser.h",
+            "LibraryDirectories": [
+                "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.14\\libraries\\USBHost\\src"
+            ]
+        },
+        {
+            "Name": "Wire.h",
+            "LibraryDirectories": [
+                "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.14\\libraries\\Wire"
+            ]
+        },
+        {
+            "Name": "SFU.h",
+            "LibraryDirectories": [
+                "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.14\\libraries\\SFU\\src"
+            ]
+        },
+        {
+            "Name": "Display.h",
+            "LibraryDirectories": [
+                "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Display\\src"
+            ]
+        },
+        {
+            "Name": "SAMD_AnalogCorrection.h",
+            "LibraryDirectories": [
+                "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.14\\libraries\\SAMD_AnalogCorrection\\src"
+            ]
+        },
+        {
+            "Name": "MouseController.h",
+            "LibraryDirectories": [
+                "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.14\\libraries\\USBHost\\src"
+            ]
+        },
+        {
+            "Name": "SNU.h",
+            "LibraryDirectories": [
+                "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.14\\libraries\\SNU\\src"
+            ]
+        },
+        {
+            "Name": "HID.h",
+            "LibraryDirectories": [
+                "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.14\\libraries\\HID"
+            ]
+        },
+        {
+            "Name": "SAMD_BootloaderUpdater.h",
+            "LibraryDirectories": [
+                "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.14\\libraries\\SAMD_BootloaderUpdater\\src"
             ]
         }
     ],
@@ -2751,85 +2775,17 @@
             "File": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Ssd1306Tester\\Ssd1306Tester\\sketches\\Ssd1306Tester.ino",
             "Prototype": "void setup();",
             "Modifiers": "",
-            "Line": 63
+            "Line": 66
         },
         {
             "FunctionName": "loop",
             "File": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Ssd1306Tester\\Ssd1306Tester\\sketches\\Ssd1306Tester.ino",
             "Prototype": "void loop();",
             "Modifiers": "",
-            "Line": 93
+            "Line": 96
         }
     ],
     "KnownLibraries": [
-        {
-            "Folder": "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.14\\libraries\\Wire",
-            "SrcFolder": "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.14\\libraries\\Wire",
-            "UtilityFolder": "",
-            "Layout": "flat",
-            "Name": "Wire",
-            "RealName": "Wire",
-            "IsLegacy": false,
-            "Version": "1.0",
-            "Author": "Jonathan BAUDIN, Thibaut VIARD, Arduino",
-            "Maintainer": "Arduino \u003cinfo@arduino.cc\u003e",
-            "Sentence": "Allows the communication between devices or sensors connected via Two Wire Interface Bus. Specific implementation for Arduino Zero.",
-            "Paragraph": "",
-            "URL": "http://www.arduino.cc/en/Reference/Wire",
-            "Category": "Communication",
-            "License": "Unspecified"
-        },
-        {
-            "Folder": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Sn74hc138d",
-            "SrcFolder": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Sn74hc138d\\src",
-            "UtilityFolder": "",
-            "Layout": "recursive",
-            "Name": "Sn74hc138d",
-            "RealName": "Sn74hc138d",
-            "IsLegacy": false,
-            "Version": "0.0.1",
-            "Author": "info",
-            "Maintainer": "info",
-            "Sentence": "3 to 8 line decoder",
-            "Paragraph": "Custom library which allows for externcal functions to control inhibit",
-            "URL": "www.soulsbysynths.com",
-            "Category": "Other",
-            "License": "Unspecified"
-        },
-        {
-            "Folder": "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.14\\libraries\\SAMD_BootloaderUpdater",
-            "SrcFolder": "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.14\\libraries\\SAMD_BootloaderUpdater\\src",
-            "UtilityFolder": "",
-            "Layout": "recursive",
-            "Name": "SAMD_BootloaderUpdater",
-            "RealName": "SAMD_BootloaderUpdater",
-            "IsLegacy": false,
-            "Version": "1.0",
-            "Author": "Arduino",
-            "Maintainer": "Arduino \u003cinfo@arduino.cc\u003e",
-            "Sentence": "Update the bootloader running on your Arduino SAMD board to the latest.",
-            "Paragraph": "",
-            "URL": "",
-            "Category": "Other",
-            "License": "Unspecified"
-        },
-        {
-            "Folder": "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.14\\libraries\\SFU",
-            "SrcFolder": "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.14\\libraries\\SFU\\src",
-            "UtilityFolder": "",
-            "Layout": "recursive",
-            "Name": "SFU",
-            "RealName": "SFU",
-            "IsLegacy": false,
-            "Version": "1.0.0",
-            "Author": "Arduino",
-            "Maintainer": "Arduino \u003cinfo@arduino.cc\u003e",
-            "Sentence": "Update the sketch on your board from a Arduino MKRMEM Shield.",
-            "Paragraph": "Requires a Arduino MKRMEM Shield.",
-            "URL": "https://www.arduino.cc/en/Reference/SFU",
-            "Category": "Other",
-            "License": "Unspecified"
-        },
         {
             "Folder": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Ssd1306Group",
             "SrcFolder": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Ssd1306Group\\src",
@@ -2844,57 +2800,6 @@
             "Sentence": "Container for Atx Oleds",
             "Paragraph": "Handles group tasks like reset and vcc inputs",
             "URL": "www.soulsbysynths.com",
-            "Category": "Other",
-            "License": "Unspecified"
-        },
-        {
-            "Folder": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Graphics",
-            "SrcFolder": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Graphics\\src",
-            "UtilityFolder": "",
-            "Layout": "recursive",
-            "Name": "Graphics",
-            "RealName": "Graphics",
-            "IsLegacy": false,
-            "Version": "0.0.1",
-            "Author": "Paul Soulsby",
-            "Maintainer": "Soulsby Synths",
-            "Sentence": "Graphics drawing routines",
-            "Paragraph": "",
-            "URL": "www.soulsbysynths.com",
-            "Category": "Display",
-            "License": "Unspecified"
-        },
-        {
-            "Folder": "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.14\\libraries\\SDU",
-            "SrcFolder": "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.14\\libraries\\SDU\\src",
-            "UtilityFolder": "",
-            "Layout": "recursive",
-            "Name": "SDU",
-            "RealName": "SDU",
-            "IsLegacy": false,
-            "Version": "1.0.0",
-            "Author": "Arduino",
-            "Maintainer": "Arduino \u003cinfo@arduino.cc\u003e",
-            "Sentence": "Update the sketch on your board from an SD card",
-            "Paragraph": "Requires an SD card",
-            "URL": "http://www.arduino.cc/en/Reference/SDU",
-            "Category": "Other",
-            "License": "Unspecified"
-        },
-        {
-            "Folder": "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.14\\libraries\\SAMD_AnalogCorrection",
-            "SrcFolder": "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.14\\libraries\\SAMD_AnalogCorrection\\src",
-            "UtilityFolder": "",
-            "Layout": "recursive",
-            "Name": "SAMD_AnalogCorrection",
-            "RealName": "SAMD_AnalogCorrection",
-            "IsLegacy": false,
-            "Version": "1.0",
-            "Author": "Arduino",
-            "Maintainer": "Arduino \u003cinfo@arduino.cc\u003e",
-            "Sentence": "Sets and enables the digital correction logic of the SAMD ADC.",
-            "Paragraph": "Useful to correct the values returned by the ADC.",
-            "URL": "",
             "Category": "Other",
             "License": "Unspecified"
         },
@@ -2916,36 +2821,36 @@
             "License": "Unspecified"
         },
         {
-            "Folder": "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.14\\libraries\\SPI",
-            "SrcFolder": "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.14\\libraries\\SPI",
+            "Folder": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\OutputFlasher",
+            "SrcFolder": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\OutputFlasher\\src",
             "UtilityFolder": "",
-            "Layout": "flat",
-            "Name": "SPI",
-            "RealName": "SPI",
+            "Layout": "recursive",
+            "Name": "OutputFlasher",
+            "RealName": "OutputFlasher",
             "IsLegacy": false,
-            "Version": "1.0",
-            "Author": "Jonathan BAUDIN, Thibaut VIARD, Arduino",
-            "Maintainer": "Arduino \u003cinfo@arduino.cc\u003e",
-            "Sentence": "Enables the communication with devices that use the Serial Peripheral Interface (SPI) Bus. Specific implementation for Arduino Zero.",
+            "Version": "0.0.1",
+            "Author": "Paul Soulsby",
+            "Maintainer": "Soulsby Synths",
+            "Sentence": "A basic library created with VisualGDB",
             "Paragraph": "",
-            "URL": "http://www.arduino.cc/en/Reference/SPI",
-            "Category": "Communication",
+            "URL": "www.soulsbysynths.com",
+            "Category": "Other",
             "License": "Unspecified"
         },
         {
-            "Folder": "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.14\\libraries\\USBHost",
-            "SrcFolder": "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.14\\libraries\\USBHost\\src",
+            "Folder": "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.14\\libraries\\SFU",
+            "SrcFolder": "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.14\\libraries\\SFU\\src",
             "UtilityFolder": "",
             "Layout": "recursive",
-            "Name": "USBHost",
-            "RealName": "USBHost",
+            "Name": "SFU",
+            "RealName": "SFU",
             "IsLegacy": false,
-            "Version": "1.0",
+            "Version": "1.0.0",
             "Author": "Arduino",
             "Maintainer": "Arduino \u003cinfo@arduino.cc\u003e",
-            "Sentence": "Allows the communication with USB peripherals like mice, keyboards, and thumbdrives. For Arduino MKR1000 and Zero.",
-            "Paragraph": "The USBHost library allows the board to appear as a USB host, enabling it to communicate with peripherals like USB mice and keyboards. USBHost does not support devices that are connected through USB hubs. This includes some keyboards that have an internal hub.",
-            "URL": "https://www.arduino.cc/en/Reference/USBHost",
+            "Sentence": "Update the sketch on your board from a Arduino MKRMEM Shield.",
+            "Paragraph": "Requires a Arduino MKRMEM Shield.",
+            "URL": "https://www.arduino.cc/en/Reference/SFU",
             "Category": "Other",
             "License": "Unspecified"
         },
@@ -2967,34 +2872,34 @@
             "License": "Unspecified"
         },
         {
-            "Folder": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\Arduino\\Adafruit_MCP23017_Arduino_Library",
-            "SrcFolder": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\Arduino\\Adafruit_MCP23017_Arduino_Library\\src",
+            "Folder": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Ssd1306",
+            "SrcFolder": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Ssd1306\\src",
             "UtilityFolder": "",
             "Layout": "recursive",
-            "Name": "Adafruit_MCP23017_Arduino_Library",
-            "RealName": "Adafruit MCP23017 Arduino Library",
-            "IsLegacy": false,
-            "Version": "2.3.2",
-            "Author": "Adafruit",
-            "Maintainer": "Adafruit \u003cinfo@adafruit.com\u003e",
-            "Sentence": "Arduino Library for MCP23XXX I2C and SPI GPIO port expanders",
-            "Paragraph": "Arduino Library for MCP23008, MCP23S08, MCP23017, and MCP23S17 I2C and SPI GPIO port expanders",
-            "URL": "https://github.com/adafruit/Adafruit-MCP23017-Arduino-Library",
-            "Category": "Signal Input/Output",
-            "License": "Unspecified"
-        },
-        {
-            "Folder": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Canvas",
-            "SrcFolder": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Canvas\\src",
-            "UtilityFolder": "",
-            "Layout": "recursive",
-            "Name": "Canvas",
-            "RealName": "Canvas",
+            "Name": "Ssd1306",
+            "RealName": "Ssd1306",
             "IsLegacy": false,
             "Version": "0.0.1",
             "Author": "Paul Soulsby",
             "Maintainer": "Soulsby Synths",
-            "Sentence": "Block of memory for drawing using Graphics",
+            "Sentence": "Atx SSD1306 control",
+            "Paragraph": "Modification of Adafruit_SSD1306 for use with Atx controller, using mux and expander",
+            "URL": "www.soulsbysynths.com",
+            "Category": "Other",
+            "License": "Unspecified"
+        },
+        {
+            "Folder": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Label",
+            "SrcFolder": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Label\\src",
+            "UtilityFolder": "",
+            "Layout": "recursive",
+            "Name": "Label",
+            "RealName": "Label",
+            "IsLegacy": false,
+            "Version": "0.0.1",
+            "Author": "Paul Soulsby",
+            "Maintainer": "Soulsby Synths",
+            "Sentence": "C# style label",
             "Paragraph": "",
             "URL": "www.soulsbysynths.com",
             "Category": "Display",
@@ -3018,53 +2923,19 @@
             "License": "Unspecified"
         },
         {
-            "Folder": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\Arduino\\Adafruit_GFX_Library",
-            "SrcFolder": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\Arduino\\Adafruit_GFX_Library",
-            "UtilityFolder": "",
-            "Layout": "flat",
-            "Name": "Adafruit_GFX_Library",
-            "RealName": "Adafruit GFX Library",
-            "IsLegacy": false,
-            "Version": "1.11.9",
-            "Author": "Adafruit",
-            "Maintainer": "Adafruit \u003cinfo@adafruit.com\u003e",
-            "Sentence": "Adafruit GFX graphics core library, this is the 'core' class that all our other graphics libraries derive from.",
-            "Paragraph": "Install this library in addition to the display library for your hardware.",
-            "URL": "https://github.com/adafruit/Adafruit-GFX-Library",
-            "Category": "Display",
-            "License": "Unspecified"
-        },
-        {
-            "Folder": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\Arduino\\Adafruit_BusIO",
-            "SrcFolder": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\Arduino\\Adafruit_BusIO",
-            "UtilityFolder": "",
-            "Layout": "flat",
-            "Name": "Adafruit_BusIO",
-            "RealName": "Adafruit BusIO",
-            "IsLegacy": false,
-            "Version": "1.15.0",
-            "Author": "Adafruit",
-            "Maintainer": "Adafruit \u003cinfo@adafruit.com\u003e",
-            "Sentence": "This is a library for abstracting away I2C and SPI interfacing",
-            "Paragraph": "This is a library for abstracting away I2C and SPI interfacing",
-            "URL": "https://github.com/adafruit/Adafruit_BusIO",
-            "Category": "Signal Input/Output",
-            "License": "Unspecified"
-        },
-        {
-            "Folder": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\OutputFlasher",
-            "SrcFolder": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\OutputFlasher\\src",
+            "Folder": "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.14\\libraries\\SAMD_AnalogCorrection",
+            "SrcFolder": "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.14\\libraries\\SAMD_AnalogCorrection\\src",
             "UtilityFolder": "",
             "Layout": "recursive",
-            "Name": "OutputFlasher",
-            "RealName": "OutputFlasher",
+            "Name": "SAMD_AnalogCorrection",
+            "RealName": "SAMD_AnalogCorrection",
             "IsLegacy": false,
-            "Version": "0.0.1",
-            "Author": "Paul Soulsby",
-            "Maintainer": "Soulsby Synths",
-            "Sentence": "A basic library created with VisualGDB",
-            "Paragraph": "",
-            "URL": "www.soulsbysynths.com",
+            "Version": "1.0",
+            "Author": "Arduino",
+            "Maintainer": "Arduino \u003cinfo@arduino.cc\u003e",
+            "Sentence": "Sets and enables the digital correction logic of the SAMD ADC.",
+            "Paragraph": "Useful to correct the values returned by the ADC.",
+            "URL": "",
             "Category": "Other",
             "License": "Unspecified"
         },
@@ -3086,23 +2957,6 @@
             "License": "Unspecified"
         },
         {
-            "Folder": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Ssd1306",
-            "SrcFolder": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Ssd1306\\src",
-            "UtilityFolder": "",
-            "Layout": "recursive",
-            "Name": "Ssd1306",
-            "RealName": "Ssd1306",
-            "IsLegacy": false,
-            "Version": "0.0.1",
-            "Author": "Paul Soulsby",
-            "Maintainer": "Soulsby Synths",
-            "Sentence": "Atx SSD1306 control",
-            "Paragraph": "Modification of Adafruit_SSD1306 for use with Atx controller, using mux and expander",
-            "URL": "www.soulsbysynths.com",
-            "Category": "Other",
-            "License": "Unspecified"
-        },
-        {
             "Folder": "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.14\\libraries\\SNU",
             "SrcFolder": "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.14\\libraries\\SNU\\src",
             "UtilityFolder": "",
@@ -3120,19 +2974,172 @@
             "License": "Unspecified"
         },
         {
-            "Folder": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Label",
-            "SrcFolder": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Label\\src",
+            "Folder": "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.14\\libraries\\USBHost",
+            "SrcFolder": "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.14\\libraries\\USBHost\\src",
             "UtilityFolder": "",
             "Layout": "recursive",
-            "Name": "Label",
-            "RealName": "Label",
+            "Name": "USBHost",
+            "RealName": "USBHost",
+            "IsLegacy": false,
+            "Version": "1.0",
+            "Author": "Arduino",
+            "Maintainer": "Arduino \u003cinfo@arduino.cc\u003e",
+            "Sentence": "Allows the communication with USB peripherals like mice, keyboards, and thumbdrives. For Arduino MKR1000 and Zero.",
+            "Paragraph": "The USBHost library allows the board to appear as a USB host, enabling it to communicate with peripherals like USB mice and keyboards. USBHost does not support devices that are connected through USB hubs. This includes some keyboards that have an internal hub.",
+            "URL": "https://www.arduino.cc/en/Reference/USBHost",
+            "Category": "Other",
+            "License": "Unspecified"
+        },
+        {
+            "Folder": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\Arduino\\Adafruit_MCP23017_Arduino_Library",
+            "SrcFolder": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\Arduino\\Adafruit_MCP23017_Arduino_Library\\src",
+            "UtilityFolder": "",
+            "Layout": "recursive",
+            "Name": "Adafruit_MCP23017_Arduino_Library",
+            "RealName": "Adafruit MCP23017 Arduino Library",
+            "IsLegacy": false,
+            "Version": "2.3.2",
+            "Author": "Adafruit",
+            "Maintainer": "Adafruit \u003cinfo@adafruit.com\u003e",
+            "Sentence": "Arduino Library for MCP23XXX I2C and SPI GPIO port expanders",
+            "Paragraph": "Arduino Library for MCP23008, MCP23S08, MCP23017, and MCP23S17 I2C and SPI GPIO port expanders",
+            "URL": "https://github.com/adafruit/Adafruit-MCP23017-Arduino-Library",
+            "Category": "Signal Input/Output",
+            "License": "Unspecified"
+        },
+        {
+            "Folder": "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.14\\libraries\\SDU",
+            "SrcFolder": "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.14\\libraries\\SDU\\src",
+            "UtilityFolder": "",
+            "Layout": "recursive",
+            "Name": "SDU",
+            "RealName": "SDU",
+            "IsLegacy": false,
+            "Version": "1.0.0",
+            "Author": "Arduino",
+            "Maintainer": "Arduino \u003cinfo@arduino.cc\u003e",
+            "Sentence": "Update the sketch on your board from an SD card",
+            "Paragraph": "Requires an SD card",
+            "URL": "http://www.arduino.cc/en/Reference/SDU",
+            "Category": "Other",
+            "License": "Unspecified"
+        },
+        {
+            "Folder": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\Arduino\\Adafruit_BusIO",
+            "SrcFolder": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\Arduino\\Adafruit_BusIO",
+            "UtilityFolder": "",
+            "Layout": "flat",
+            "Name": "Adafruit_BusIO",
+            "RealName": "Adafruit BusIO",
+            "IsLegacy": false,
+            "Version": "1.15.0",
+            "Author": "Adafruit",
+            "Maintainer": "Adafruit \u003cinfo@adafruit.com\u003e",
+            "Sentence": "This is a library for abstracting away I2C and SPI interfacing",
+            "Paragraph": "This is a library for abstracting away I2C and SPI interfacing",
+            "URL": "https://github.com/adafruit/Adafruit_BusIO",
+            "Category": "Signal Input/Output",
+            "License": "Unspecified"
+        },
+        {
+            "Folder": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Graphics",
+            "SrcFolder": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Graphics\\src",
+            "UtilityFolder": "",
+            "Layout": "recursive",
+            "Name": "Graphics",
+            "RealName": "Graphics",
             "IsLegacy": false,
             "Version": "0.0.1",
             "Author": "Paul Soulsby",
             "Maintainer": "Soulsby Synths",
-            "Sentence": "C# style label",
+            "Sentence": "Graphics drawing routines",
             "Paragraph": "",
             "URL": "www.soulsbysynths.com",
+            "Category": "Display",
+            "License": "Unspecified"
+        },
+        {
+            "Folder": "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.14\\libraries\\SPI",
+            "SrcFolder": "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.14\\libraries\\SPI",
+            "UtilityFolder": "",
+            "Layout": "flat",
+            "Name": "SPI",
+            "RealName": "SPI",
+            "IsLegacy": false,
+            "Version": "1.0",
+            "Author": "Jonathan BAUDIN, Thibaut VIARD, Arduino",
+            "Maintainer": "Arduino \u003cinfo@arduino.cc\u003e",
+            "Sentence": "Enables the communication with devices that use the Serial Peripheral Interface (SPI) Bus. Specific implementation for Arduino Zero.",
+            "Paragraph": "",
+            "URL": "http://www.arduino.cc/en/Reference/SPI",
+            "Category": "Communication",
+            "License": "Unspecified"
+        },
+        {
+            "Folder": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Display",
+            "SrcFolder": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Display\\src",
+            "UtilityFolder": "",
+            "Layout": "recursive",
+            "Name": "Display",
+            "RealName": "Display",
+            "IsLegacy": false,
+            "Version": "0.0.1",
+            "Author": "Paul Soulsby",
+            "Maintainer": "Soulsby Synths",
+            "Sentence": "Base class for all output displays",
+            "Paragraph": "",
+            "URL": "www.soulsbysynths.com",
+            "Category": "Display",
+            "License": "Unspecified"
+        },
+        {
+            "Folder": "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.14\\libraries\\SAMD_BootloaderUpdater",
+            "SrcFolder": "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.14\\libraries\\SAMD_BootloaderUpdater\\src",
+            "UtilityFolder": "",
+            "Layout": "recursive",
+            "Name": "SAMD_BootloaderUpdater",
+            "RealName": "SAMD_BootloaderUpdater",
+            "IsLegacy": false,
+            "Version": "1.0",
+            "Author": "Arduino",
+            "Maintainer": "Arduino \u003cinfo@arduino.cc\u003e",
+            "Sentence": "Update the bootloader running on your Arduino SAMD board to the latest.",
+            "Paragraph": "",
+            "URL": "",
+            "Category": "Other",
+            "License": "Unspecified"
+        },
+        {
+            "Folder": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Sn74hc138d",
+            "SrcFolder": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Sn74hc138d\\src",
+            "UtilityFolder": "",
+            "Layout": "recursive",
+            "Name": "Sn74hc138d",
+            "RealName": "Sn74hc138d",
+            "IsLegacy": false,
+            "Version": "0.0.1",
+            "Author": "info",
+            "Maintainer": "info",
+            "Sentence": "3 to 8 line decoder",
+            "Paragraph": "Custom library which allows for externcal functions to control inhibit",
+            "URL": "www.soulsbysynths.com",
+            "Category": "Other",
+            "License": "Unspecified"
+        },
+        {
+            "Folder": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\Arduino\\Adafruit_GFX_Library",
+            "SrcFolder": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\Arduino\\Adafruit_GFX_Library",
+            "UtilityFolder": "",
+            "Layout": "flat",
+            "Name": "Adafruit_GFX_Library",
+            "RealName": "Adafruit GFX Library",
+            "IsLegacy": false,
+            "Version": "1.11.9",
+            "Author": "Adafruit",
+            "Maintainer": "Adafruit \u003cinfo@adafruit.com\u003e",
+            "Sentence": "Adafruit GFX graphics core library, this is the 'core' class that all our other graphics libraries derive from.",
+            "Paragraph": "Install this library in addition to the display library for your hardware.",
+            "URL": "https://github.com/adafruit/Adafruit-GFX-Library",
             "Category": "Display",
             "License": "Unspecified"
         },
@@ -3152,428 +3159,445 @@
             "URL": "http://www.arduino.cc/en/Reference/I2S",
             "Category": "Communication",
             "License": "Unspecified"
+        },
+        {
+            "Folder": "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.14\\libraries\\Wire",
+            "SrcFolder": "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.14\\libraries\\Wire",
+            "UtilityFolder": "",
+            "Layout": "flat",
+            "Name": "Wire",
+            "RealName": "Wire",
+            "IsLegacy": false,
+            "Version": "1.0",
+            "Author": "Jonathan BAUDIN, Thibaut VIARD, Arduino",
+            "Maintainer": "Arduino \u003cinfo@arduino.cc\u003e",
+            "Sentence": "Allows the communication between devices or sensors connected via Two Wire Interface Bus. Specific implementation for Arduino Zero.",
+            "Paragraph": "",
+            "URL": "http://www.arduino.cc/en/Reference/Wire",
+            "Category": "Communication",
+            "License": "Unspecified"
         }
     ],
     "LinkerCommandLine": "\"C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\tools\\arm-none-eabi-gcc\\7-2017q4/bin/arm-none-eabi-g++\"  \"-LC:\\Users\\info\\Documents\\GitHub\\SsAtx\\Ssd1306Tester\\Ssd1306Tester\\Output\\Arduino_Zero__Native_USB_Port_\\Debug\" -Os -Wl,--gc-sections -save-temps  \"-TC:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.14\\variants\\arduino_zero/linker_scripts/gcc/flash_with_bootloader.ld\" \"-Wl,-Map,C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Ssd1306Tester\\Ssd1306Tester\\Output\\Arduino_Zero__Native_USB_Port_\\Debug/Ssd1306Tester.ino.map\" --specs=nano.specs --specs=nosys.specs -mcpu=cortex-m0plus -mthumb -Wl,--cref -Wl,--check-sections -Wl,--gc-sections -Wl,--unresolved-symbols=report-all -Wl,--warn-common -Wl,--warn-section-align  -o \"C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Ssd1306Tester\\Ssd1306Tester\\Output\\Arduino_Zero__Native_USB_Port_\\Debug/Ssd1306Tester.ino.elf\" {object_files}  -Wl,--start-group \"-LC:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\tools\\CMSIS\\4.5.0/CMSIS/Lib/GCC/\" -larm_cortexM0l_math -lm \"C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Ssd1306Tester\\Ssd1306Tester\\Output\\Arduino_Zero__Native_USB_Port_\\Debug/{archive_file}\" -Wl,--end-group",
     "BuildProperties": [
         {
-            "Key": "compiler.c.elf.extra_flags",
-            "Value": ""
+            "Key": "compiler.c.cmd",
+            "Value": "arm-none-eabi-gcc"
         },
         {
-            "Key": "build.usb_flags",
-            "Value": "-DUSB_VID={build.vid} -DUSB_PID={build.pid} -DUSBCON '-DUSB_MANUFACTURER={build.usb_manufacturer}' '-DUSB_PRODUCT={build.usb_product}'"
+            "Key": "compiler.S.flags",
+            "Value": "-mcpu={build.mcu} -mthumb -c -g -x assembler-with-cpp -MMD"
         },
         {
-            "Key": "recipe.ar.pattern",
-            "Value": "\"{compiler.path}{compiler.ar.cmd}\" {compiler.ar.flags} {compiler.ar.extra_flags} \"{archive_file_path}\" \"{object_file}\""
-        },
-        {
-            "Key": "tools.openocd.bootloader.pattern",
-            "Value": "\"{path}/{cmd}\" {bootloader.verbose} -s \"{path}/share/openocd/scripts/\" -f \"interface/{protocol}\" -c \"set telnet_port 0\" {extra_params} -f \"target/at91samdXX.cfg\" -c \"telnet_port disabled; init; halt; at91samd bootloader 0; program {{runtime.platform.path}/bootloaders/{bootloader.file}} verify reset; shutdown\""
-        },
-        {
-            "Key": "pid.0",
-            "Value": "0x804d"
-        },
-        {
-            "Key": "build.openocdscript",
-            "Value": "openocd_scripts/arduino_zero.cfg"
-        },
-        {
-            "Key": "runtime.tools.CMSIS-Atmel.path",
-            "Value": "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\tools\\CMSIS-Atmel\\1.2.0"
-        },
-        {
-            "Key": "tools.bossacI.upload.params.quiet",
-            "Value": ""
-        },
-        {
-            "Key": "tools.openocd-withbootsize.program.params.verbose",
-            "Value": "-d2"
-        },
-        {
-            "Key": "runtime.tools.serial-discovery.path",
-            "Value": "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\builtin\\tools\\serial-discovery\\1.4.0"
-        },
-        {
-            "Key": "debug.toolchain.prefix",
-            "Value": "arm-none-eabi-"
-        },
-        {
-            "Key": "tools.openocd-withbootsize.erase.params.verbose",
-            "Value": "-d3"
-        },
-        {
-            "Key": "tools.arduino_ota.upload.field.password",
-            "Value": "Password"
-        },
-        {
-            "Key": "runtime.tools.mdns-discovery-1.0.9.path",
-            "Value": "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\builtin\\tools\\mdns-discovery\\1.0.9"
-        },
-        {
-            "Key": "extra.time.zone",
-            "Value": "0"
-        },
-        {
-            "Key": "compiler.libraries.ldflags",
-            "Value": ""
-        },
-        {
-            "Key": "tools.bossacI.upload.network_pattern",
-            "Value": "\"{network_cmd}\" -address {serial.port} -port 65280 -username arduino -password \"{network.password}\" -sketch \"{build.path}/{build.project_name}.bin\" -upload /sketch -b"
-        },
-        {
-            "Key": "runtime.tools.bossac-1.7.0-arduino3.path",
-            "Value": "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\tools\\bossac\\1.7.0-arduino3"
-        },
-        {
-            "Key": "runtime.tools.serial-discovery-1.4.0.path",
-            "Value": "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\builtin\\tools\\serial-discovery\\1.4.0"
-        },
-        {
-            "Key": "compiler.elf2hex.hex.flags",
-            "Value": "-O ihex -R .eeprom"
-        },
-        {
-            "Key": "tools.openocd.cmd",
-            "Value": "bin/openocd.exe"
-        },
-        {
-            "Key": "runtime.tools.arduino-tools.path",
-            "Value": "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\tools"
-        },
-        {
-            "Key": "tools.bossacI.path",
-            "Value": "{runtime.tools.bossac-1.7.0-arduino3.path}"
-        },
-        {
-            "Key": "upload.tool.default",
-            "Value": "bossac"
-        },
-        {
-            "Key": "runtime.tools.avr-gcc.path",
-            "Value": "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\tools\\avr-gcc\\7.3.0-atmel3.6.1-arduino7"
-        },
-        {
-            "Key": "tools.ctags.path",
-            "Value": "{runtime.tools.ctags.path}"
-        },
-        {
-            "Key": "runtime.tools.arm-none-eabi-gcc-7-2017q4.path",
-            "Value": "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\tools\\arm-none-eabi-gcc\\7-2017q4"
-        },
-        {
-            "Key": "compiler.readelf.cmd",
-            "Value": "arm-none-eabi-readelf"
-        },
-        {
-            "Key": "bootloader.tool.default",
-            "Value": "openocd"
-        },
-        {
-            "Key": "runtime.tools.arduino-hardware.path",
-            "Value": "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware"
-        },
-        {
-            "Key": "vid.1",
-            "Value": "0x2341"
-        },
-        {
-            "Key": "upload_port.3.pid",
-            "Value": "0x024d"
-        },
-        {
-            "Key": "upload.native_usb",
-            "Value": "true"
-        },
-        {
-            "Key": "runtime.tools.ctags.path",
-            "Value": "C:\\Users\\info\\AppData\\Local\\VisualGDB\\Arduino\\tools-builder\\ctags\\5.8-arduino11"
-        },
-        {
-            "Key": "pid.1",
-            "Value": "0x004d"
-        },
-        {
-            "Key": "build.fqbn",
-            "Value": "arduino:samd:arduino_zero_native"
-        },
-        {
-            "Key": "build.variant.path",
-            "Value": "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.14\\variants\\arduino_zero"
-        },
-        {
-            "Key": "runtime.tools.avrdude.path",
-            "Value": "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\tools\\avrdude\\6.3.0-arduino17"
-        },
-        {
-            "Key": "compiler.objcopy.cmd",
-            "Value": "arm-none-eabi-objcopy"
-        },
-        {
-            "Key": "debug.server",
-            "Value": "openocd"
-        },
-        {
-            "Key": "build.ldscript",
-            "Value": "linker_scripts/gcc/flash_with_bootloader.ld"
-        },
-        {
-            "Key": "compiler.cpp.cmd",
-            "Value": "arm-none-eabi-g++"
+            "Key": "compiler.size.cmd",
+            "Value": "arm-none-eabi-size"
         },
         {
             "Key": "tools.openocd.erase.pattern",
             "Value": ""
         },
         {
-            "Key": "tools.openocd-withbootsize.upload.pattern",
-            "Value": "\"{path}/{cmd}\" {upload.verbose} -s \"{path}/share/openocd/scripts/\" -f \"{runtime.platform.path}/variants/{build.variant}/{build.openocdscript}\" -c \"telnet_port disabled; program {{build.path}/{build.project_name}.bin} verify reset {bootloader.size}; shutdown\""
-        },
-        {
-            "Key": "runtime.tools.openocd-0.10.0-arduino7.path",
-            "Value": "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\tools\\openocd\\0.10.0-arduino7"
-        },
-        {
-            "Key": "runtime.tools.ctags-5.8-arduino11.path",
-            "Value": "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\builtin\\tools\\ctags\\5.8-arduino11"
-        },
-        {
-            "Key": "compiler.ldflags",
-            "Value": "-mcpu={build.mcu} -mthumb -Wl,--cref -Wl,--check-sections -Wl,--gc-sections -Wl,--unresolved-symbols=report-all -Wl,--warn-common -Wl,--warn-section-align"
-        },
-        {
-            "Key": "recipe.size.pattern",
-            "Value": "\"{compiler.path}{compiler.size.cmd}\" -A \"{build.path}/{build.project_name}.elf\""
-        },
-        {
-            "Key": "tools.openocd-withbootsize.program.params.quiet",
-            "Value": "-d0"
-        },
-        {
-            "Key": "tools.openocd-withbootsize.bootloader.params.verbose",
-            "Value": "-d2"
-        },
-        {
-            "Key": "runtime.tools.avr-gcc-7.3.0-atmel3.6.1-arduino7.path",
-            "Value": "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\tools\\avr-gcc\\7.3.0-atmel3.6.1-arduino7"
-        },
-        {
-            "Key": "tools.arduino-preprocessor.path",
-            "Value": "{runtime.tools.arduino-preprocessor.path}"
-        },
-        {
-            "Key": "recipe.output.save_file",
-            "Value": "{build.project_name}.{build.variant}.{build.preferred_out_format}"
-        },
-        {
-            "Key": "tools.avrdude.upload.network_pattern",
-            "Value": "\"{network_cmd}\" -address {serial.port} -port 65280 -username arduino -password \"{network.password}\" -sketch \"{build.path}/{build.project_name}.bin\" -upload /sketch -b"
-        },
-        {
-            "Key": "tools.openocd.bootloader.params.verbose",
-            "Value": "-d2"
-        },
-        {
-            "Key": "tools.openocd-withbootsize.erase.params.quiet",
-            "Value": "-d0"
-        },
-        {
-            "Key": "pid.2",
-            "Value": "0x824d"
-        },
-        {
-            "Key": "build.board",
-            "Value": "SAMD_ZERO"
-        },
-        {
-            "Key": "compiler.c.flags",
-            "Value": "-mcpu={build.mcu} -mthumb -c -g {compiler.optimization_flags} {compiler.warning_flags} -std=gnu11 -ffunction-sections -fdata-sections -nostdlib --param max-inline-insns-single=500 -MMD"
-        },
-        {
-            "Key": "compiler.S.extra_flags",
-            "Value": ""
-        },
-        {
-            "Key": "compiler.ar.extra_flags",
-            "Value": ""
-        },
-        {
-            "Key": "tools.bossacI.network_cmd",
-            "Value": "{runtime.tools.arduinoOTA.path}/bin/arduinoOTA"
-        },
-        {
-            "Key": "build.usb_manufacturer",
-            "Value": "\"Arduino LLC\""
-        },
-        {
-            "Key": "runtime.tools.CMSIS-4.5.0.path",
-            "Value": "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\tools\\CMSIS\\4.5.0"
-        },
-        {
-            "Key": "recipe.c.combine.pattern",
-            "Value": "\"{compiler.path}{compiler.c.elf.cmd}\"  \"-L{build.path}\" {compiler.c.elf.flags} {compiler.c.elf.extra_flags} \"-T{build.variant.path}/{build.ldscript}\" \"-Wl,-Map,{build.path}/{build.project_name}.map\" --specs=nano.specs --specs=nosys.specs {compiler.ldflags} -o \"{build.path}/{build.project_name}.elf\" {object_files} {compiler.libraries.ldflags} -Wl,--start-group {compiler.arm.cmsis.ldflags} -lm \"{build.path}/{archive_file}\" -Wl,--end-group"
-        },
-        {
-            "Key": "pluggable_discovery.required.0",
-            "Value": "builtin:serial-discovery"
-        },
-        {
-            "Key": "build.variant_system_lib",
-            "Value": ""
-        },
-        {
-            "Key": "tools.openocd.upload.params.verbose",
-            "Value": "-d2"
-        },
-        {
-            "Key": "build.system.path",
-            "Value": "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.14\\system"
-        },
-        {
-            "Key": "runtime.tools.arm-none-eabi-gcc.path",
-            "Value": "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\tools\\arm-none-eabi-gcc\\7-2017q4"
-        },
-        {
-            "Key": "compiler.S.cmd",
-            "Value": "arm-none-eabi-gcc"
-        },
-        {
-            "Key": "compiler.cpp.flags",
-            "Value": "-mcpu={build.mcu} -mthumb -c -g {compiler.optimization_flags} {compiler.warning_flags} -std=gnu++11 -ffunction-sections -fdata-sections -fno-threadsafe-statics -nostdlib --param max-inline-insns-single=500 -fno-rtti -fno-exceptions -MMD"
-        },
-        {
-            "Key": "compiler.objcopy.eep.flags",
-            "Value": "-O ihex -j .eeprom --set-section-flags=.eeprom=alloc,load --no-change-warnings --change-section-lma .eeprom=0"
-        },
-        {
-            "Key": "archive_file_path",
-            "Value": "{build.path}/{archive_file}"
-        },
-        {
-            "Key": "tools.openocd.program.params.verbose",
-            "Value": "-d2"
-        },
-        {
-            "Key": "tools.arduino_ota.upload.field.password.secret",
-            "Value": "true"
-        },
-        {
-            "Key": "name",
-            "Value": "Arduino Zero (Native USB Port)"
-        },
-        {
-            "Key": "tools.avrdude.cmd",
-            "Value": "{path}/bin/avrdude"
-        },
-        {
-            "Key": "tools.openocd.upload.params.quiet",
-            "Value": "-d0"
-        },
-        {
-            "Key": "upload_port.0.vid",
+            "Key": "vid.1",
             "Value": "0x2341"
         },
         {
-            "Key": "upload.wait_for_upload_port",
-            "Value": "true"
+            "Key": "upload.tool.default",
+            "Value": "bossac"
         },
         {
-            "Key": "build.project_name",
-            "Value": "Ssd1306Tester.ino"
+            "Key": "runtime.tools.arduino-hardware.path",
+            "Value": "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware"
         },
         {
-            "Key": "compiler.c.elf.flags",
-            "Value": "{compiler.optimization_flags} -Wl,--gc-sections -save-temps"
+            "Key": "compiler.arm.cmsis.ldflags",
+            "Value": "\"-L{runtime.tools.CMSIS-4.5.0.path}/CMSIS/Lib/GCC/\" -larm_cortexM0l_math"
         },
         {
-            "Key": "tools.avrdude_remote.upload.pattern",
-            "Value": "\"openocd --version 2\u003e\u00261 | grep 2016 \u0026\u0026 if opkg update; then opkg upgrade openocd; exit 1; else echo 'Please connect your board to the Internet in order to upgrade tools' \u003e\u00262; exit 1; fi || /usr/bin/run-avrdude /tmp/sketch.hex\""
+            "Key": "tools.avrdude.upload.params.noverify",
+            "Value": "-V"
         },
         {
-            "Key": "tools.openocd.program.params.quiet",
-            "Value": "-d0"
+            "Key": "tools.bossacI.upload.params.verbose",
+            "Value": "-i -d"
         },
         {
-            "Key": "upload_port.2.pid",
-            "Value": "0x824d"
+            "Key": "upload.maximum_size",
+            "Value": "262144"
         },
         {
-            "Key": "runtime.tools.arduinoOTA-1.3.0.path",
-            "Value": "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\tools\\arduinoOTA\\1.3.0"
-        },
-        {
-            "Key": "build.arch",
-            "Value": "SAMD"
-        },
-        {
-            "Key": "build.library_discovery_phase",
-            "Value": "0"
-        },
-        {
-            "Key": "extra.time.local",
-            "Value": "1711408370"
-        },
-        {
-            "Key": "tools.avrdude.path",
-            "Value": "{runtime.tools.avrdude.path}"
-        },
-        {
-            "Key": "preproc.macros.flags",
-            "Value": "-w -x c++ -E -CC"
-        },
-        {
-            "Key": "recipe.S.o.pattern",
-            "Value": "\"{compiler.path}{compiler.S.cmd}\" {compiler.S.flags} -DF_CPU={build.f_cpu} -DARDUINO={runtime.ide.version} -DARDUINO_{build.board} -DARDUINO_ARCH_{build.arch} {compiler.S.extra_flags} {build.extra_flags} {compiler.arm.cmsis.c.flags} \"-I{build.core.path}/api/deprecated\" \"-I{build.core.path}/api/deprecated-avr-comp\" {includes} \"{source_file}\" -o \"{object_file}\""
-        },
-        {
-            "Key": "tools.bossac.upload.pattern",
-            "Value": "\"{path}/{cmd}\" {upload.verbose} --port={serial.port.file} -U {upload.native_usb} -i -e -w -v \"{build.path}/{build.project_name}.bin\" -R"
-        },
-        {
-            "Key": "tools.openocd.upload.network_pattern",
-            "Value": "{network_cmd} -address {serial.port} -port 65280 -username arduino -password \"{network.password}\" -sketch \"{build.path}/{build.project_name}.bin\" -upload /sketch -b"
-        },
-        {
-            "Key": "tools.openocd-withbootsize.cmd",
-            "Value": "bin/openocd.exe"
-        },
-        {
-            "Key": "runtime.tools.avrdude-6.3.0-arduino17.path",
-            "Value": "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\tools\\avrdude\\6.3.0-arduino17"
+            "Key": "runtime.tools.bossac-1.7.0-arduino3.path",
+            "Value": "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\tools\\bossac\\1.7.0-arduino3"
         },
         {
             "Key": "debug.executable",
             "Value": "{build.path}/{build.project_name}.elf"
         },
         {
-            "Key": "tools.bossac.network_cmd",
-            "Value": "{runtime.tools.arduinoOTA.path}/bin/arduinoOTA"
+            "Key": "runtime.tools.avrdude-6.3.0-arduino17.path",
+            "Value": "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\tools\\avrdude\\6.3.0-arduino17"
         },
         {
-            "Key": "compiler.ar.flags",
-            "Value": "rcs"
-        },
-        {
-            "Key": "tools.bossac.upload.network_pattern",
-            "Value": "\"{network_cmd}\" -address {serial.port} -port 65280 -username arduino -password \"{network.password}\" -sketch \"{build.path}/{build.project_name}.bin\" -upload /sketch -b {arduinoota.extraflags}"
-        },
-        {
-            "Key": "tools.openocd-withbootsize.bootloader.params.quiet",
+            "Key": "tools.openocd-withbootsize.program.params.quiet",
             "Value": "-d0"
         },
         {
-            "Key": "tools.bossacI.upload.pattern",
-            "Value": "\"{path}/{cmd}\" {upload.verbose} --port={serial.port.file} -I -U {upload.native_usb} -i -e -w \"{build.path}/{build.project_name}.bin\" -R"
+            "Key": "build.fqbn",
+            "Value": "arduino:samd:arduino_zero_native"
+        },
+        {
+            "Key": "preproc.macros.flags",
+            "Value": "-w -x c++ -E -CC"
+        },
+        {
+            "Key": "tools.bossacI_remote.upload.pattern",
+            "Value": "/usr/bin/run-bossac {upload.verbose} --port=ttyATH0 -U {upload.native_usb} -e -w -v /tmp/sketch.bin -R"
+        },
+        {
+            "Key": "tools.openocd-withbootsize.upload.params.verbose",
+            "Value": "-d2"
+        },
+        {
+            "Key": "vid.0",
+            "Value": "0x2341"
+        },
+        {
+            "Key": "build.core",
+            "Value": "arduino"
+        },
+        {
+            "Key": "runtime.tools.openocd.path",
+            "Value": "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\tools\\openocd\\0.10.0-arduino7"
+        },
+        {
+            "Key": "extra.time.utc",
+            "Value": "1712161995"
+        },
+        {
+            "Key": "tools.openocd-withbootsize.program.pattern",
+            "Value": "\"{path}/{cmd}\" {program.verbose} -s \"{path}/share/openocd/scripts/\" -f \"{runtime.platform.path}/variants/{build.variant}/{build.openocdscript}\" -c \"telnet_port disabled; program {{build.path}/{build.project_name}.elf} verify reset; shutdown\""
+        },
+        {
+            "Key": "build.board",
+            "Value": "SAMD_ZERO"
+        },
+        {
+            "Key": "build.core.path",
+            "Value": "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.14\\cores\\arduino"
+        },
+        {
+            "Key": "compiler.elf2hex.cmd",
+            "Value": "arm-none-eabi-objcopy"
+        },
+        {
+            "Key": "recipe.ar.pattern",
+            "Value": "\"{compiler.path}{compiler.ar.cmd}\" {compiler.ar.flags} {compiler.ar.extra_flags} \"{archive_file_path}\" \"{object_file}\""
+        },
+        {
+            "Key": "tools.arduino_ota.cmd",
+            "Value": "{runtime.tools.arduinoOTA.path}/bin/arduinoOTA"
+        },
+        {
+            "Key": "bootloader.tool.default",
+            "Value": "openocd"
+        },
+        {
+            "Key": "runtime.hardware.path",
+            "Value": "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd"
+        },
+        {
+            "Key": "pid.1",
+            "Value": "0x004d"
+        },
+        {
+            "Key": "runtime.tools.arm-none-eabi-gcc-7-2017q4.path",
+            "Value": "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\tools\\arm-none-eabi-gcc\\7-2017q4"
+        },
+        {
+            "Key": "runtime.tools.serial-monitor-0.14.1.path",
+            "Value": "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\builtin\\tools\\serial-monitor\\0.14.1"
+        },
+        {
+            "Key": "tools.openocd.upload.pattern",
+            "Value": "\"{path}/{cmd}\" {upload.verbose} -s \"{path}/share/openocd/scripts/\" -f \"{runtime.platform.path}/variants/{build.variant}/{build.openocdscript}\" -c \"telnet_port disabled; program {{build.path}/{build.project_name}.bin} verify reset 0x2000; shutdown\""
+        },
+        {
+            "Key": "tools.openocd.program.pattern",
+            "Value": "\"{path}/{cmd}\" {program.verbose} -s \"{path}/share/openocd/scripts/\" -f \"interface/{protocol}\" -c \"set telnet_port 0\" {extra_params} -f \"target/at91samdXX.cfg\" -c \"telnet_port disabled; program {{build.path}/{build.project_name}.hex} verify reset; shutdown\""
+        },
+        {
+            "Key": "build.extra_flags",
+            "Value": "-D__SAMD21G18A__ {build.usb_flags}"
+        },
+        {
+            "Key": "compiler.warning_flags.none",
+            "Value": "-w"
+        },
+        {
+            "Key": "recipe.c.o.pattern",
+            "Value": "\"{compiler.path}{compiler.c.cmd}\" {compiler.c.flags} -DF_CPU={build.f_cpu} -DARDUINO={runtime.ide.version} -DARDUINO_{build.board} -DARDUINO_ARCH_{build.arch} {compiler.c.extra_flags} {build.extra_flags} {compiler.arm.cmsis.c.flags} \"-I{build.core.path}/api/deprecated\" \"-I{build.core.path}/api/deprecated-avr-comp\" {includes} \"{source_file}\" -o \"{object_file}\""
+        },
+        {
+            "Key": "pluggable_discovery.required.1",
+            "Value": "builtin:mdns-discovery"
+        },
+        {
+            "Key": "tools.openocd.bootloader.params.quiet",
+            "Value": "-d0"
+        },
+        {
+            "Key": "tools.ctags.cmd.path",
+            "Value": "{path}/ctags"
+        },
+        {
+            "Key": "tools.ctags.path",
+            "Value": "{runtime.tools.ctags.path}"
+        },
+        {
+            "Key": "compiler.objcopy.cmd",
+            "Value": "arm-none-eabi-objcopy"
+        },
+        {
+            "Key": "debug.toolchain.path",
+            "Value": "{runtime.tools.arm-none-eabi-gcc-7-2017q4.path}/bin/"
+        },
+        {
+            "Key": "build.project_name",
+            "Value": "Ssd1306Tester.ino"
+        },
+        {
+            "Key": "runtime.tools.CMSIS-Atmel-1.2.0.path",
+            "Value": "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\tools\\CMSIS-Atmel\\1.2.0"
+        },
+        {
+            "Key": "runtime.tools.builtin-tools.path",
+            "Value": "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\builtin\\tools"
         },
         {
             "Key": "tools.openocd-withbootsize.erase.pattern",
             "Value": ""
         },
         {
+            "Key": "upload.tool",
+            "Value": "bossac"
+        },
+        {
+            "Key": "tools.bossacI.upload.network_pattern",
+            "Value": "\"{network_cmd}\" -address {serial.port} -port 65280 -username arduino -password \"{network.password}\" -sketch \"{build.path}/{build.project_name}.bin\" -upload /sketch -b"
+        },
+        {
+            "Key": "upload_port.1.pid",
+            "Value": "0x004d"
+        },
+        {
+            "Key": "tools.openocd-withbootsize.erase.params.quiet",
+            "Value": "-d0"
+        },
+        {
+            "Key": "runtime.tools.CMSIS.path",
+            "Value": "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\tools\\CMSIS\\4.5.0"
+        },
+        {
+            "Key": "runtime.tools.ctags.path",
+            "Value": "C:\\Users\\info\\AppData\\Local\\VisualGDB\\Arduino\\tools-builder\\ctags\\5.8-arduino11"
+        },
+        {
+            "Key": "tools.bossacI.upload.pattern",
+            "Value": "\"{path}/{cmd}\" {upload.verbose} --port={serial.port.file} -I -U {upload.native_usb} -i -e -w \"{build.path}/{build.project_name}.bin\" -R"
+        },
+        {
+            "Key": "compiler.c.elf.cmd",
+            "Value": "arm-none-eabi-g++"
+        },
+        {
+            "Key": "tools.avrdude.config.path",
+            "Value": "{path}/etc/avrdude.conf"
+        },
+        {
+            "Key": "tools.arduino_ota.upload.field.password.secret",
+            "Value": "true"
+        },
+        {
+            "Key": "pid.0",
+            "Value": "0x804d"
+        },
+        {
+            "Key": "ide_version",
+            "Value": "10600"
+        },
+        {
+            "Key": "build.library_discovery_phase",
+            "Value": "0"
+        },
+        {
+            "Key": "compiler.S.cmd",
+            "Value": "arm-none-eabi-gcc"
+        },
+        {
+            "Key": "archive_file_path",
+            "Value": "{build.path}/{archive_file}"
+        },
+        {
+            "Key": "build.preferred_out_format",
+            "Value": "bin"
+        },
+        {
+            "Key": "tools.bossacI.path",
+            "Value": "{runtime.tools.bossac-1.7.0-arduino3.path}"
+        },
+        {
+            "Key": "runtime.tools.arduinoOTA-1.3.0.path",
+            "Value": "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\tools\\arduinoOTA\\1.3.0"
+        },
+        {
+            "Key": "runtime.tools.arduinoOTA-1.2.1.path",
+            "Value": ""
+        },
+        {
+            "Key": "compiler.cpp.cmd",
+            "Value": "arm-none-eabi-g++"
+        },
+        {
+            "Key": "upload_port.2.vid",
+            "Value": "0x2341"
+        },
+        {
+            "Key": "tools.bossac.path",
+            "Value": "{runtime.tools.bossac-1.7.0-arduino3.path}"
+        },
+        {
+            "Key": "pid.3",
+            "Value": "0x024d"
+        },
+        {
+            "Key": "build.ldscript",
+            "Value": "linker_scripts/gcc/flash_with_bootloader.ld"
+        },
+        {
+            "Key": "tools.openocd.upload.params.quiet",
+            "Value": "-d0"
+        },
+        {
+            "Key": "tools.openocd.erase.params.verbose",
+            "Value": "-d3"
+        },
+        {
+            "Key": "upload.maximum_data_size",
+            "Value": "32768"
+        },
+        {
             "Key": "upload.use_1200bps_touch",
+            "Value": "true"
+        },
+        {
+            "Key": "runtime.tools.CMSIS-4.5.0.path",
+            "Value": "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\tools\\CMSIS\\4.5.0"
+        },
+        {
+            "Key": "tools.avrdude.upload.params.verbose",
+            "Value": "-v -v"
+        },
+        {
+            "Key": "tools.openocd.upload.network_pattern",
+            "Value": "{network_cmd} -address {serial.port} -port 65280 -username arduino -password \"{network.password}\" -sketch \"{build.path}/{build.project_name}.bin\" -upload /sketch -b"
+        },
+        {
+            "Key": "tools.openocd.bootloader.pattern",
+            "Value": "\"{path}/{cmd}\" {bootloader.verbose} -s \"{path}/share/openocd/scripts/\" -f \"interface/{protocol}\" -c \"set telnet_port 0\" {extra_params} -f \"target/at91samdXX.cfg\" -c \"telnet_port disabled; init; halt; at91samd bootloader 0; program {{runtime.platform.path}/bootloaders/{bootloader.file}} verify reset; shutdown\""
+        },
+        {
+            "Key": "tools.openocd-withbootsize.path",
+            "Value": "{runtime.tools.openocd-0.10.0-arduino7.path}"
+        },
+        {
+            "Key": "tools.openocd-withbootsize.upload.pattern",
+            "Value": "\"{path}/{cmd}\" {upload.verbose} -s \"{path}/share/openocd/scripts/\" -f \"{runtime.platform.path}/variants/{build.variant}/{build.openocdscript}\" -c \"telnet_port disabled; program {{build.path}/{build.project_name}.bin} verify reset {bootloader.size}; shutdown\""
+        },
+        {
+            "Key": "runtime.ide.version",
+            "Value": "10600"
+        },
+        {
+            "Key": "runtime.tools.serial-discovery-1.4.0.path",
+            "Value": "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\builtin\\tools\\serial-discovery\\1.4.0"
+        },
+        {
+            "Key": "compiler.optimization_flags.debug",
+            "Value": "-Og -g3"
+        },
+        {
+            "Key": "compiler.S.extra_flags",
+            "Value": ""
+        },
+        {
+            "Key": "recipe.objcopy.hex.pattern",
+            "Value": "\"{compiler.path}{compiler.elf2hex.cmd}\" {compiler.elf2hex.hex.flags} {compiler.elf2hex.extra_flags} \"{build.path}/{build.project_name}.elf\" \"{build.path}/{build.project_name}.hex\""
+        },
+        {
+            "Key": "runtime.tools.bossac.path",
+            "Value": "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\tools\\bossac\\1.7.0-arduino3"
+        },
+        {
+            "Key": "runtime.tools.serial-monitor.path",
+            "Value": "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\builtin\\tools\\serial-monitor\\0.14.1"
+        },
+        {
+            "Key": "compiler.elf2hex.hex.flags",
+            "Value": "-O ihex -R .eeprom"
+        },
+        {
+            "Key": "build.source.path",
+            "Value": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Ssd1306Tester\\Ssd1306Tester\\sketches"
+        },
+        {
+            "Key": "compiler.c.flags",
+            "Value": "-mcpu={build.mcu} -mthumb -c -g {compiler.optimization_flags} {compiler.warning_flags} -std=gnu11 -ffunction-sections -fdata-sections -nostdlib --param max-inline-insns-single=500 -MMD"
+        },
+        {
+            "Key": "tools.openocd.program.params.quiet",
+            "Value": "-d0"
+        },
+        {
+            "Key": "tools.arduino_ota.upload.field.password",
+            "Value": "Password"
+        },
+        {
+            "Key": "upload.native_usb",
+            "Value": "true"
+        },
+        {
+            "Key": "build.variant",
+            "Value": "arduino_zero"
+        },
+        {
+            "Key": "compiler.cpp.extra_flags",
+            "Value": ""
+        },
+        {
+            "Key": "pluggable_discovery.required.0",
+            "Value": "builtin:serial-discovery"
+        },
+        {
+            "Key": "tools.bossac.upload.params.verbose",
+            "Value": "-i -d"
+        },
+        {
+            "Key": "upload_port.1.vid",
+            "Value": "0x2341"
+        },
+        {
+            "Key": "runtime.tools.mdns-discovery.path",
+            "Value": "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\builtin\\tools\\mdns-discovery\\1.0.9"
+        },
+        {
+            "Key": "runtime.tools.arduinoOTA.path",
+            "Value": "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\tools\\arduinoOTA\\1.3.0"
+        },
+        {
+            "Key": "recipe.objcopy.bin.pattern",
+            "Value": "\"{compiler.path}{compiler.elf2hex.cmd}\" {compiler.elf2hex.bin.flags} {compiler.elf2hex.extra_flags} \"{build.path}/{build.project_name}.elf\" \"{build.path}/{build.project_name}.bin\""
+        },
+        {
+            "Key": "upload.wait_for_upload_port",
             "Value": "true"
         },
         {
@@ -3581,492 +3605,492 @@
             "Value": "-Wall -Wextra"
         },
         {
-            "Key": "compiler.c.extra_flags",
+            "Key": "compiler.ar.extra_flags",
             "Value": ""
-        },
-        {
-            "Key": "recipe.cpp.o.pattern",
-            "Value": "\"{compiler.path}{compiler.cpp.cmd}\" {compiler.cpp.flags} -DF_CPU={build.f_cpu} -DARDUINO={runtime.ide.version} -DARDUINO_{build.board} -DARDUINO_ARCH_{build.arch} {compiler.cpp.extra_flags} {build.extra_flags} {compiler.arm.cmsis.c.flags} \"-I{build.core.path}/api/deprecated\" \"-I{build.core.path}/api/deprecated-avr-comp\" {includes} \"{source_file}\" -o \"{object_file}\""
-        },
-        {
-            "Key": "tools.avrdude.upload.pattern",
-            "Value": "\"{cmd}\" \"-C{config.path}\" {upload.verbose} -p{build.emu.mcu} -c{upload.protocol} -P{serial.port} -b{upload.speed} \"-Uflash:w:{build.path}/{build.project_name}.hex:i\""
-        },
-        {
-            "Key": "upload.protocol",
-            "Value": "sam-ba"
-        },
-        {
-            "Key": "build.core",
-            "Value": "arduino"
-        },
-        {
-            "Key": "runtime.ide.path",
-            "Value": "C:\\Users\\info\\AppData\\Local\\VisualGDB\\Arduino"
-        },
-        {
-            "Key": "compiler.warning_flags.none",
-            "Value": "-w"
-        },
-        {
-            "Key": "compiler.optimization_flags.debug",
-            "Value": "-Og -g3"
-        },
-        {
-            "Key": "compiler.c.cmd",
-            "Value": "arm-none-eabi-gcc"
-        },
-        {
-            "Key": "debug.toolchain.path",
-            "Value": "{runtime.tools.arm-none-eabi-gcc-7-2017q4.path}/bin/"
-        },
-        {
-            "Key": "tools.openocd.network_cmd",
-            "Value": "{runtime.tools.arduinoOTA.path}/bin/arduinoOTA"
-        },
-        {
-            "Key": "upload.maximum_size",
-            "Value": "262144"
-        },
-        {
-            "Key": "upload.maximum_data_size",
-            "Value": "32768"
-        },
-        {
-            "Key": "tools.bossac_remote.upload.pattern",
-            "Value": "/usr/bin/run-bossac {upload.verbose} --port=ttyATH0 -U {upload.native_usb} -e -w -v /tmp/sketch.bin -R"
-        },
-        {
-            "Key": "build.path",
-            "Value": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Ssd1306Tester\\Ssd1306Tester\\Output\\Arduino_Zero__Native_USB_Port_\\Debug"
-        },
-        {
-            "Key": "runtime.tools.serial-monitor-0.14.1.path",
-            "Value": "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\builtin\\tools\\serial-monitor\\0.14.1"
-        },
-        {
-            "Key": "extra.time.utc",
-            "Value": "1711408370"
-        },
-        {
-            "Key": "compiler.define",
-            "Value": "-DARDUINO="
-        },
-        {
-            "Key": "tools.avrdude.upload.params.noverify",
-            "Value": "-V"
-        },
-        {
-            "Key": "tools.avrdude.network_cmd",
-            "Value": "{runtime.tools.arduinoOTA.path}/bin/arduinoOTA"
-        },
-        {
-            "Key": "tools.openocd.bootloader.params.quiet",
-            "Value": "-d0"
-        },
-        {
-            "Key": "tools.avrdude.config.path",
-            "Value": "{path}/etc/avrdude.conf"
-        },
-        {
-            "Key": "tools.openocd.path",
-            "Value": "{runtime.tools.openocd-0.10.0-arduino7.path}"
-        },
-        {
-            "Key": "tools.openocd.erase.params.verbose",
-            "Value": "-d3"
-        },
-        {
-            "Key": "pid.3",
-            "Value": "0x024d"
         },
         {
             "Key": "runtime.tools.dfu-discovery.path",
             "Value": "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\builtin\\tools\\dfu-discovery\\0.1.2"
         },
         {
-            "Key": "compiler.warning_flags",
-            "Value": "-w"
-        },
-        {
-            "Key": "compiler.c.elf.cmd",
-            "Value": "arm-none-eabi-g++"
-        },
-        {
-            "Key": "tools.bossac.path",
-            "Value": "{runtime.tools.bossac-1.7.0-arduino3.path}"
-        },
-        {
-            "Key": "tools.bossac.cmd",
-            "Value": "bossac.exe"
-        },
-        {
-            "Key": "bootloader.tool",
-            "Value": "openocd"
-        },
-        {
-            "Key": "runtime.tools.openocd.path",
-            "Value": "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\tools\\openocd\\0.10.0-arduino7"
-        },
-        {
-            "Key": "debug.server.openocd.scripts_dir",
-            "Value": "{runtime.tools.openocd-0.10.0-arduino7.path}/share/openocd/scripts/"
-        },
-        {
-            "Key": "tools.openocd-withbootsize.upload.params.quiet",
-            "Value": "-d0"
-        },
-        {
-            "Key": "upload_port.1.pid",
-            "Value": "0x004d"
-        },
-        {
-            "Key": "runtime.tools.serial-monitor.path",
-            "Value": "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\builtin\\tools\\serial-monitor\\0.14.1"
-        },
-        {
-            "Key": "runtime.tools.mdns-discovery.path",
-            "Value": "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\builtin\\tools\\mdns-discovery\\1.0.9"
-        },
-        {
-            "Key": "version",
-            "Value": "1.8.14"
-        },
-        {
-            "Key": "pluggable_discovery.required.1",
-            "Value": "builtin:mdns-discovery"
-        },
-        {
-            "Key": "recipe.objcopy.bin.pattern",
-            "Value": "\"{compiler.path}{compiler.elf2hex.cmd}\" {compiler.elf2hex.bin.flags} {compiler.elf2hex.extra_flags} \"{build.path}/{build.project_name}.elf\" \"{build.path}/{build.project_name}.bin\""
-        },
-        {
-            "Key": "build.preferred_out_format",
-            "Value": "bin"
-        },
-        {
-            "Key": "runtime.tools.builtin.path",
-            "Value": "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\builtin\\tools"
-        },
-        {
-            "Key": "compiler.size.cmd",
-            "Value": "arm-none-eabi-size"
-        },
-        {
-            "Key": "runtime.ide.version",
-            "Value": "10600"
-        },
-        {
-            "Key": "runtime.os",
-            "Value": "windows"
-        },
-        {
-            "Key": "runtime.tools.CMSIS.path",
-            "Value": "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\tools\\CMSIS\\4.5.0"
-        },
-        {
-            "Key": "software",
-            "Value": "ARDUINO"
-        },
-        {
-            "Key": "tools.ctags.pattern",
-            "Value": "\"{cmd.path}\" -u --language-force=c++ -f - --c++-kinds=svpf --fields=KSTtzns --line-directives \"{source_file}\""
-        },
-        {
-            "Key": "tools.arduino-preprocessor.pattern",
-            "Value": "\"{cmd.path}\" \"{source_file}\" \"{codecomplete}\" -- -std=gnu++11"
-        },
-        {
-            "Key": "compiler.warning_flags.default",
-            "Value": ""
-        },
-        {
             "Key": "recipe.size.regex",
             "Value": "^(?:\\.text|\\.data|)\\s+([0-9]+).*"
         },
         {
-            "Key": "compiler.elf2hex.cmd",
-            "Value": "arm-none-eabi-objcopy"
-        },
-        {
-            "Key": "compiler.cpp.extra_flags",
+            "Key": "tools.bossacI.upload.params.quiet",
             "Value": ""
         },
         {
-            "Key": "debug.server.openocd.path",
-            "Value": "{runtime.tools.openocd-0.10.0-arduino7.path}/bin/openocd"
-        },
-        {
-            "Key": "tools.arduino_ota.upload.pattern",
-            "Value": "\"{cmd}\" -address \"{upload.port.address}\" -port 65280 -username arduino -password \"{upload.field.password}\" -sketch \"{build.path}/{build.project_name}.bin\" -upload /sketch -b {arduinoota.extraflags}"
-        },
-        {
-            "Key": "tools.avrdude.upload.params.verbose",
-            "Value": "-v -v"
-        },
-        {
-            "Key": "tools.openocd-withbootsize.upload.params.verbose",
-            "Value": "-d2"
-        },
-        {
-            "Key": "upload.tool.network",
-            "Value": "arduino_ota"
-        },
-        {
-            "Key": "runtime.tools.builtin-tools.path",
-            "Value": "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\builtin\\tools"
-        },
-        {
-            "Key": "runtime.platform.path",
-            "Value": "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.14"
-        },
-        {
-            "Key": "tools.arduino-preprocessor.cmd.path",
-            "Value": "{path}/arduino-preprocessor"
-        },
-        {
-            "Key": "recipe.size.regex.data",
-            "Value": "^(?:\\.data|\\.bss)\\s+([0-9]+).*"
-        },
-        {
-            "Key": "debug.toolchain",
-            "Value": "gcc"
-        },
-        {
-            "Key": "tools.bossacI.cmd",
-            "Value": "bossac.exe"
-        },
-        {
-            "Key": "tools.bossacI_remote.upload.pattern",
-            "Value": "/usr/bin/run-bossac {upload.verbose} --port=ttyATH0 -U {upload.native_usb} -e -w -v /tmp/sketch.bin -R"
+            "Key": "upload_port.0.vid",
+            "Value": "0x2341"
         },
         {
             "Key": "build.usb_product",
             "Value": "\"Arduino Zero\""
         },
         {
-            "Key": "build.core.path",
-            "Value": "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.14\\cores\\arduino"
-        },
-        {
-            "Key": "recipe.output.tmp_file",
-            "Value": "{build.project_name}.{build.preferred_out_format}"
-        },
-        {
-            "Key": "tools.bossacI.upload.params.verbose",
-            "Value": "-i -d"
-        },
-        {
-            "Key": "upload_port.2.vid",
-            "Value": "0x2341"
-        },
-        {
-            "Key": "compiler.elf2hex.extra_flags",
-            "Value": ""
-        },
-        {
-            "Key": "vid.3",
-            "Value": "0x2341"
-        },
-        {
-            "Key": "build.f_cpu",
-            "Value": "48000000L"
-        },
-        {
-            "Key": "runtime.tools.CMSIS-Atmel-1.2.0.path",
-            "Value": "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\tools\\CMSIS-Atmel\\1.2.0"
-        },
-        {
-            "Key": "compiler.arm.cmsis.ldflags",
-            "Value": "\"-L{runtime.tools.CMSIS-4.5.0.path}/CMSIS/Lib/GCC/\" -larm_cortexM0l_math"
-        },
-        {
-            "Key": "ide_version",
-            "Value": "10600"
-        },
-        {
-            "Key": "compiler.optimization_flags.release",
-            "Value": "-Os"
-        },
-        {
-            "Key": "compiler.S.flags",
-            "Value": "-mcpu={build.mcu} -mthumb -c -g -x assembler-with-cpp -MMD"
-        },
-        {
-            "Key": "tools.openocd-withbootsize.bootloader.pattern",
-            "Value": "\"{path}/{cmd}\" {bootloader.verbose} -s \"{path}/share/openocd/scripts/\" -f \"{runtime.platform.path}/variants/{build.variant}/{build.openocdscript}\" -c \"telnet_port disabled; init; halt; at91samd bootloader 0; program {{runtime.platform.path}/bootloaders/{bootloader.file}} verify reset; shutdown\""
-        },
-        {
-            "Key": "arduinoota.extraflags",
-            "Value": ""
-        },
-        {
-            "Key": "upload_port.0.pid",
-            "Value": "0x804d"
-        },
-        {
-            "Key": "build.vid",
-            "Value": "0x2341"
-        },
-        {
-            "Key": "runtime.tools.arduino.path",
-            "Value": "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\tools"
-        },
-        {
-            "Key": "tools.ctags.cmd.path",
-            "Value": "{path}/ctags"
-        },
-        {
-            "Key": "compiler.elf2hex.bin.flags",
-            "Value": "-O binary"
-        },
-        {
-            "Key": "tools.openocd.program.pattern",
-            "Value": "\"{path}/{cmd}\" {program.verbose} -s \"{path}/share/openocd/scripts/\" -f \"interface/{protocol}\" -c \"set telnet_port 0\" {extra_params} -f \"target/at91samdXX.cfg\" -c \"telnet_port disabled; program {{build.path}/{build.project_name}.hex} verify reset; shutdown\""
-        },
-        {
-            "Key": "tools.openocd.erase.params.quiet",
-            "Value": "-d0"
-        },
-        {
-            "Key": "tools.openocd-withbootsize.program.pattern",
-            "Value": "\"{path}/{cmd}\" {program.verbose} -s \"{path}/share/openocd/scripts/\" -f \"{runtime.platform.path}/variants/{build.variant}/{build.openocdscript}\" -c \"telnet_port disabled; program {{build.path}/{build.project_name}.elf} verify reset; shutdown\""
-        },
-        {
-            "Key": "upload_port.1.vid",
-            "Value": "0x2341"
-        },
-        {
-            "Key": "build.variant",
-            "Value": "arduino_zero"
-        },
-        {
-            "Key": "pluggable_monitor.required.serial",
-            "Value": "builtin:serial-monitor"
-        },
-        {
             "Key": "debug.server.openocd.script",
             "Value": "{runtime.platform.path}/variants/{build.variant}/{build.openocdscript}"
-        },
-        {
-            "Key": "tools.bossac.upload.params.verbose",
-            "Value": "-i -d"
-        },
-        {
-            "Key": "tools.arduino_ota.cmd",
-            "Value": "{runtime.tools.arduinoOTA.path}/bin/arduinoOTA"
-        },
-        {
-            "Key": "recipe.c.o.pattern",
-            "Value": "\"{compiler.path}{compiler.c.cmd}\" {compiler.c.flags} -DF_CPU={build.f_cpu} -DARDUINO={runtime.ide.version} -DARDUINO_{build.board} -DARDUINO_ARCH_{build.arch} {compiler.c.extra_flags} {build.extra_flags} {compiler.arm.cmsis.c.flags} \"-I{build.core.path}/api/deprecated\" \"-I{build.core.path}/api/deprecated-avr-comp\" {includes} \"{source_file}\" -o \"{object_file}\""
-        },
-        {
-            "Key": "recipe.objcopy.hex.pattern",
-            "Value": "\"{compiler.path}{compiler.elf2hex.cmd}\" {compiler.elf2hex.hex.flags} {compiler.elf2hex.extra_flags} \"{build.path}/{build.project_name}.elf\" \"{build.path}/{build.project_name}.hex\""
-        },
-        {
-            "Key": "tools.openocd.upload.pattern",
-            "Value": "\"{path}/{cmd}\" {upload.verbose} -s \"{path}/share/openocd/scripts/\" -f \"{runtime.platform.path}/variants/{build.variant}/{build.openocdscript}\" -c \"telnet_port disabled; program {{build.path}/{build.project_name}.bin} verify reset 0x2000; shutdown\""
-        },
-        {
-            "Key": "tools.openocd-withbootsize.path",
-            "Value": "{runtime.tools.openocd-0.10.0-arduino7.path}"
-        },
-        {
-            "Key": "upload.tool",
-            "Value": "bossac"
         },
         {
             "Key": "tools.bossac.upload.params.quiet",
             "Value": ""
         },
         {
-            "Key": "bootloader.file",
-            "Value": "zero/samd21_sam_ba.bin"
+            "Key": "tools.openocd.network_cmd",
+            "Value": "{runtime.tools.arduinoOTA.path}/bin/arduinoOTA"
         },
         {
-            "Key": "compiler.optimization_flags",
-            "Value": "-Os"
+            "Key": "tools.openocd-withbootsize.upload.params.quiet",
+            "Value": "-d0"
         },
         {
-            "Key": "runtime.tools.dfu-discovery-0.1.2.path",
-            "Value": "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\builtin\\tools\\dfu-discovery\\0.1.2"
+            "Key": "tools.openocd-withbootsize.bootloader.params.quiet",
+            "Value": "-d0"
         },
         {
-            "Key": "compiler.warning_flags.more",
-            "Value": "-Wall"
-        },
-        {
-            "Key": "compiler.ar.cmd",
-            "Value": "arm-none-eabi-ar"
-        },
-        {
-            "Key": "_id",
-            "Value": "arduino_zero_native"
-        },
-        {
-            "Key": "vid.2",
+            "Key": "vid.3",
             "Value": "0x2341"
-        },
-        {
-            "Key": "build.mcu",
-            "Value": "cortex-m0plus"
-        },
-        {
-            "Key": "build.pid",
-            "Value": "0x804d"
-        },
-        {
-            "Key": "runtime.hardware.path",
-            "Value": "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd"
-        },
-        {
-            "Key": "compiler.arm.cmsis.c.flags",
-            "Value": "\"-I{runtime.tools.CMSIS-4.5.0.path}/CMSIS/Include/\" \"-I{runtime.tools.CMSIS-Atmel-1.2.0.path}/CMSIS/Device/ATMEL/\""
-        },
-        {
-            "Key": "tools.avrdude.upload.params.quiet",
-            "Value": "-q -q"
         },
         {
             "Key": "upload_port.3.vid",
             "Value": "0x2341"
         },
         {
-            "Key": "runtime.tools.bossac.path",
-            "Value": "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\tools\\bossac\\1.7.0-arduino3"
+            "Key": "compiler.warning_flags.more",
+            "Value": "-Wall"
         },
         {
-            "Key": "runtime.tools.arduinoOTA.path",
-            "Value": "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\tools\\arduinoOTA\\1.3.0"
+            "Key": "pluggable_monitor.required.serial",
+            "Value": "builtin:serial-monitor"
         },
         {
-            "Key": "vid.0",
-            "Value": "0x2341"
+            "Key": "tools.openocd.cmd",
+            "Value": "bin/openocd.exe"
+        },
+        {
+            "Key": "compiler.c.elf.flags",
+            "Value": "{compiler.optimization_flags} -Wl,--gc-sections -save-temps"
+        },
+        {
+            "Key": "upload.protocol",
+            "Value": "sam-ba"
+        },
+        {
+            "Key": "compiler.warning_flags.default",
+            "Value": ""
+        },
+        {
+            "Key": "tools.bossac.cmd",
+            "Value": "bossac.exe"
+        },
+        {
+            "Key": "tools.bossac.upload.network_pattern",
+            "Value": "\"{network_cmd}\" -address {serial.port} -port 65280 -username arduino -password \"{network.password}\" -sketch \"{build.path}/{build.project_name}.bin\" -upload /sketch -b {arduinoota.extraflags}"
+        },
+        {
+            "Key": "tools.arduino_ota.upload.pattern",
+            "Value": "\"{cmd}\" -address \"{upload.port.address}\" -port 65280 -username arduino -password \"{upload.field.password}\" -sketch \"{build.path}/{build.project_name}.bin\" -upload /sketch -b {arduinoota.extraflags}"
+        },
+        {
+            "Key": "build.pid",
+            "Value": "0x804d"
+        },
+        {
+            "Key": "compiler.elf2hex.extra_flags",
+            "Value": ""
+        },
+        {
+            "Key": "runtime.os",
+            "Value": "windows"
+        },
+        {
+            "Key": "tools.openocd.upload.params.verbose",
+            "Value": "-d2"
+        },
+        {
+            "Key": "tools.openocd-withbootsize.program.params.verbose",
+            "Value": "-d2"
         },
         {
             "Key": "upload_port.4.board",
             "Value": "arduino_zero_native"
         },
         {
-            "Key": "runtime.tools.arduinoOTA-1.2.1.path",
+            "Key": "runtime.tools.openocd-0.10.0-arduino7.path",
+            "Value": "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\tools\\openocd\\0.10.0-arduino7"
+        },
+        {
+            "Key": "tools.arduino-preprocessor.pattern",
+            "Value": "\"{cmd.path}\" \"{source_file}\" \"{codecomplete}\" -- -std=gnu++11"
+        },
+        {
+            "Key": "tools.bossacI.network_cmd",
+            "Value": "{runtime.tools.arduinoOTA.path}/bin/arduinoOTA"
+        },
+        {
+            "Key": "name",
+            "Value": "Arduino Zero (Native USB Port)"
+        },
+        {
+            "Key": "bootloader.tool",
+            "Value": "openocd"
+        },
+        {
+            "Key": "tools.ctags.pattern",
+            "Value": "\"{cmd.path}\" -u --language-force=c++ -f - --c++-kinds=svpf --fields=KSTtzns --line-directives \"{source_file}\""
+        },
+        {
+            "Key": "compiler.ar.flags",
+            "Value": "rcs"
+        },
+        {
+            "Key": "compiler.c.extra_flags",
             "Value": ""
         },
         {
-            "Key": "build.source.path",
-            "Value": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Ssd1306Tester\\Ssd1306Tester\\sketches"
+            "Key": "vid.2",
+            "Value": "0x2341"
+        },
+        {
+            "Key": "runtime.platform.path",
+            "Value": "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.14"
+        },
+        {
+            "Key": "runtime.tools.ctags-5.8-arduino11.path",
+            "Value": "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\builtin\\tools\\ctags\\5.8-arduino11"
+        },
+        {
+            "Key": "runtime.tools.arduino-tools.path",
+            "Value": "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\tools"
+        },
+        {
+            "Key": "runtime.tools.avrdude.path",
+            "Value": "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\tools\\avrdude\\6.3.0-arduino17"
+        },
+        {
+            "Key": "compiler.c.elf.extra_flags",
+            "Value": ""
+        },
+        {
+            "Key": "debug.toolchain",
+            "Value": "gcc"
+        },
+        {
+            "Key": "tools.bossac.upload.pattern",
+            "Value": "\"{path}/{cmd}\" {upload.verbose} --port={serial.port.file} -U {upload.native_usb} -i -e -w -v \"{build.path}/{build.project_name}.bin\" -R"
+        },
+        {
+            "Key": "tools.bossac.network_cmd",
+            "Value": "{runtime.tools.arduinoOTA.path}/bin/arduinoOTA"
+        },
+        {
+            "Key": "upload_port.2.pid",
+            "Value": "0x824d"
+        },
+        {
+            "Key": "build.usb_manufacturer",
+            "Value": "\"Arduino LLC\""
+        },
+        {
+            "Key": "build.openocdscript",
+            "Value": "openocd_scripts/arduino_zero.cfg"
+        },
+        {
+            "Key": "recipe.size.pattern",
+            "Value": "\"{compiler.path}{compiler.size.cmd}\" -A \"{build.path}/{build.project_name}.elf\""
+        },
+        {
+            "Key": "tools.avrdude_remote.upload.pattern",
+            "Value": "\"openocd --version 2\u003e\u00261 | grep 2016 \u0026\u0026 if opkg update; then opkg upgrade openocd; exit 1; else echo 'Please connect your board to the Internet in order to upgrade tools' \u003e\u00262; exit 1; fi || /usr/bin/run-avrdude /tmp/sketch.hex\""
+        },
+        {
+            "Key": "tools.avrdude.network_cmd",
+            "Value": "{runtime.tools.arduinoOTA.path}/bin/arduinoOTA"
+        },
+        {
+            "Key": "tools.openocd.erase.params.quiet",
+            "Value": "-d0"
+        },
+        {
+            "Key": "compiler.ldflags",
+            "Value": "-mcpu={build.mcu} -mthumb -Wl,--cref -Wl,--check-sections -Wl,--gc-sections -Wl,--unresolved-symbols=report-all -Wl,--warn-common -Wl,--warn-section-align"
+        },
+        {
+            "Key": "compiler.arm.cmsis.c.flags",
+            "Value": "\"-I{runtime.tools.CMSIS-4.5.0.path}/CMSIS/Include/\" \"-I{runtime.tools.CMSIS-Atmel-1.2.0.path}/CMSIS/Device/ATMEL/\""
+        },
+        {
+            "Key": "debug.server.openocd.scripts_dir",
+            "Value": "{runtime.tools.openocd-0.10.0-arduino7.path}/share/openocd/scripts/"
+        },
+        {
+            "Key": "tools.bossac_remote.upload.pattern",
+            "Value": "/usr/bin/run-bossac {upload.verbose} --port=ttyATH0 -U {upload.native_usb} -e -w -v /tmp/sketch.bin -R"
+        },
+        {
+            "Key": "runtime.tools.mdns-discovery-1.0.9.path",
+            "Value": "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\builtin\\tools\\mdns-discovery\\1.0.9"
+        },
+        {
+            "Key": "runtime.tools.dfu-discovery-0.1.2.path",
+            "Value": "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\builtin\\tools\\dfu-discovery\\0.1.2"
+        },
+        {
+            "Key": "debug.server.openocd.path",
+            "Value": "{runtime.tools.openocd-0.10.0-arduino7.path}/bin/openocd"
+        },
+        {
+            "Key": "tools.openocd-withbootsize.bootloader.pattern",
+            "Value": "\"{path}/{cmd}\" {bootloader.verbose} -s \"{path}/share/openocd/scripts/\" -f \"{runtime.platform.path}/variants/{build.variant}/{build.openocdscript}\" -c \"telnet_port disabled; init; halt; at91samd bootloader 0; program {{runtime.platform.path}/bootloaders/{bootloader.file}} verify reset; shutdown\""
+        },
+        {
+            "Key": "recipe.output.tmp_file",
+            "Value": "{build.project_name}.{build.preferred_out_format}"
+        },
+        {
+            "Key": "debug.server",
+            "Value": "openocd"
+        },
+        {
+            "Key": "runtime.tools.builtin.path",
+            "Value": "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\builtin\\tools"
+        },
+        {
+            "Key": "extra.time.zone",
+            "Value": "0"
+        },
+        {
+            "Key": "recipe.size.regex.data",
+            "Value": "^(?:\\.data|\\.bss)\\s+([0-9]+).*"
+        },
+        {
+            "Key": "tools.openocd.bootloader.params.verbose",
+            "Value": "-d2"
+        },
+        {
+            "Key": "extra.time.dst",
+            "Value": "3600"
+        },
+        {
+            "Key": "compiler.warning_flags",
+            "Value": "-w"
+        },
+        {
+            "Key": "recipe.c.combine.pattern",
+            "Value": "\"{compiler.path}{compiler.c.elf.cmd}\"  \"-L{build.path}\" {compiler.c.elf.flags} {compiler.c.elf.extra_flags} \"-T{build.variant.path}/{build.ldscript}\" \"-Wl,-Map,{build.path}/{build.project_name}.map\" --specs=nano.specs --specs=nosys.specs {compiler.ldflags} -o \"{build.path}/{build.project_name}.elf\" {object_files} {compiler.libraries.ldflags} -Wl,--start-group {compiler.arm.cmsis.ldflags} -lm \"{build.path}/{archive_file}\" -Wl,--end-group"
+        },
+        {
+            "Key": "build.f_cpu",
+            "Value": "48000000L"
+        },
+        {
+            "Key": "tools.openocd-withbootsize.erase.params.verbose",
+            "Value": "-d3"
+        },
+        {
+            "Key": "build.variant_system_lib",
+            "Value": ""
+        },
+        {
+            "Key": "build.path",
+            "Value": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Ssd1306Tester\\Ssd1306Tester\\Output\\Arduino_Zero__Native_USB_Port_\\Debug"
+        },
+        {
+            "Key": "extra.time.local",
+            "Value": "1712165595"
+        },
+        {
+            "Key": "tools.bossacI.cmd",
+            "Value": "bossac.exe"
+        },
+        {
+            "Key": "tools.openocd-withbootsize.cmd",
+            "Value": "bin/openocd.exe"
+        },
+        {
+            "Key": "tools.arduino-preprocessor.path",
+            "Value": "{runtime.tools.arduino-preprocessor.path}"
+        },
+        {
+            "Key": "version",
+            "Value": "1.8.14"
+        },
+        {
+            "Key": "compiler.optimization_flags.release",
+            "Value": "-Os"
+        },
+        {
+            "Key": "tools.openocd-withbootsize.bootloader.params.verbose",
+            "Value": "-d2"
+        },
+        {
+            "Key": "runtime.tools.avr-gcc.path",
+            "Value": "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\tools\\avr-gcc\\7.3.0-atmel3.6.1-arduino7"
+        },
+        {
+            "Key": "recipe.S.o.pattern",
+            "Value": "\"{compiler.path}{compiler.S.cmd}\" {compiler.S.flags} -DF_CPU={build.f_cpu} -DARDUINO={runtime.ide.version} -DARDUINO_{build.board} -DARDUINO_ARCH_{build.arch} {compiler.S.extra_flags} {build.extra_flags} {compiler.arm.cmsis.c.flags} \"-I{build.core.path}/api/deprecated\" \"-I{build.core.path}/api/deprecated-avr-comp\" {includes} \"{source_file}\" -o \"{object_file}\""
+        },
+        {
+            "Key": "pid.2",
+            "Value": "0x824d"
+        },
+        {
+            "Key": "bootloader.file",
+            "Value": "zero/samd21_sam_ba.bin"
+        },
+        {
+            "Key": "software",
+            "Value": "ARDUINO"
+        },
+        {
+            "Key": "tools.avrdude.upload.network_pattern",
+            "Value": "\"{network_cmd}\" -address {serial.port} -port 65280 -username arduino -password \"{network.password}\" -sketch \"{build.path}/{build.project_name}.bin\" -upload /sketch -b"
+        },
+        {
+            "Key": "upload_port.0.pid",
+            "Value": "0x804d"
+        },
+        {
+            "Key": "compiler.optimization_flags",
+            "Value": "-Os"
+        },
+        {
+            "Key": "runtime.tools.arm-none-eabi-gcc.path",
+            "Value": "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\tools\\arm-none-eabi-gcc\\7-2017q4"
+        },
+        {
+            "Key": "tools.avrdude.cmd",
+            "Value": "{path}/bin/avrdude"
+        },
+        {
+            "Key": "runtime.ide.path",
+            "Value": "C:\\Users\\info\\AppData\\Local\\VisualGDB\\Arduino"
+        },
+        {
+            "Key": "tools.avrdude.path",
+            "Value": "{runtime.tools.avrdude.path}"
+        },
+        {
+            "Key": "tools.arduino-preprocessor.cmd.path",
+            "Value": "{path}/arduino-preprocessor"
+        },
+        {
+            "Key": "compiler.objcopy.eep.flags",
+            "Value": "-O ihex -j .eeprom --set-section-flags=.eeprom=alloc,load --no-change-warnings --change-section-lma .eeprom=0"
+        },
+        {
+            "Key": "tools.avrdude.upload.pattern",
+            "Value": "\"{cmd}\" \"-C{config.path}\" {upload.verbose} -p{build.emu.mcu} -c{upload.protocol} -P{serial.port} -b{upload.speed} \"-Uflash:w:{build.path}/{build.project_name}.hex:i\""
+        },
+        {
+            "Key": "arduinoota.extraflags",
+            "Value": ""
+        },
+        {
+            "Key": "compiler.cpp.flags",
+            "Value": "-mcpu={build.mcu} -mthumb -c -g {compiler.optimization_flags} {compiler.warning_flags} -std=gnu++11 -ffunction-sections -fdata-sections -fno-threadsafe-statics -nostdlib --param max-inline-insns-single=500 -fno-rtti -fno-exceptions -MMD"
+        },
+        {
+            "Key": "tools.avrdude.upload.params.quiet",
+            "Value": "-q -q"
+        },
+        {
+            "Key": "upload_port.3.pid",
+            "Value": "0x024d"
+        },
+        {
+            "Key": "build.system.path",
+            "Value": "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.14\\system"
+        },
+        {
+            "Key": "compiler.elf2hex.bin.flags",
+            "Value": "-O binary"
+        },
+        {
+            "Key": "compiler.define",
+            "Value": "-DARDUINO="
+        },
+        {
+            "Key": "compiler.libraries.ldflags",
+            "Value": ""
+        },
+        {
+            "Key": "upload.tool.network",
+            "Value": "arduino_ota"
+        },
+        {
+            "Key": "runtime.tools.CMSIS-Atmel.path",
+            "Value": "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\tools\\CMSIS-Atmel\\1.2.0"
+        },
+        {
+            "Key": "runtime.tools.avr-gcc-7.3.0-atmel3.6.1-arduino7.path",
+            "Value": "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\tools\\avr-gcc\\7.3.0-atmel3.6.1-arduino7"
+        },
+        {
+            "Key": "build.usb_flags",
+            "Value": "-DUSB_VID={build.vid} -DUSB_PID={build.pid} -DUSBCON '-DUSB_MANUFACTURER={build.usb_manufacturer}' '-DUSB_PRODUCT={build.usb_product}'"
+        },
+        {
+            "Key": "recipe.output.save_file",
+            "Value": "{build.project_name}.{build.variant}.{build.preferred_out_format}"
+        },
+        {
+            "Key": "build.mcu",
+            "Value": "cortex-m0plus"
+        },
+        {
+            "Key": "recipe.cpp.o.pattern",
+            "Value": "\"{compiler.path}{compiler.cpp.cmd}\" {compiler.cpp.flags} -DF_CPU={build.f_cpu} -DARDUINO={runtime.ide.version} -DARDUINO_{build.board} -DARDUINO_ARCH_{build.arch} {compiler.cpp.extra_flags} {build.extra_flags} {compiler.arm.cmsis.c.flags} \"-I{build.core.path}/api/deprecated\" \"-I{build.core.path}/api/deprecated-avr-comp\" {includes} \"{source_file}\" -o \"{object_file}\""
+        },
+        {
+            "Key": "build.variant.path",
+            "Value": "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.14\\variants\\arduino_zero"
         },
         {
             "Key": "compiler.path",
             "Value": "{runtime.tools.arm-none-eabi-gcc-7-2017q4.path}/bin/"
         },
         {
-            "Key": "build.extra_flags",
-            "Value": "-D__SAMD21G18A__ {build.usb_flags}"
+            "Key": "compiler.ar.cmd",
+            "Value": "arm-none-eabi-ar"
         },
         {
-            "Key": "extra.time.dst",
-            "Value": "0"
+            "Key": "compiler.readelf.cmd",
+            "Value": "arm-none-eabi-readelf"
+        },
+        {
+            "Key": "debug.toolchain.prefix",
+            "Value": "arm-none-eabi-"
+        },
+        {
+            "Key": "_id",
+            "Value": "arduino_zero_native"
+        },
+        {
+            "Key": "tools.openocd.path",
+            "Value": "{runtime.tools.openocd-0.10.0-arduino7.path}"
+        },
+        {
+            "Key": "tools.openocd.program.params.verbose",
+            "Value": "-d2"
+        },
+        {
+            "Key": "build.vid",
+            "Value": "0x2341"
+        },
+        {
+            "Key": "build.arch",
+            "Value": "SAMD"
+        },
+        {
+            "Key": "runtime.tools.serial-discovery.path",
+            "Value": "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\builtin\\tools\\serial-discovery\\1.4.0"
+        },
+        {
+            "Key": "runtime.tools.arduino.path",
+            "Value": "C:\\Users\\info\\AppData\\Local\\Arduino15\\packages\\arduino\\tools"
         }
     ]
 }

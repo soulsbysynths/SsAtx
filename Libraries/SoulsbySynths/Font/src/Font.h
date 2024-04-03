@@ -6,9 +6,9 @@
 class Font
 {
 	public:
-	Font(const uint8_t** charData, graphics::Size size, char startChar, uint8_t charCount)
-		: CHAR_DATA(charData)
-		, SIZE(size)
+	Font(const uint8_t** charData, graphics::Size sizeBitShift, char startChar, uint8_t charCount)
+		: CHAR_DATA_(charData)
+		, SIZE_BIT_SHIFT(sizeBitShift)
 		, START_CHAR(startChar)
 		, CHAR_COUNT(charCount)
 	{
@@ -16,6 +16,7 @@ class Font
 	
 	const char START_CHAR;
 	const uint8_t CHAR_COUNT;
+	const graphics::Size SIZE_BIT_SHIFT;
 	inline const char getEndChar() const
 	{
 		return START_CHAR + CHAR_COUNT - 1;
@@ -28,25 +29,24 @@ class Font
 			return NULL;
 		}
 		
-		return CHAR_DATA[character - START_CHAR];
+		return CHAR_DATA_[character - START_CHAR];
 	}
 	
 	inline const int getCharSize() const
 	{
-		return (SIZE.width * SIZE.height) >> 3;
+		return (getWidth() * getHeight()) >> 3;
 	}
 	
 	inline const int getWidth() const
 	{
-		return SIZE.width;
+		return (1 << SIZE_BIT_SHIFT.width);
 	}
 	
 	inline const int getHeight() const
 	{
-		return SIZE.height;
+		return (1 << SIZE_BIT_SHIFT.height);
 	}
 	
 	private:
-	const uint8_t** CHAR_DATA;
-	const graphics::Size SIZE;
+	const uint8_t** CHAR_DATA_;
 };

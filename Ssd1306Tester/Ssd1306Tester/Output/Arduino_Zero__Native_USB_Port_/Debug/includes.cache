@@ -56,6 +56,11 @@
   },
   {
     "Sourcefile": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Ssd1306Tester\\Ssd1306Tester\\Output\\Arduino_Zero__Native_USB_Port_\\Debug\\sketch\\Ssd1306Tester.ino.cpp",
+    "Include": "Display.h",
+    "Includepath": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Display\\src"
+  },
+  {
+    "Sourcefile": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Ssd1306Tester\\Ssd1306Tester\\Output\\Arduino_Zero__Native_USB_Port_\\Debug\\sketch\\Ssd1306Tester.ino.cpp",
     "Include": "Ssd1306Group.h",
     "Includepath": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Ssd1306Group\\src"
   },

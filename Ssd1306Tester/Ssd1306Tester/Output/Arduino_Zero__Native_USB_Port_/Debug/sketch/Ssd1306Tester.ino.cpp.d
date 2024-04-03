@@ -124,6 +124,7 @@ C:\Users\info\Documents\GitHub\SsAtx\Ssd1306Tester\Ssd1306Tester\Output\Arduino_
  C:\Users\info\Documents\GitHub\SsAtx\Libraries\SoulsbySynths\Sn74hc138d\src/Sn74hc138d.h \
  C:\Users\info\Documents\GitHub\SsAtx\Libraries\SoulsbySynths\Ssd1306\src/Ssd1306.h \
  C:\Users\info\Documents\GitHub\SsAtx\Libraries\Arduino\Adafruit_GFX_Library/Adafruit_GFX.h \
+ C:\Users\info\Documents\GitHub\SsAtx\Libraries\SoulsbySynths\Display\src/Display.h \
  C:\Users\info\Documents\GitHub\SsAtx\Libraries\SoulsbySynths\Ssd1306\src/Ssd1306OledSettings.h \
  C:\Users\info\Documents\GitHub\SsAtx\Libraries\SoulsbySynths\Ssd1306\src/Ssd1306.h \
  C:\Users\info\Documents\GitHub\SsAtx\Libraries\SoulsbySynths\Ssd1306Group\src/Ssd1306Group.h \

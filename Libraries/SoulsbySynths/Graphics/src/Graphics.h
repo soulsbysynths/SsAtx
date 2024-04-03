@@ -4,6 +4,7 @@
 #include <string.h>
 #include <stdlib.h> 
 #include <algorithm>
+#include <functional>
 #include <Font.h>
 
 namespace graphics
@@ -11,10 +12,9 @@ namespace graphics
 	class Graphics
 	{
 		public:
-		Graphics(Rect rect, 
-		         Size outputSize, 
-		         uint8_t initialiseValue = 0x00, 
-		         Rect quantizeRectBitShift = { 0, 3, 0, 3 });
+		Graphics(const Rect rect, 
+		         const Size constrainSize, 
+		         uint8_t initialiseValue = 0x00);
 	
 		~Graphics(void);
 		
@@ -36,6 +36,19 @@ namespace graphics
 		void drawLine(Point startPoint, Point endPoint, DrawMode drawMode = DM_WHITE);
 		void drawRect(Rect rect, DrawMode drawMode = DM_WHITE);
 		void drawCharacter(Point location, const Font* font, char character, DrawMode drawMode = DM_WHITE);
+		static void constrainRect(Rect* rect, const Size constrainSize, const Size quantiseBitShift);
+		static void constrainRectGraphics(Rect* rect, const Size constrainSize)
+		{
+			constrainRect(rect, constrainSize, { 0, GRAPHICS_BIT_SHIFT });	
+		}
+		
+		static Rect constrainRectGraphics(const Rect* rect, const Size constrainSize)
+		{
+			Rect r = *rect;
+			constrainRect(&r, constrainSize, { 0, GRAPHICS_BIT_SHIFT });	
+			return r;
+		}
+		
 		private:
 		inline void setBufferData(const int index, const uint8_t value)
 		{
@@ -49,35 +62,17 @@ namespace graphics
 		
 		inline const size_t getBufferSize() const
 		{
-			return (RECT_.width * RECT_.height) >> 3;
+			return (RECT_.width * RECT_.height) >> GRAPHICS_BIT_SHIFT;
 		}
 			
 		inline void maskBuffer(int index, size_t size, const uint8_t mask, DrawMode drawMode)
-		{
-			if ((index + size) >= getBufferSize())
-			{
-				size = getBufferSize() - index;
-			}
-			
+		{		
 			while (size)
 			{
-				switch (drawMode)
-				{
-					case DM_WHITE:
-						buffer_[index] |= mask;
-						break;
-					case DM_BLACK:
-						buffer_[index] &= ~mask;
-						break;
-					case DM_INVERT:
-						buffer_[index] ^= mask;
-						break;
-				}
-				
+				maskBuffer(index, mask, drawMode);
 				index++;
 				size--;
 			}
-			
 		}
 		
 		inline void maskBuffer(int index, const uint8_t mask, DrawMode drawMode)
@@ -92,6 +87,9 @@ namespace graphics
 				case DM_WHITE:
 					buffer_[index] |= mask;
 					break;
+				case DM_GREY:
+					buffer_[index] |= (mask & ((index & 0x01) ? 0xAA : 0x55));
+					break;
 				case DM_BLACK:
 					buffer_[index] &= ~mask;
 					break;
@@ -101,12 +99,12 @@ namespace graphics
 			}
 		}
 		
-		Rect constrainRect(Rect rect, Size outputSize, Rect quantizeRectBitShift);
 		void drawHorizontalLine(int x, int y, int width, DrawMode drawMode = DM_WHITE);
 		void drawVerticalLine(int x, int y, int height, DrawMode drawMode = DM_WHITE);
 		void drawPixel(Point* point, DrawMode drawMode);
 		
 		uint8_t* buffer_ = NULL;
 		const Rect RECT_;
+		static const uint8_t GRAPHICS_BIT_SHIFT = 3; // Bit shift to store 8 pixel values (on/off) in a byte
 	};
 }

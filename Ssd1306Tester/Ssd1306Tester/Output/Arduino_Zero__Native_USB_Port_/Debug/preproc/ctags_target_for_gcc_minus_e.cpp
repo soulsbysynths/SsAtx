@@ -18,6 +18,7 @@
 # 18 "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Ssd1306Tester\\Ssd1306Tester\\sketches\\Ssd1306Tester.ino" 2
 
 
+
 void initialiseDtrMux();
 void setDtrMuxInhibit(bool inhibit);
 void initialiseOledPins();
@@ -32,6 +33,7 @@ void writeRandomChar(Ssd1306* ssd);
 void writeRandomCharFullScreen(Ssd1306* ssd);
 void writeGraphicsTest(uint8_t stage);
 void writeRandomLabel(Ssd1306* ssd);
+void paintLabel(Label* l, graphics::Graphics* g);
 graphics::Rect getRandomRect(Ssd1306* ssd);
 
 
@@ -41,10 +43,11 @@ enum GraphicsTest
  GT_RECTS,
  GT_RECTS_FULLSCREEN,
  GT_CHAR,
- GT_CHAR_FULLSCREEN
+ GT_CHAR_FULLSCREEN,
+ GT_LABEL
 };
 
-static const GraphicsTest GRAPHICS_TEST = GT_RECTS_FULLSCREEN;
+static const GraphicsTest GRAPHICS_TEST = GT_LABEL;
 static const int DELAY = 500;
 static const uint8_t PIN_CLK = 6;
 static const uint8_t PIN_DC = 7;
@@ -115,7 +118,7 @@ void writeGraphicsTest(uint8_t stage)
     }
    case GT_RECTS:
     {
-     writeRandomRectFullScreen(ssd);
+     writeRandomRect(ssd);
      break;
     }
    case GT_RECTS_FULLSCREEN:
@@ -125,12 +128,17 @@ void writeGraphicsTest(uint8_t stage)
     }
    case GT_CHAR:
     {
-     writeRandomCharFullScreen(ssd);
+     writeRandomChar(ssd);
      break;
     }
    case GT_CHAR_FULLSCREEN:
     {
      writeRandomCharFullScreen(ssd);
+     break;
+    }
+   case GT_LABEL:
+    {
+     writeRandomLabel(ssd);
      break;
     }
   }
@@ -169,11 +177,7 @@ void writeRandomRectFullScreen(Ssd1306* ssd)
  Graphics graphics(Rect{ 0, 0, ssd->SIZE.width, ssd->SIZE.height }, ssd->SIZE);
 
  Rect rect = getRandomRect(ssd);
- //	Rect rect
- //	{
- //		0, 0, ssd->SIZE.width, ssd->SIZE.height
- //	}
- //	;
+ Graphics::constrainRectGraphics(&rect, ssd->SIZE);
 
  graphics.drawRect(rect);
  graphics.drawLine(Point{ rect.x, rect.y }, Point{ rect.x + rect.width - 1, rect.y + rect.height - 1 });
@@ -216,8 +220,12 @@ void writeRandomCharFullScreen(Ssd1306* ssd)
 
 void writeRandomLabel(Ssd1306* ssd)
 {
- //Label label(getRandomRect(),"HELLO WORLD!",dinMittel8x16Regular)
+ using namespace graphics;
+ //Label label({ 0, 0, ssd->SIZE.width, ssd->SIZE.height }, ssd, "blah", &dinMittel8x16Regular);
+ ssd->clearDisplay();
+ Label label(ssd->ID, &dinMittel8x16Regular, ssd->SIZE, getRandomRect(ssd), "HELLO WORLD!", &paintLabel);
 }
+
 
 void initialiseDtrMux()
 {
@@ -265,26 +273,32 @@ void writeOledDc(Ssd1306* ssd, uint8_t value)
  digitalWrite(PIN_DC, value);
 }
 
+void paintLabel(Label* l, graphics::Graphics* g)
+{
+ oledGroup.getOledPtr(l->ID)->writeGraphics(g);
+}
+
 graphics::Rect getRandomRect(Ssd1306* ssd)
 {
- graphics::Rect rect
- {
-  random(ssd->SIZE.width),
-  random(ssd->SIZE.height),
-  random(ssd->SIZE.width),
-  random(ssd->SIZE.height)
- }
- ;
+ using namespace graphics;
 
- if (rect.x + rect.width > ssd->SIZE.width)
- {
-  rect.width = ssd->SIZE.width - rect.x;
- }
+ Rect rect;
 
- if (rect.y + rect.height > ssd->SIZE.height)
- {
-  rect.height = ssd->SIZE.height - rect.y;
- }
+ rect.x = random(0, ssd->SIZE.width);
+ rect.y = random(0, ssd->SIZE.height);
+ rect.width = random(0, ssd->SIZE.width);
+ rect.height = random(0, ssd->SIZE.height);
+
+//	Size fontSize = { dinMittel8x16Regular.getWidth(), dinMittel8x16Regular.getHeight() };
+//	rect.x = random(0, ssd->SIZE.width - fontSize.width);
+//	rect.y = random(0, ssd->SIZE.height - fontSize.height);
+//	rect.width = random(fontSize.width, (ssd->SIZE.width - rect.x));
+//	rect.height = random(fontSize.height, (ssd->SIZE.height - rect.y));
+
+//	rect.x = 0;
+//	rect.y = 0;
+//	rect.width = ssd->SIZE.width;
+//	rect.height = ssd->SIZE.height;
 
  return rect;
 }

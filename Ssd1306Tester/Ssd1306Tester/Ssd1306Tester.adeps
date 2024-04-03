@@ -53,6 +53,14 @@
       <Type>Library</Type>
       <Key>
         <Packager>Paul Soulsby</Packager>
+        <Name>Display</Name>
+        <Version>0.0.1</Version>
+      </Key>
+    </Dependency>
+    <Dependency>
+      <Type>Library</Type>
+      <Key>
+        <Packager>Paul Soulsby</Packager>
         <Name>Ssd1306Group</Name>
         <Version>0.0.1</Version>
       </Key>

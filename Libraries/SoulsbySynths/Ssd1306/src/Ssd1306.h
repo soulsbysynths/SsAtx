@@ -2,10 +2,10 @@
 #define _SSD1306_H_
 
 #include <Adafruit_GFX.h>
-#include <Graphics.h>
+#include <Display.h>
 #include <stdint.h>
 
-class Ssd1306
+class Ssd1306 : public Display
 {
 	public:
 	
@@ -51,8 +51,7 @@ class Ssd1306
 	}	
 	void clearDisplay();
 	void writeGraphics(const graphics::Graphics* graphics);
-	const uint8_t ID = 0;
-	const graphics::Size SIZE = { 0, 0 };
+	
 	private:
 	enum MemoryMode : uint8_t
 	{

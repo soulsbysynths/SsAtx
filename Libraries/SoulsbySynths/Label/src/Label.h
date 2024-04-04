@@ -15,8 +15,10 @@ class Label
 	      void(*paintLabel)(Label*, graphics::Graphics*),
 	      graphics::StringAlignment alignment = graphics::SA_NEAR,
 	      graphics::StringAlignment lineAlignment = graphics::SA_NEAR,
-	      bool border = false, 
-	      graphics::DrawMode drawMode = graphics::DM_WHITE,
+	      bool border = false,
+	      graphics::Colour backColour = graphics::CO_BLACK,
+	      graphics::Colour foreColour = graphics::CO_WHITE,
+	      graphics::DrawMode drawMode = graphics::DM_OR_MASK,
 	      const uint8_t zOrder = 0);
 	
 	~Label(void);
@@ -46,6 +48,7 @@ class Label
 	
 	private:
 	graphics::Rect initRect(graphics::Rect* rect);
+	void drawBorder(graphics::Graphics* g, graphics::Point location, int column, int row);
 	void(*paintLabel_)(Label*, graphics::Graphics*) = NULL;
 	const Font* FONT_ = NULL;
 	const graphics::Size CONSTRAIN_SIZE_;
@@ -56,5 +59,8 @@ class Label
 	bool border_ = false;
 	graphics::StringAlignment alignment_ = graphics::SA_NEAR;
 	graphics::StringAlignment lineAlignment_ = graphics::SA_NEAR;
-	graphics::DrawMode drawMode_ = graphics::DM_WHITE;
+	graphics::Colour backColour_ = graphics::CO_BLACK;
+	graphics::Colour foreColour_ = graphics::CO_WHITE;
+	graphics::DrawMode drawMode_ = graphics::DM_OR_MASK;
+	
 };

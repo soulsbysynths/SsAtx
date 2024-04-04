@@ -31,12 +31,25 @@ namespace graphics
 		SA_FAR
 	};
 
-	enum DrawMode
+	enum Colour : uint8_t
 	{
-		DM_WHITE  = 0,
-		DM_GREY,
-		DM_BLACK,
-		DM_INVERT
+		CO_WHITE     = 0,
+		CO_LIGHTGREY,
+		CO_GREY,
+		CO_DARKGREY,
+		CO_BLACK
+	};
+	
+	enum DrawMode : uint8_t
+	{
+		DM_MASK         = 0,
+		DM_NOT_MASK,
+		DM_AND_MASK,
+		DM_AND_NOT_MASK,
+		DM_OR_MASK,
+		DM_OR_NOT_MASK,
+		DM_XOR_MASK,
+		DM_XOR_NOT_MASK
 	};
 }
 #endif // _GRAPHICSTYPES_H_

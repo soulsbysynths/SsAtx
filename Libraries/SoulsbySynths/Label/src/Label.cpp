@@ -8,6 +8,8 @@ Label::Label(const uint8_t id,
              graphics::StringAlignment alignment,
              graphics::StringAlignment lineAlignment,
              bool border, 
+             graphics::Colour backColour,
+             graphics::Colour foreColour,
              graphics::DrawMode drawMode,
              const uint8_t zOrder)
 	: ID(id)
@@ -18,10 +20,12 @@ Label::Label(const uint8_t id,
 	, alignment_(alignment)
 	, lineAlignment_(lineAlignment)
 	, border_(border)
+	, backColour_(backColour)
+	, foreColour_(foreColour)
 	, drawMode_(drawMode)
 	, Z_ORDER(zOrder)
 	, COLUMNS_(RECT_.width >> font->SIZE_BIT_SHIFT.width)
-	, ROWS_(RECT_.height / font->SIZE_BIT_SHIFT.height)
+	, ROWS_(RECT_.height >> font->SIZE_BIT_SHIFT.height)
 
 {
 	charMap_ = new char*[COLUMNS_];
@@ -39,12 +43,12 @@ Label::Label(const uint8_t id,
 	}
 	
 	paint();
-	graphics::Rect r;
-	r.x = RECT_.width / 2;
-	r.y = RECT_.height / 2;
-	r.width = RECT_.width - r.x;
-	r.height = RECT_.height - r.y;
-	paint(r);
+	//		graphics::Rect r;
+	//		r.x = RECT_.width / 2;
+	//		r.y = RECT_.height / 2;
+	//		r.width = RECT_.width - r.x;
+	//		r.height = RECT_.height - r.y;
+	//		paint(r);
 }
 
 Label::~Label(void) 
@@ -107,29 +111,96 @@ void Label::paint(graphics::Rect rect)
 		                  rect.width,
 		                  rect.height
 	                  }, 
-	                  CONSTRAIN_SIZE_);
+	                  CONSTRAIN_SIZE_,
+	                  backColour_);
 	
-	int c = rect.x >> FONT_->SIZE_BIT_SHIFT.width;
-	int r = rect.y >> FONT_->SIZE_BIT_SHIFT.height;
-	int columns = rect.width >> FONT_->SIZE_BIT_SHIFT.width;
-	int rows = rect.height >> FONT_->SIZE_BIT_SHIFT.height;
+	uint8_t r = rect.y >> FONT_->SIZE_BIT_SHIFT.height;
+	const uint8_t COLUMNS = rect.width >> FONT_->SIZE_BIT_SHIFT.width;
+	const uint8_t ROWS = rect.height >> FONT_->SIZE_BIT_SHIFT.height;
 	
-	for (int j = 0; j < rows; j++)
+	for (uint8_t j = 0; j < ROWS; j++)
 	{
-		for (int i = 0; i < columns; i++)
+		uint8_t c = rect.x >> FONT_->SIZE_BIT_SHIFT.width;
+		for (uint8_t i = 0; i < COLUMNS; i++)
 		{
-			graphics.drawCharacter({ i << FONT_->SIZE_BIT_SHIFT.width, j << FONT_->SIZE_BIT_SHIFT.height }, 
+			Point location = 
+			{
+				i << FONT_->SIZE_BIT_SHIFT.width,
+				j << FONT_->SIZE_BIT_SHIFT.height
+			};
+			graphics.drawCharacter(location,
 			                       FONT_, 
 			                       charMap_[c][r], 
+			                       foreColour_,
 			                       drawMode_);
+			if (border_)
+			{
+				drawBorder(&graphics, location, c, r);
+			}
 			c++;
 		}
 		r++;
-		c = 0;
 	}
 
-	graphics.drawRect({ 0, 0, graphics.getRectPtr()->width, graphics.getRectPtr()->height }, DM_GREY);
+	//graphics.drawRect({ 0, 0, graphics.getRectPtr()->width, graphics.getRectPtr()->height }, CO_DARKGREY, DM_OR_MASK);
 	paintLabel_(this, &graphics);	
+}
+
+void Label::drawBorder(graphics::Graphics* g, graphics::Point location, int column, int row)
+{
+	using namespace graphics;
+	
+	if (column == 0)
+	{
+		g->drawLine(location,
+		            {
+			            location.x,
+			            location.y + FONT_->getHeight()
+		            },
+		            CO_WHITE, 
+		            DM_OR_MASK);
+	}
+				
+	if (column == (COLUMNS_ - 1))
+	{
+		g->drawLine(
+		            {
+			            location.x + FONT_->getWidth() - 1,
+			            location.y
+		            },
+		            {
+			            location.x + FONT_->getWidth() - 1,
+			            location.y + FONT_->getHeight()
+		            },
+		            CO_WHITE,
+		            DM_OR_MASK);
+	}
+				
+	if (row == 0)
+	{
+		g->drawLine(location,
+		            {
+			            location.x + FONT_->getWidth(),
+			            location.y
+		            },
+		            CO_WHITE,
+		            DM_OR_MASK);
+	}
+				
+	if (row == (ROWS_ - 1))
+	{
+		g->drawLine(
+		            {
+			            location.x,
+			            location.y + FONT_->getHeight() - 1
+		            },
+		            {
+			            location.x + FONT_->getWidth(),
+			            location.y + FONT_->getHeight() - 1
+		            },
+		            CO_WHITE,
+		            DM_OR_MASK);
+	}
 }
 
 graphics::Rect Label::initRect(graphics::Rect* rect)

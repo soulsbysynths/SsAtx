@@ -4,11 +4,16 @@ using namespace graphics;
 
 Graphics::Graphics(const Rect rect, 
                    const Size constrainSize, 
-                   uint8_t initialiseValue)
+                   const Colour initialiseColour /* CO_BLACK*/)
 	: RECT_(constrainRectGraphics(&rect, constrainSize))
 {
 	buffer_ = new uint8_t[getBufferSize()];
-	memset(buffer_, initialiseValue, getBufferSize());
+	uint8_t* begin = buffer_;
+	uint8_t* end = &buffer_[getBufferSize()];
+	for (; begin != end; ++begin)
+	{
+		*begin = getColourPattern(initialiseColour, (int)begin);
+	}
 }
 
 Graphics::~Graphics(void)
@@ -18,7 +23,8 @@ Graphics::~Graphics(void)
 
 void Graphics::drawLine(Point startPoint, 
                         Point endPoint, 
-                        DrawMode drawMode /* = DM_WHITE */)
+                        Colour colour, /* CO_WHITE*/
+                        DrawMode drawMode /* = DM_OR_MASK */)
 {
 	if (startPoint.x == endPoint.x) 
 	{
@@ -26,24 +32,14 @@ void Graphics::drawLine(Point startPoint,
 		{
 			std::swap(startPoint.y, endPoint.y);
 		}
-
-		if (startPoint.y < 0 || endPoint.y >= RECT_.height)
-		{
-			return;
-		}
 		
-		drawVerticalLine(startPoint.x, startPoint.y, endPoint.y - startPoint.y, drawMode);
+		drawVerticalLine(startPoint.x, startPoint.y, endPoint.y - startPoint.y, colour, drawMode);
 	}
 	else if (startPoint.y == endPoint.y) 
 	{
 		if (startPoint.x > endPoint.x)
 		{
 			std::swap(startPoint.x, endPoint.x);
-		}
-		
-		if (startPoint.y < 0 || endPoint.y >= RECT_.height)
-		{
-			return;
 		}
 		
 		drawHorizontalLine(startPoint.x, startPoint.y, endPoint.x - startPoint.x);
@@ -84,11 +80,11 @@ void Graphics::drawLine(Point startPoint,
 			if (steep) 
 			{
 				Point swapped = { startPoint.y, startPoint.x };
-				drawPixel(&swapped, drawMode);
+				drawPixel(&swapped, colour, drawMode);
 			}
 			else 
 			{
-				drawPixel(&startPoint, drawMode);
+				drawPixel(&startPoint, colour, drawMode);
 			}
 			err -= dy;
 			if (err < 0) 
@@ -104,7 +100,8 @@ void Graphics::drawLine(Point startPoint,
 void Graphics::drawHorizontalLine(int x, 
                                   int y, 
                                   int width, 
-                                  DrawMode drawMode /* = DM_WHITE */)
+                                  Colour colour, /* CO_WHITE*/
+                                  DrawMode drawMode /* = DM_OR_MASK */)
 {	
 	if (x < 0)
 	{
@@ -127,14 +124,15 @@ void Graphics::drawHorizontalLine(int x,
 	int index = (y >> GRAPHICS_BIT_SHIFT) * RECT_.width + x;
 	uint8_t mask = 1 << (y & 0x07);
 	
-	maskBuffer(index, width, mask, drawMode);
+	drawBuffer(index, width, mask, colour, drawMode);
 }
 
 
 void Graphics::drawVerticalLine(int x, 
                                 int y, 
                                 int height, 
-                                DrawMode drawMode /* = DM_WHITE */)
+                                Colour colour, /* CO_WHITE*/
+                                DrawMode drawMode /* = DM_OR_MASK */)
 {
 	if (y < 0)
 	{
@@ -185,7 +183,7 @@ void Graphics::drawVerticalLine(int x,
 			mask &= (0XFF >> (mod - height));
 		}
 		
-		maskBuffer(index, mask, drawMode);
+		drawBuffer(index, mask, colour, drawMode);
 		index += RECT_.width;
 	}
 
@@ -198,7 +196,7 @@ void Graphics::drawVerticalLine(int x,
 		{
 			do
 			{
-				maskBuffer(index, 0xFF, drawMode);
+				drawBuffer(index, 0xFF, colour, drawMode);
 				index += RECT_.width; // Advance pointer 8 rows
 				height -= 8; // Subtract 8 rows from height
 			}
@@ -226,24 +224,16 @@ void Graphics::drawVerticalLine(int x,
 			};
 					
 			uint8_t mask = POSTMASK[mod];
-			maskBuffer(index, mask, drawMode);	
+			drawBuffer(index, mask, colour, drawMode);	
 		}
 	}
 }
 
-void Graphics::drawPixel(Point* point, 
-                         DrawMode drawMode)
-{	
-	maskBuffer(point->x + (point->y >> GRAPHICS_BIT_SHIFT) * getRectPtr()->width, 
-	           (1 << (point->y & 0x07)), 
-	           drawMode);
-}
-
-
 void Graphics::drawCharacter(Point location,
                              const Font* font, 
                              char character, 
-                             DrawMode drawMode /* = DM_WHITE */)
+                             Colour colour, /* = CO_WHITE */
+                             DrawMode drawMode /* = DM_OR_MASK */)
 {
 	const int FONT_WIDTH = font->getWidth();
 	const int FONT_HEIGHT = font->getHeight();
@@ -254,76 +244,49 @@ void Graphics::drawCharacter(Point location,
 	}
 	   
 	const uint8_t* CHAR_BITMAP = font->getCharPtr(character);
-	
 	int row = location.y >> GRAPHICS_BIT_SHIFT;
-	uint8_t* CANV_BUFFER = getBufferPtr() + (row * RECT_.width + location.x);
+	int startIndex = row * RECT_.width + location.x;
 	int charIndex = 0;
 	while (charIndex < font->getCharSize())
 	{
-		switch (drawMode)
-		{
-			case DM_WHITE:
-				{
-					//					std::copy(&CHAR_BITMAP[charIndex], &CHAR_BITMAP[charIndex + FONT_WIDTH], CANV_BUFFER);
-					std::transform(&CHAR_BITMAP[charIndex], 
-					               &CHAR_BITMAP[charIndex + FONT_WIDTH], 
-					               CANV_BUFFER, 
-					               CANV_BUFFER,
-					               std::bit_or<uint8_t>());
-					break;
-				}
-			case DM_GREY:
-				{
-					
-					break;
-				}
-			case DM_BLACK:
-				{
-					uint8_t invertedChar[FONT_WIDTH];
-					std::transform(&CHAR_BITMAP[charIndex], &CHAR_BITMAP[charIndex + FONT_WIDTH], invertedChar, std::bit_not<uint8_t>());
-					std::transform(invertedChar, 
-					               &invertedChar[FONT_WIDTH], 
-					               CANV_BUFFER, 
-					               CANV_BUFFER,
-					               std::bit_and<uint8_t>());
-					break;
-				}
-			case DM_INVERT:
-				{
-					break;
-				}
-		}
-		
-		CANV_BUFFER += RECT_.width;
+		drawBuffer(startIndex,
+		           FONT_WIDTH,
+		           &CHAR_BITMAP[charIndex],
+		           FONT_WIDTH,
+		           colour,
+		           drawMode);
+		startIndex += RECT_.width;
 		charIndex += FONT_WIDTH;
 	}
 }
 
 
 void Graphics::drawRect(Rect rect, 
-                        DrawMode drawMode /* = DM_WHITE */)
+                        Colour colour,
+                        DrawMode drawMode /* = DM_OR_MASK */)
 {
-	//rect.width--;
-//	rect.height--;
-	
 	drawHorizontalLine(rect.x,
 	                   rect.y,
 	                   rect.width,
+	                   colour,
 	                   drawMode);
 	
 	drawHorizontalLine(rect.x,
 	                   rect.y + rect.height - 1,
 	                   rect.width,
+	                   colour,
 	                   drawMode);
 	
 	drawVerticalLine(rect.x,
 	                 rect.y,
 	                 rect.height,
+	                 colour,
 	                 drawMode);
 	
 	drawVerticalLine(rect.x + rect.width - 1,
 	                 rect.y,
 	                 rect.height,
+	                 colour,
 	                 drawMode);
 }
 

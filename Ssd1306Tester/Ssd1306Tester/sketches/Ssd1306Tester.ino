@@ -25,16 +25,18 @@ void writeOledGroupVcc(uint8_t value);
 void writeOledGroupReset(uint8_t value);
 void writeOledSelect(Ssd1306* ssd, uint8_t value);
 void writeOledDc(Ssd1306* ssd, uint8_t value);
-void writeRandomBuffer(Ssd1306* ssd, uint8_t bufferData);
+void writeRandomBuffer(Ssd1306* ssd, graphics::Colour colour);
 void writeRandomRect(Ssd1306* ssd);
 void writeRandomRectFullScreen(Ssd1306* ssd);
 void writeRandomChar(Ssd1306* ssd);
 void writeRandomCharFullScreen(Ssd1306* ssd);
-void writeGraphicsTest(uint8_t stage);
+void writeGraphicsTest();
 void writeRandomLabel(Ssd1306* ssd);
 void paintLabel(Label* l, graphics::Graphics* g);
 graphics::Rect getRandomRect(Ssd1306* ssd);
-
+graphics::Colour getRandomColour();
+graphics::DrawMode getRandomDrawMode();
+bool getRandomBool();
 
 enum GraphicsTest
 {
@@ -96,14 +98,14 @@ void setup()
 void loop()
 {
 	digitalWrite(PIN_CLK, HIGH);
-	writeGraphicsTest(HIGH);
+	writeGraphicsTest();
 	delay(DELAY);
 	digitalWrite(PIN_CLK, LOW);
-	writeGraphicsTest(LOW);
+	writeGraphicsTest();
 	delay(DELAY);
 }
 
-void writeGraphicsTest(uint8_t stage)
+void writeGraphicsTest()
 {
 	for (uint8_t i = 0; i < (WIDE_OLEDS + TALL_OLEDS); i++)
 	{
@@ -112,7 +114,7 @@ void writeGraphicsTest(uint8_t stage)
 		{
 			case GT_CANVAS:
 				{
-					writeRandomBuffer(ssd, stage ? 0xFF : 0x00);
+					writeRandomBuffer(ssd, getRandomColour());
 					break;
 				}
 			case GT_RECTS:
@@ -141,15 +143,14 @@ void writeGraphicsTest(uint8_t stage)
 					break;
 				}
 		}
-		
 	}
 }
 
-void writeRandomBuffer(Ssd1306* ssd, uint8_t bufferData)
+void writeRandomBuffer(Ssd1306* ssd, graphics::Colour colour)
 {
 	using namespace graphics;
 	
-	Graphics graphics(getRandomRect(ssd), ssd->SIZE, bufferData);
+	Graphics graphics(getRandomRect(ssd), ssd->SIZE, colour);
 
 	ssd->writeGraphics(&graphics);	
 }
@@ -197,7 +198,7 @@ void writeRandomChar(Ssd1306* ssd)
 	rect.height = dinMittel8x16Regular.getHeight();
 	Graphics graphics(rect, ssd->SIZE);
 	
-	graphics.drawCharacter(Point{ 0, 0 }, &dinMittel8x16Regular, randomChar);
+	graphics.drawCharacter(Point{ 0, 0 }, &dinMittel8x16Regular, randomChar, CO_LIGHTGREY);
 	ssd->writeGraphics(&graphics);
 }
 
@@ -213,16 +214,36 @@ void writeRandomCharFullScreen(Ssd1306* ssd)
 
 	Graphics graphics(Rect{ 0, 0, ssd->SIZE.width, ssd->SIZE.height }, ssd->SIZE);
 	
-	graphics.drawCharacter(point, &dinMittel8x16Regular, randomChar);
+	graphics.drawCharacter(point, &dinMittel8x16Regular, randomChar, CO_WHITE, DM_NOT_MASK);
 	ssd->writeGraphics(&graphics);
 }
 
 void writeRandomLabel(Ssd1306* ssd)
 {
 	using namespace graphics;
-	//Label label({ 0, 0, ssd->SIZE.width, ssd->SIZE.height }, ssd, "blah", &dinMittel8x16Regular);
 	ssd->clearDisplay();
-	Label label(ssd->ID, &dinMittel8x16Regular, ssd->SIZE, getRandomRect(ssd), "HELLO WORLD!", &paintLabel);
+	Label label(ssd->ID, 
+	            &dinMittel8x16Regular, 
+	            ssd->SIZE,
+	            getRandomRect(ssd),
+	            "HELLO WORLD!",
+	            &paintLabel,
+	            SA_NEAR,
+	            SA_NEAR,
+				true);
+	
+	//	Label label(ssd->ID, 
+//	            &dinMittel8x16Regular, 
+//	            ssd->SIZE,
+//	            getRandomRect(ssd),
+//	            "HELLO WORLD!",
+//	            &paintLabel,
+//	            SA_NEAR,
+//	            SA_NEAR,
+//	            getRandomBool(),
+//	            getRandomColour(),
+//	            getRandomColour(),
+//	            getRandomDrawMode());
 }
 
 
@@ -288,16 +309,31 @@ graphics::Rect getRandomRect(Ssd1306* ssd)
 	rect.width = random(0, ssd->SIZE.width);
 	rect.height = random(0, ssd->SIZE.height);
 	
-//	Size fontSize = { dinMittel8x16Regular.getWidth(), dinMittel8x16Regular.getHeight() };
-//	rect.x = random(0, ssd->SIZE.width - fontSize.width);
-//	rect.y = random(0, ssd->SIZE.height - fontSize.height);
-//	rect.width = random(fontSize.width, (ssd->SIZE.width - rect.x));
-//	rect.height = random(fontSize.height, (ssd->SIZE.height - rect.y));
+	//	Size fontSize = { dinMittel8x16Regular.getWidth(), dinMittel8x16Regular.getHeight() };
+	//	rect.x = random(0, ssd->SIZE.width - fontSize.width);
+	//	rect.y = random(0, ssd->SIZE.height - fontSize.height);
+	//	rect.width = random(fontSize.width, (ssd->SIZE.width - rect.x));
+	//	rect.height = random(fontSize.height, (ssd->SIZE.height - rect.y));
 	
-//	rect.x = 0;
-//	rect.y = 0;
-//	rect.width = ssd->SIZE.width;
-//	rect.height = ssd->SIZE.height;
+	//	rect.x = 0;
+	//	rect.y = 0;
+	//	rect.width = ssd->SIZE.width;
+	//	rect.height = ssd->SIZE.height;
 	
 	return rect;
+}
+
+graphics::Colour getRandomColour()
+{
+	return (graphics::Colour)random(0, 5);
+}
+
+graphics::DrawMode getRandomDrawMode()
+{
+	return (graphics::DrawMode)random(0, 8);
+}
+
+bool getRandomBool()
+{
+	return (bool)random(0, 2);
 }

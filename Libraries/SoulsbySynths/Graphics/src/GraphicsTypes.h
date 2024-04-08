@@ -16,12 +16,16 @@ namespace graphics
 		int height;
 	} Size;
 	
+	typedef struct GridSize
+	{
+		int columns;
+		int rows;
+	} GridSize;
+	
 	typedef struct Rect
 	{
-		int x;
-		int y;
-		int width;
-		int height;
+		Point location;
+		Size size;
 	} Rect;
 	
 	enum StringAlignment : uint8_t

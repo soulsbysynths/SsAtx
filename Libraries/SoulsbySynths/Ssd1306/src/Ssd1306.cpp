@@ -71,10 +71,10 @@ void Ssd1306::writeGraphics(const graphics::Graphics* graphics)
 	
 	const Rect* rect = graphics->getRectPtr();
 		
-	uint8_t x = rect->x + SETTINGS_->columnOffset;
-	uint8_t y = rect->y >> 3;
-	uint8_t w = rect->width;
-	uint8_t h = rect->height >> 3;
+	uint8_t x = rect->location.x + SETTINGS_->columnOffset;
+	uint8_t y = rect->location.y >> 3;  // Does this need to use graphics quantise bit shift?
+	uint8_t w = rect->size.width;
+	uint8_t h = rect->size.height >> 3;	// Does this need to use graphics quantise bit shift?
 	
 	if (w == 0 || h == 0)
 	{

@@ -16,7 +16,7 @@
 #include "DinMittel8x16Regular.h"
 #include <Label.h>
 #include <Display.h>
-
+#include <string>
 
 void initialiseDtrMux();
 void setDtrMuxInhibit(bool inhibit);
@@ -37,6 +37,8 @@ graphics::Rect getRandomRect(Ssd1306* ssd);
 graphics::Colour getRandomColour();
 graphics::DrawMode getRandomDrawMode();
 bool getRandomBool();
+std::string getRandomString(graphics::Rect* rect);
+graphics::StringAlignment getRandomStringAlignment();
 
 enum GraphicsTest
 {
@@ -150,7 +152,7 @@ void writeRandomBuffer(Ssd1306* ssd, graphics::Colour colour)
 {
 	using namespace graphics;
 	
-	Graphics graphics(getRandomRect(ssd), ssd->SIZE, colour);
+	Graphics graphics(getRandomRect(ssd), &ssd->SIZE, colour);
 
 	ssd->writeGraphics(&graphics);	
 }
@@ -159,13 +161,13 @@ void writeRandomRect(Ssd1306* ssd)
 {
 	using namespace graphics;
 
-	Graphics graphics(getRandomRect(ssd), ssd->SIZE);
+	Graphics graphics(getRandomRect(ssd), &ssd->SIZE);
 
 	const Rect* rect = graphics.getRectPtr();
 
-	graphics.drawRect(Rect{ 0, 0, rect->width, rect->height });
-	graphics.drawLine(Point{ 0, 0 }, Point{ rect->width, rect->height });
-	graphics.drawLine(Point{ 0, rect->height }, Point{ rect->width, 0 });
+	graphics.drawRect(Rect{ 0, 0, rect->size.width, rect->size.height });
+	graphics.drawLine(Point{ 0, 0 }, Point{ rect->size.width, rect->size.height });
+	graphics.drawLine(Point{ 0, rect->size.height }, Point{ rect->size.width, 0 });
 	ssd->writeGraphics(&graphics);
 	
 }
@@ -174,14 +176,19 @@ void writeRandomRectFullScreen(Ssd1306* ssd)
 {
 	using namespace graphics;
 
-	Graphics graphics(Rect{ 0, 0, ssd->SIZE.width, ssd->SIZE.height }, ssd->SIZE);
+	Graphics graphics(Rect{ 0, 0, ssd->SIZE.width, ssd->SIZE.height }, &ssd->SIZE);
 	
 	Rect rect = getRandomRect(ssd);
-	Graphics::constrainRectGraphics(&rect, ssd->SIZE);
+	Graphics::constrainRectGraphics(&rect, &ssd->SIZE);
 	
 	graphics.drawRect(rect);
-	graphics.drawLine(Point{ rect.x, rect.y }, Point{ rect.x + rect.width - 1, rect.y + rect.height - 1 });
-	graphics.drawLine(Point{ rect.x, rect.y + rect.height - 1 }, Point{ rect.x + rect.width - 1, rect.y });
+	graphics.drawLine(rect.location, 
+	                  Point {
+		                  rect.location.x + rect.size.width - 1, 
+		                  rect.location.y + rect.size.height - 1
+	                  });
+	graphics.drawLine(Point{ rect.location.x, rect.location.y + rect.size.height - 1 }, 
+	                  Point{ rect.location.x + rect.size.width - 1, rect.location.y });
 	ssd->writeGraphics(&graphics);
 	
 }
@@ -192,11 +199,11 @@ void writeRandomChar(Ssd1306* ssd)
 
 	char randomChar = random(dinMittel8x16Regular.START_CHAR, dinMittel8x16Regular.getEndChar() + 1);
 	Rect rect;
-	rect.x = random(ssd->SIZE.width);
-	rect.y = random(ssd->SIZE.height);
-	rect.width = dinMittel8x16Regular.getWidth();
-	rect.height = dinMittel8x16Regular.getHeight();
-	Graphics graphics(rect, ssd->SIZE);
+	rect.location.x = random(ssd->SIZE.width);
+	rect.location.y = random(ssd->SIZE.height);
+	rect.size.width = dinMittel8x16Regular.getWidth();
+	rect.size.height = dinMittel8x16Regular.getHeight();
+	Graphics graphics(rect, &ssd->SIZE);
 	
 	graphics.drawCharacter(Point{ 0, 0 }, &dinMittel8x16Regular, randomChar, CO_LIGHTGREY);
 	ssd->writeGraphics(&graphics);
@@ -212,7 +219,7 @@ void writeRandomCharFullScreen(Ssd1306* ssd)
 	point.x = random(ssd->SIZE.width - dinMittel8x16Regular.getWidth());
 	point.y = random(ssd->SIZE.height - dinMittel8x16Regular.getHeight());
 
-	Graphics graphics(Rect{ 0, 0, ssd->SIZE.width, ssd->SIZE.height }, ssd->SIZE);
+	Graphics graphics(Rect{ 0, 0, ssd->SIZE.width, ssd->SIZE.height }, &ssd->SIZE);
 	
 	graphics.drawCharacter(point, &dinMittel8x16Regular, randomChar, CO_WHITE, DM_NOT_MASK);
 	ssd->writeGraphics(&graphics);
@@ -222,28 +229,39 @@ void writeRandomLabel(Ssd1306* ssd)
 {
 	using namespace graphics;
 	ssd->clearDisplay();
-	Label label(ssd->ID, 
-	            &dinMittel8x16Regular, 
-	            ssd->SIZE,
-	            getRandomRect(ssd),
-	            "HELLO WORLD!",
-	            &paintLabel,
-	            SA_NEAR,
-	            SA_NEAR,
-				true);
+	
+	Rect rect = getRandomRect(ssd);
+	//		Rect rect = 		     
+	//		{
+	//			4,
+	//			8,
+	//			ssd->SIZE.width - 4,
+	//			ssd->SIZE.height - 8   
+	//		};
 	
 	//	Label label(ssd->ID, 
-//	            &dinMittel8x16Regular, 
-//	            ssd->SIZE,
-//	            getRandomRect(ssd),
-//	            "HELLO WORLD!",
-//	            &paintLabel,
-//	            SA_NEAR,
-//	            SA_NEAR,
-//	            getRandomBool(),
-//	            getRandomColour(),
-//	            getRandomColour(),
-//	            getRandomDrawMode());
+	//	            &dinMittel8x16Regular, 
+	//	            &ssd->SIZE,
+	//	            &rect,
+	//	            getRandomString(&rect),
+	//	            &paintLabel,
+	//	            getRandomStringAlignment(),
+	//	            getRandomStringAlignment(),
+	//	            true);
+	
+
+	Label label(ssd->ID, 
+	            &dinMittel8x16Regular, 
+	            &ssd->SIZE,
+	            &rect,
+	            getRandomString(&rect),
+	            &paintLabel,
+	            getRandomStringAlignment(),
+	            getRandomStringAlignment(),
+	            true,
+	            CO_DARKGREY,
+	            CO_WHITE,
+	            DM_OR_MASK);
 }
 
 
@@ -304,21 +322,21 @@ graphics::Rect getRandomRect(Ssd1306* ssd)
 
 	Rect rect;
 	
-	rect.x = random(0, ssd->SIZE.width);
-	rect.y = random(0, ssd->SIZE.height);
-	rect.width = random(0, ssd->SIZE.width);
-	rect.height = random(0, ssd->SIZE.height);
+	rect.location.x = random(0, ssd->SIZE.width);
+	rect.location.y = random(0, ssd->SIZE.height);
+	rect.size.width = random(0, ssd->SIZE.width);
+	rect.size.height = random(0, ssd->SIZE.height);
 	
 	//	Size fontSize = { dinMittel8x16Regular.getWidth(), dinMittel8x16Regular.getHeight() };
-	//	rect.x = random(0, ssd->SIZE.width - fontSize.width);
-	//	rect.y = random(0, ssd->SIZE.height - fontSize.height);
-	//	rect.width = random(fontSize.width, (ssd->SIZE.width - rect.x));
-	//	rect.height = random(fontSize.height, (ssd->SIZE.height - rect.y));
+	//	rect.x = random(0, &ssd->SIZE.width - fontSize.width);
+	//	rect.y = random(0, &ssd->SIZE.height - fontSize.height);
+	//	rect.width = random(fontSize.width, (&ssd->SIZE.width - rect.x));
+	//	rect.height = random(fontSize.height, (&ssd->SIZE.height - rect.y));
 	
 	//	rect.x = 0;
 	//	rect.y = 0;
-	//	rect.width = ssd->SIZE.width;
-	//	rect.height = ssd->SIZE.height;
+	//	rect.width = &ssd->SIZE.width;
+	//	rect.height = &ssd->SIZE.height;
 	
 	return rect;
 }
@@ -336,4 +354,35 @@ graphics::DrawMode getRandomDrawMode()
 bool getRandomBool()
 {
 	return (bool)random(0, 2);
+}
+
+std::string getRandomString(graphics::Rect* rect)
+{
+	const int COLUMNS = rect->size.width >> dinMittel8x16Regular.SIZE_BIT_SHIFT.width;
+	const int ROWS = rect->size.height >> dinMittel8x16Regular.SIZE_BIT_SHIFT.height;
+	int lines = random(0, ROWS);
+	lines++;
+	std::string s;
+	char c = 'a';
+	for (int line = 0; line < lines; line++)
+	{
+		int lineLength = random(0, COLUMNS);
+		lineLength++;
+		for (int letter = 0; letter < lineLength; letter++)
+		{
+			s.push_back(c);
+			c++;
+		}
+		if (line < (lines - 1))
+		{
+			s.push_back('\n');
+		}
+	}
+	
+	return s;
+}
+
+graphics::StringAlignment getRandomStringAlignment()
+{
+	return (graphics::StringAlignment)random(0, 3);
 }

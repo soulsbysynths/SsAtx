@@ -2,8 +2,10 @@
 
 using namespace graphics;
 
+const struct graphics::Size Graphics::QUANTISE_BIT_SHIFT_ = { 0, 3 };
+
 Graphics::Graphics(const Rect rect, 
-                   const Size constrainSize, 
+                   const Size* constrainSize, 
                    const Colour initialiseColour /* CO_BLACK*/)
 	: RECT_(constrainRectGraphics(&rect, constrainSize))
 {
@@ -33,7 +35,7 @@ void Graphics::drawLine(Point startPoint,
 			std::swap(startPoint.y, endPoint.y);
 		}
 		
-		drawVerticalLine(startPoint.x, startPoint.y, endPoint.y - startPoint.y, colour, drawMode);
+		drawVerticalLine(startPoint, endPoint.y - startPoint.y, colour, drawMode);
 	}
 	else if (startPoint.y == endPoint.y) 
 	{
@@ -42,7 +44,7 @@ void Graphics::drawLine(Point startPoint,
 			std::swap(startPoint.x, endPoint.x);
 		}
 		
-		drawHorizontalLine(startPoint.x, startPoint.y, endPoint.x - startPoint.x);
+		drawHorizontalLine(startPoint, endPoint.x - startPoint.x, colour, drawMode);
 	}
 	else
 	{
@@ -97,67 +99,65 @@ void Graphics::drawLine(Point startPoint,
 }
 
 
-void Graphics::drawHorizontalLine(int x, 
-                                  int y, 
+void Graphics::drawHorizontalLine(Point startPoint,
                                   int width, 
                                   Colour colour, /* CO_WHITE*/
                                   DrawMode drawMode /* = DM_OR_MASK */)
 {	
-	if (x < 0)
+	if (startPoint.x < 0)
 	{
 		// Clip left
-		width += x;
-		x = 0;
+		width += startPoint.x;
+		startPoint.x = 0;
 	}
 		
-	if ((x + width) > RECT_.width)
+	if ((startPoint.x + width) > RECT_.size.width)
 	{
 		// Clip right
-		width = (RECT_.width - x - 1);
+		width = (RECT_.size.width - startPoint.x - 1);
 	}
 		
-	if (x >= RECT_.width || width <= 0 || y < 0 || y >= RECT_.height)
+	if (startPoint.x >= RECT_.size.width || width <= 0 || startPoint.y < 0 || startPoint.y >= RECT_.size.height)
 	{
 		return;
 	}
 	
-	int index = (y >> GRAPHICS_BIT_SHIFT) * RECT_.width + x;
-	uint8_t mask = 1 << (y & 0x07);
+	int index = (startPoint.y >> QUANTISE_BIT_SHIFT_.height) * RECT_.size.width + startPoint.x;
+	uint8_t mask = 1 << (startPoint.y & 0x07);
 	
 	drawBuffer(index, width, mask, colour, drawMode);
 }
 
 
-void Graphics::drawVerticalLine(int x, 
-                                int y, 
+void Graphics::drawVerticalLine(Point startPoint,
                                 int height, 
                                 Colour colour, /* CO_WHITE*/
                                 DrawMode drawMode /* = DM_OR_MASK */)
 {
-	if (y < 0)
+	if (startPoint.y < 0)
 	{
 		// Clip top
-		height += y;
-		y = 0;
+		height += startPoint.y;
+		startPoint.y = 0;
 	}
 		
-	if ((y + height) > RECT_.height)
+	if ((startPoint.y + height) > RECT_.size.height)
 	{
 		// Clip bottom
-		height = (RECT_.height - y - 1);
+		height = (RECT_.size.height - startPoint.y - 1);
 	}
 		
-	if (y >= RECT_.height || height <= 0 || x < 0 || x >= RECT_.width)
+	if (startPoint.y >= RECT_.size.height || height <= 0 || startPoint.x < 0 || startPoint.x >= RECT_.size.width)
 	{
 		return;
 	}
 		// Proceed only if height is now positive
 	  // this display doesn't need ints for coordinates,
 	  // use local byte registers for faster juggling
-	int index = (y >> GRAPHICS_BIT_SHIFT) * RECT_.width + x;
+	int index = (startPoint.y >> QUANTISE_BIT_SHIFT_.height) * RECT_.size.width + startPoint.x;
 	
 	// do the first partial byte, if necessary - this requires some masking
-	uint8_t mod = (y & 7);
+	uint8_t mod = (startPoint.y & 7);
 	if (mod)
 	{
 		// mask off the high n bits we want to set
@@ -184,7 +184,7 @@ void Graphics::drawVerticalLine(int x,
 		}
 		
 		drawBuffer(index, mask, colour, drawMode);
-		index += RECT_.width;
+		index += RECT_.size.width;
 	}
 
 	if (height >= mod)
@@ -197,7 +197,7 @@ void Graphics::drawVerticalLine(int x,
 			do
 			{
 				drawBuffer(index, 0xFF, colour, drawMode);
-				index += RECT_.width; // Advance pointer 8 rows
+				index += RECT_.size.width; // Advance pointer 8 rows
 				height -= 8; // Subtract 8 rows from height
 			}
 			while (height >= 8);
@@ -238,14 +238,22 @@ void Graphics::drawCharacter(Point location,
 	const int FONT_WIDTH = font->getWidth();
 	const int FONT_HEIGHT = font->getHeight();
 	
-	if (location.x < 0 || location.x > (RECT_.width - FONT_WIDTH) || location.y < 0 || location.y > (RECT_.height - FONT_HEIGHT))
+	uint8_t* blankChar;
+	const uint8_t* CHAR_BITMAP = font->getCharPtr(character);
+	if (CHAR_BITMAP == NULL)
+	{
+		blankChar = new uint8_t[font->getCharSize()];
+		std::fill(blankChar, blankChar + font->getCharSize(), 0);
+		CHAR_BITMAP = blankChar;
+	}
+	
+	if (location.x < 0 || location.x > (RECT_.size.width - FONT_WIDTH) || location.y < 0 || location.y > (RECT_.size.height - FONT_HEIGHT))
 	{
 		return;   
 	}
 	   
-	const uint8_t* CHAR_BITMAP = font->getCharPtr(character);
-	int row = location.y >> GRAPHICS_BIT_SHIFT;
-	int startIndex = row * RECT_.width + location.x;
+	int row = location.y >> QUANTISE_BIT_SHIFT_.height;
+	int startIndex = row * RECT_.size.width + location.x;
 	int charIndex = 0;
 	while (charIndex < font->getCharSize())
 	{
@@ -255,8 +263,13 @@ void Graphics::drawCharacter(Point location,
 		           FONT_WIDTH,
 		           colour,
 		           drawMode);
-		startIndex += RECT_.width;
+		startIndex += RECT_.size.width;
 		charIndex += FONT_WIDTH;
+	}
+	
+	if (font->getCharPtr(character) == NULL)
+	{
+		delete[] blankChar;
 	}
 }
 
@@ -265,86 +278,88 @@ void Graphics::drawRect(Rect rect,
                         Colour colour,
                         DrawMode drawMode /* = DM_OR_MASK */)
 {
-	drawHorizontalLine(rect.x,
-	                   rect.y,
-	                   rect.width,
+	drawHorizontalLine(rect.location,
+	                   rect.size.width,
 	                   colour,
 	                   drawMode);
 	
-	drawHorizontalLine(rect.x,
-	                   rect.y + rect.height - 1,
-	                   rect.width,
+	drawHorizontalLine( {
+		                   rect.location.x,
+		                   rect.location.y + rect.size.height - 1
+	                   },
+	                   rect.size.width,
 	                   colour,
 	                   drawMode);
 	
-	drawVerticalLine(rect.x,
-	                 rect.y,
-	                 rect.height,
+	drawVerticalLine(rect.location,
+	                 rect.size.height,
 	                 colour,
 	                 drawMode);
 	
-	drawVerticalLine(rect.x + rect.width - 1,
-	                 rect.y,
-	                 rect.height,
+	drawVerticalLine( {
+		                 rect.location.x + rect.size.width - 1,
+		                 rect.location.y
+	                 },
+	                 rect.size.height,
 	                 colour,
 	                 drawMode);
 }
 
-void Graphics::constrainRect(Rect* rect, const Size constrainSize, const Size quantiseBitShift)
+void Graphics::constrainRect(Rect* rect, const Size* constrainSize, const Size* quantiseBitShift)
 {
 	// Crop out of bounds left.
-	if (rect->x < 0)
+	if (rect->location.x < 0)
 	{
-		rect->width += rect->x;
-		rect->x = 0;
+		rect->size.width += rect->location.x;
+		rect->location.x = 0;
 	}
 	
 	// Crop out of bounds top.
-	if (rect->y < 0)
+	if (rect->location.y < 0)
 	{
-		rect->height += rect->y;
-		rect->y = 0;
+		rect->size.height += rect->location.y;
+		rect->location.y = 0;
 	}
 
 	// Quantise	location
-	Point originalLocation = { rect->x, rect->y };
+	Point originalLocation = rect->location;
 	
-	rect->x >>= quantiseBitShift.width;
-	rect->x <<= quantiseBitShift.width;
-	rect->y >>= quantiseBitShift.height;
-	rect->y <<= quantiseBitShift.height;
+	rect->location.x >>= quantiseBitShift->width;
+	rect->location.x <<= quantiseBitShift->width;
+	rect->location.y >>= quantiseBitShift->height;
+	rect->location.y <<= quantiseBitShift->height;
 	
 	// Adjust size for new location, then quantise size
-	rect->width += (originalLocation.x - rect->x);
-	rect->height += (originalLocation.y - rect->y);
+	rect->size.width += (originalLocation.x - rect->location.x);
+	rect->size.height += (originalLocation.y - rect->location.y);
 	
-	rect->width >>= quantiseBitShift.width;
-	rect->width <<= quantiseBitShift.width;
-	rect->height >>= quantiseBitShift.height;
-	rect->height <<= quantiseBitShift.height;
+	rect->size.width >>= quantiseBitShift->width;
+	rect->size.width <<= quantiseBitShift->width;
+	rect->size.height >>= quantiseBitShift->height;
+	rect->size.height <<= quantiseBitShift->height;
 	
 	// Force width >= quantise width
-	if (rect->width < (1 << quantiseBitShift.width))
+	if (rect->size.width < (1 << quantiseBitShift->width))
 	{
-		rect->width = (1 << quantiseBitShift.width);
+		rect->size.width = (1 << quantiseBitShift->width);
 	}
 	
 	// Force height >= quantise height
-	if (rect->height < (1 << quantiseBitShift.height))
+	if (rect->size.height < (1 << quantiseBitShift->height))
 	{
-		rect->height = (1 << quantiseBitShift.height);
+		rect->size.height = (1 << quantiseBitShift->height);
 	}
 	
 	// Crop out of bounds right.
-	if (rect->x + rect->width > constrainSize.width)
+	if (rect->location.x + rect->size.width > constrainSize->width)
 	{
-		rect->x = constrainSize.width - rect->width;
+		rect->location.x = constrainSize->width - rect->size.width;
 	}
 	
 	// Crop out of bounds bottom.
-	if (rect->y + rect->height > constrainSize.height)
+	if (rect->location.y + rect->size.height > constrainSize->height)
 	{
-		rect->y = constrainSize.height - rect->height;
+		rect->location.y = constrainSize->height - rect->size.height;
 	}
 
 }

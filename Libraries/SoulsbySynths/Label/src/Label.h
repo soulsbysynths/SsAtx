@@ -1,6 +1,7 @@
 #pragma once
 #include <Graphics.h>
 #include <string>
+#include <algorithm>
 #include <vector>
 #include <Font.h>
 
@@ -9,8 +10,8 @@ class Label
 	public:
 	Label(const uint8_t id,
 	      const Font* font, 
-	      graphics::Size constrainSize, 
-	      graphics::Rect rect,
+	      const graphics::Size* constrainSize, 
+	      const graphics::Rect* rect,
 	      std::string text, 
 	      void(*paintLabel)(Label*, graphics::Graphics*),
 	      graphics::StringAlignment alignment = graphics::SA_NEAR,
@@ -25,18 +26,18 @@ class Label
 	
 	inline const graphics::Point getLocation() const
 	{
-		return { RECT_.x, RECT_.y };
+		return RECT_.location;
 	}
 	
 	inline const graphics::Size getSize() const
 	{
-		return { RECT_.width, RECT_.height };
+		return RECT_.size;
 	}
 	
 	void setText(std::string text);
 	inline void paint()
 	{
-		paint({ 0, 0, RECT_.width, RECT_.height });
+		paint({ { 0, 0 }, RECT_.size });
 	}
 	
 	void paint(graphics::Rect rect);
@@ -45,18 +46,26 @@ class Label
 	
 	protected:
 	
-	
 	private:
-	graphics::Rect initRect(graphics::Rect* rect);
+	inline void paint(int column, int row)
+	{
+		paint({
+			      column << FONT_->SIZE_BIT_SHIFT.width,
+			      row << FONT_->SIZE_BIT_SHIFT.height,
+			      FONT_->getWidth(),
+			      FONT_->getHeight()
+		      });
+	}
+	
+	graphics::Rect initRect(const graphics::Rect* rect);
 	void drawBorder(graphics::Graphics* g, graphics::Point location, int column, int row);
 	void(*paintLabel_)(Label*, graphics::Graphics*) = NULL;
 	const Font* FONT_ = NULL;
-	const graphics::Size CONSTRAIN_SIZE_;
+	const graphics::Size* CONSTRAIN_SIZE_;
 	const graphics::Rect RECT_;
-	char** charMap_ = NULL;
-	const int COLUMNS_ = 0;
-	const int ROWS_ = 0;
+	const graphics::GridSize GRID_SIZE_;
 	bool border_ = false;
+	std::vector<std::string> text_;
 	graphics::StringAlignment alignment_ = graphics::SA_NEAR;
 	graphics::StringAlignment lineAlignment_ = graphics::SA_NEAR;
 	graphics::Colour backColour_ = graphics::CO_BLACK;

@@ -13,20 +13,20 @@ namespace graphics
 	{
 		public:
 		Graphics(const Rect rect, 
-		         const Size constrainSize, 
+		         const Size* constrainSize, 
 		const Colour initialiseColour = CO_BLACK);
 	
 		~Graphics(void);
 		
-		inline static void constrainRectGraphics(Rect* rect, const Size constrainSize)
+		inline static void constrainRectGraphics(Rect* rect, const Size* constrainSize)
 		{
-			constrainRect(rect, constrainSize, { 0, GRAPHICS_BIT_SHIFT });	
+			constrainRect(rect, constrainSize, &QUANTISE_BIT_SHIFT_);	
 		}
 		
-		inline static Rect constrainRectGraphics(const Rect* rect, const Size constrainSize)
+		inline static Rect constrainRectGraphics(const Rect* rect, const Size* constrainSize)
 		{
 			Rect r = *rect;
-			constrainRect(&r, constrainSize, { 0, GRAPHICS_BIT_SHIFT });	
+			constrainRect(&r, constrainSize, &QUANTISE_BIT_SHIFT_);	
 			return r;
 		}
 		
@@ -58,14 +58,14 @@ namespace graphics
 		                   Colour colour = CO_WHITE, 
 		                   DrawMode drawMode = DM_OR_MASK);
 		static void constrainRect(Rect* rect, 
-		                          const Size constrainSize, 
-		                          const Size quantiseBitShift);
+		                          const Size* constrainSize, 
+		                          const Size* quantiseBitShift);
 		
 		private:
 		
 		inline const size_t getBufferSize() const
 		{
-			return (RECT_.width * RECT_.height) >> GRAPHICS_BIT_SHIFT;
+			return (RECT_.size.width >> QUANTISE_BIT_SHIFT_.width) * (RECT_.size.height >> QUANTISE_BIT_SHIFT_.height);
 		}
 		
 		inline void drawBuffer(int startIndex, 
@@ -150,7 +150,7 @@ namespace graphics
 		                      Colour colour = CO_WHITE,
 		                      DrawMode drawMode = DM_OR_MASK)
 		{	
-			drawBuffer(point->x + (point->y >> GRAPHICS_BIT_SHIFT) * getRectPtr()->width, 
+			drawBuffer(point->x + (point->y >> QUANTISE_BIT_SHIFT_.height) * getRectPtr()->size.width, 
 			           (1 << (point->y & 0x07)), 
 			           colour,
 			           drawMode);
@@ -224,20 +224,18 @@ namespace graphics
 			}
 		}
 		
-		void drawHorizontalLine(int x, 
-		                        int y, 
+		void drawHorizontalLine(Point startPoint,
 		                        int width, 
 		                        Colour colour = CO_WHITE, 
 		                        DrawMode drawMode = DM_OR_MASK);
 		
-		void drawVerticalLine(int x, 
-		                      int y, 
+		void drawVerticalLine(Point startPoint,
 		                      int height, 
 		                      Colour colour = CO_WHITE, 
 		                      DrawMode drawMode = DM_OR_MASK);
 		
 		uint8_t* buffer_ = NULL;
 		const Rect RECT_;
-		static const uint8_t GRAPHICS_BIT_SHIFT = 3; // Bit shift to store 8 pixel values (on/off) in a byte
+		static const Size QUANTISE_BIT_SHIFT_; // Bit shift to store 8 pixel values (on/off) in a byte
 	};
 }

@@ -1,11 +1,12 @@
 #pragma once
 #include <Graphics.h>
+#include <Control.h>
 #include <string>
 #include <algorithm>
 #include <vector>
 #include <Font.h>
 
-class Label
+class Label : public Control
 {
 	public:
 	Label(const uint8_t id,
@@ -13,7 +14,7 @@ class Label
 	      const graphics::Size* constrainSize, 
 	      const graphics::Rect* rect,
 	      std::string text, 
-	      void(*paintLabel)(Label*, graphics::Graphics*),
+	      void(*paintControl)(Control*, graphics::Graphics*),
 	      graphics::StringAlignment alignment = graphics::SA_NEAR,
 	      graphics::StringAlignment lineAlignment = graphics::SA_NEAR,
 	      bool border = false,
@@ -22,47 +23,20 @@ class Label
 	      graphics::DrawMode drawMode = graphics::DM_OR_MASK,
 	      const uint8_t zOrder = 0);
 	
-	~Label(void);
-	
-	inline const graphics::Point getLocation() const
+	~Label(void)
 	{
-		return RECT_.location;
 	}
-	
-	inline const graphics::Size getSize() const
-	{
-		return RECT_.size;
-	}
-	
+		
 	void setText(std::string text);
-	inline void paint()
-	{
-		paint({ { 0, 0 }, RECT_.size });
-	}
-	
-	void paint(graphics::Rect rect);
-	const uint8_t ID;
-	const uint8_t Z_ORDER;
+	void paint(graphics::Rect* rect);
 	
 	protected:
+	void paint(graphics::Rect* rect, graphics::Graphics* graphics);
+	const Font* FONT_ = NULL;
 	
 	private:
-	inline void paint(int column, int row)
-	{
-		paint({
-			      column << FONT_->SIZE_BIT_SHIFT.width,
-			      row << FONT_->SIZE_BIT_SHIFT.height,
-			      FONT_->getWidth(),
-			      FONT_->getHeight()
-		      });
-	}
-	
-	graphics::Rect initRect(const graphics::Rect* rect);
+	void paint(graphics::Grid* grid);
 	void drawBorder(graphics::Graphics* g, graphics::Point location, int column, int row);
-	void(*paintLabel_)(Label*, graphics::Graphics*) = NULL;
-	const Font* FONT_ = NULL;
-	const graphics::Size* CONSTRAIN_SIZE_;
-	const graphics::Rect RECT_;
 	const graphics::GridSize GRID_SIZE_;
 	bool border_ = false;
 	std::vector<std::string> text_;

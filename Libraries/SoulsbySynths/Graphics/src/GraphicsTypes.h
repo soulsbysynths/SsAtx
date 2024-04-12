@@ -16,17 +16,35 @@ namespace graphics
 		int height;
 	} Size;
 	
+	typedef struct Rect
+	{
+		Point location;
+		Size size;
+	} Rect;
+	
+	typedef struct Line
+	{
+		Point start;
+		Point end;
+	} Line;
+	
+	typedef struct GridLocation
+	{
+		int column;
+		int row;
+	} GridLocation;
+	
 	typedef struct GridSize
 	{
 		int columns;
 		int rows;
 	} GridSize;
 	
-	typedef struct Rect
+	typedef struct Grid
 	{
-		Point location;
-		Size size;
-	} Rect;
+		GridLocation location;
+		GridSize size;
+	} Grid;
 	
 	enum StringAlignment : uint8_t
 	{
@@ -55,5 +73,14 @@ namespace graphics
 		DM_XOR_MASK,
 		DM_XOR_NOT_MASK
 	};
+	
+	enum CircleQuarter : uint8_t
+	{
+		CQ_TOPLEFT = 1,
+		CQ_TOPRIGHT = 2,
+		CQ_BOTTOMRIGHT = 4,
+		CQ_BOTTOMLEFT = 8
+	};
+	
 }
 #endif // _GRAPHICSTYPES_H_

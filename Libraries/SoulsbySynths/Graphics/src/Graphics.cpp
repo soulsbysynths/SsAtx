@@ -23,52 +23,51 @@ Graphics::~Graphics(void)
 	delete[] buffer_;
 }
 
-void Graphics::drawLine(Point startPoint, 
-                        Point endPoint, 
+void Graphics::drawLine(Line line, 
                         Colour colour, /* CO_WHITE*/
                         DrawMode drawMode /* = DM_OR_MASK */)
 {
-	if (startPoint.x == endPoint.x) 
+	if (line.start.x == line.end.x) 
 	{
-		if (startPoint.y > endPoint.y)
+		if (line.start.y > line.end.y)
 		{
-			std::swap(startPoint.y, endPoint.y);
+			std::swap(line.start.y, line.end.y);
 		}
 		
-		drawVerticalLine(startPoint, endPoint.y - startPoint.y, colour, drawMode);
+		drawVerticalLine(line.start, line.end.y - line.start.y, colour, drawMode);
 	}
-	else if (startPoint.y == endPoint.y) 
+	else if (line.start.y == line.end.y) 
 	{
-		if (startPoint.x > endPoint.x)
+		if (line.start.x > line.end.x)
 		{
-			std::swap(startPoint.x, endPoint.x);
+			std::swap(line.start.x, line.end.x);
 		}
 		
-		drawHorizontalLine(startPoint, endPoint.x - startPoint.x, colour, drawMode);
+		drawHorizontalLine(line.start, line.end.x - line.start.x, colour, drawMode);
 	}
 	else
 	{
-		int steep = abs(endPoint.y - startPoint.y) > abs(endPoint.x - startPoint.x);
+		int steep = abs(line.end.y - line.start.y) > abs(line.end.x - line.start.x);
 		if (steep) 
 		{
-			std::swap(startPoint.x, startPoint.y);
-			std::swap(endPoint.x, endPoint.y);
+			std::swap(line.start.x, line.start.y);
+			std::swap(line.end.x, line.end.y);
 		}
 
-		if (startPoint.x > endPoint.x) 
+		if (line.start.x > line.end.x) 
 		{
-			std::swap(startPoint.x, endPoint.x);
-			std::swap(startPoint.y, endPoint.y);
+			std::swap(line.start.x, line.end.x);
+			std::swap(line.start.y, line.end.y);
 		}
 
 		int dx, dy;
-		dx = endPoint.x - startPoint.x;
-		dy = abs(endPoint.y - startPoint.y);
+		dx = line.end.x - line.start.x;
+		dy = abs(line.end.y - line.start.y);
 
 		int err = dx / 2;
 		int ystep;
 
-		if (startPoint.y < endPoint.y) 
+		if (line.start.y < line.end.y) 
 		{
 			ystep = 1;
 		}
@@ -77,21 +76,21 @@ void Graphics::drawLine(Point startPoint,
 			ystep = -1;
 		}
 
-		for (; startPoint.x <= endPoint.x; startPoint.x++)
+		for (; line.start.x <= line.end.x; line.start.x++)
 		{
 			if (steep) 
 			{
-				Point swapped = { startPoint.y, startPoint.x };
+				Point swapped = { line.start.y, line.start.x };
 				drawPixel(&swapped, colour, drawMode);
 			}
 			else 
 			{
-				drawPixel(&startPoint, colour, drawMode);
+				drawPixel(&line.start, colour, drawMode);
 			}
 			err -= dy;
 			if (err < 0) 
 			{
-				startPoint.y += ystep;
+				line.start.y += ystep;
 				err += dx;
 			}
 		}
@@ -117,7 +116,10 @@ void Graphics::drawHorizontalLine(Point startPoint,
 		width = (RECT_.size.width - startPoint.x - 1);
 	}
 		
-	if (startPoint.x >= RECT_.size.width || width <= 0 || startPoint.y < 0 || startPoint.y >= RECT_.size.height)
+	if (startPoint.x >= RECT_.size.width || 
+	    width <= 0 || 
+	    startPoint.y < 0 || 
+	    startPoint.y >= RECT_.size.height)
 	{
 		return;
 	}
@@ -147,7 +149,10 @@ void Graphics::drawVerticalLine(Point startPoint,
 		height = (RECT_.size.height - startPoint.y - 1);
 	}
 		
-	if (startPoint.y >= RECT_.size.height || height <= 0 || startPoint.x < 0 || startPoint.x >= RECT_.size.width)
+	if (startPoint.y >= RECT_.size.height || 
+	    height <= 0 || 
+	    startPoint.x < 0 || 
+	    startPoint.x >= RECT_.size.width)
 	{
 		return;
 	}
@@ -165,7 +170,8 @@ void Graphics::drawVerticalLine(Point startPoint,
 		// note - lookup table results in a nearly 10% performance
 		// improvement in fill* functions
 		// uint8_t mask = ~(0xFF >> mod);
-		static const uint8_t PREMASK[8] = {
+		static const uint8_t PREMASK[8] = 
+		{
 			0x00,
 			0x80,
 			0xC0,
@@ -207,12 +213,14 @@ void Graphics::drawVerticalLine(Point startPoint,
 		{
 			// Do the final partial byte, if necessary
 			mod = height & 0x07;
+			
 			// this time we want to mask the low bits of the byte,
 			// vs the high bits we did above
 			// uint8_t mask = (1 << mod) - 1;
 			// note - lookup table results in a nearly 10% performance
 			// improvement in fill* functions
-			static const uint8_t POSTMASK[8] = { 
+			static const uint8_t POSTMASK[8] = 
+			{ 
 				0x00,
 				0x01,
 				0x03,
@@ -247,7 +255,10 @@ void Graphics::drawCharacter(Point location,
 		CHAR_BITMAP = blankChar;
 	}
 	
-	if (location.x < 0 || location.x > (RECT_.size.width - FONT_WIDTH) || location.y < 0 || location.y > (RECT_.size.height - FONT_HEIGHT))
+	if (location.x < 0 || 
+	    location.x > (RECT_.size.width - FONT_WIDTH) || 
+	    location.y < 0 || 
+	    location.y > (RECT_.size.height - FONT_HEIGHT))
 	{
 		return;   
 	}
@@ -303,6 +314,247 @@ void Graphics::drawRect(Rect rect,
 	                 rect.size.height,
 	                 colour,
 	                 drawMode);
+}
+
+void Graphics::drawCircle(Point location,
+                          int radius,
+                          CircleQuarter quarters,
+                          Colour colour,
+                          DrawMode drawMode /* = DM_OR_MASK */)
+{
+	int f = 1 - radius;
+	int ddF_x = 1;
+	int ddF_y = -2 * radius;
+	int x = 0;
+	int y = radius;
+
+	while (x < y)
+	{
+		if (f >= 0)
+		{
+			y--;
+			ddF_y += 2;
+			f += ddF_y;
+		}
+		
+		x++;
+		ddF_x += 2;
+		f += ddF_x;
+		if (quarters & CQ_BOTTOMRIGHT)
+		{
+			drawPixel( { 
+				          location.x + x, 
+				          location.y + y 
+			          }, 
+			          colour, 
+			          drawMode);
+			drawPixel( {
+				          location.x + y, 
+				          location.y + x
+			          },
+			          colour, 
+			          drawMode);
+		}
+		
+		if (quarters & CQ_TOPRIGHT)
+		{
+			drawPixel( {
+				          location.x + x, 
+				          location.y - y
+			          },
+			          colour,
+			          drawMode);
+			drawPixel( {
+				          location.x + y, 
+				          location.y - x
+			          },
+			          colour,
+			          drawMode);
+		}
+		
+		if (quarters & CQ_BOTTOMLEFT)
+		{
+			drawPixel( {
+				          location.x - y, 
+				          location.y + x 
+			          },
+			          colour,
+			          drawMode);
+			drawPixel( {
+				          location.x - x, 
+				          location.y + y 
+			          },
+			          colour,
+			          drawMode);
+		}
+		
+		if (quarters & CQ_TOPLEFT)
+		{
+			drawPixel( {
+				          location.x - y, 
+				          location.y - x 
+			          }, 
+			          colour,
+			          drawMode);
+			drawPixel( {
+				          location.x - x, 
+				          location.y - y
+			          },
+			          colour,
+			          drawMode);
+		}
+	}
+}
+
+void Graphics::drawRoundRect(Rect rect,
+                             int radius,
+                             Colour colour,
+                             DrawMode drawMode /* = DM_OR_MASK */)
+{
+	int16_t maxRadius = ((rect.size.width < rect.size.height) ? rect.size.width : rect.size.height) / 2; // 1/2 minor axis
+	if (radius > maxRadius)
+	{
+		radius = maxRadius;
+	}
+
+	drawHorizontalLine( {
+		                   rect.location.x + radius, 
+		                   rect.location.y
+	                   }, 
+	                   rect.size.width - 2 * radius, 
+	                   colour,
+	                   drawMode); // Top
+	drawHorizontalLine( {
+		                   rect.location.x + radius, 
+		                   rect.location.y + rect.size.height - 1
+	                   },
+	                   rect.size.width - 2 * radius, 
+	                   colour,
+	                   drawMode); // Bottom
+	drawVerticalLine( {
+		                 rect.location.x, 
+		                 rect.location.y + radius
+	                 }, 
+	                 rect.size.height - 2 * radius, 
+	                 colour,
+	                 drawMode); // Left
+	drawVerticalLine( {
+		                 rect.location.x + rect.size.width - 1, 
+		                 rect.location.y + radius
+	                 }, 
+	                 rect.size.height - 2 * radius, 
+	                 colour,
+	                 drawMode); // Right
+	drawCircle( {
+		           rect.location.x + radius, 
+		           rect.location.y + radius
+	           },
+	           radius,
+	           CQ_TOPLEFT,
+	           colour,
+	           drawMode);
+	drawCircle( {
+		           rect.location.x + rect.size.width - radius - 1, 
+		           rect.location.y + radius
+	           },
+	           radius, 
+	           CQ_TOPRIGHT, 
+	           colour,
+	           drawMode);
+	drawCircle( {
+		           rect.location.x + rect.size.width - radius - 1, 
+		           rect.location.y + rect.size.height - radius - 1
+	           }, 
+	           radius, 
+	           CQ_BOTTOMRIGHT, 
+	           colour,
+	           drawMode);
+	drawCircle( {
+		           rect.location.x + radius, 
+		           rect.location.y + rect.size.height - radius - 1
+	           },
+	           radius, 
+	           CQ_BOTTOMLEFT,
+	           colour,
+	           drawMode);
+}
+
+void Graphics::drawBuffer(int startIndex, 
+                          const size_t size, 
+                          const uint8_t mask, 
+                          const Colour colour,
+                          DrawMode drawMode)
+{	
+	if (startIndex < 0 || (startIndex + size) > getBufferSize())
+	{
+		return;
+	}
+			
+	drawArray(&buffer_[startIndex], 
+	          &buffer_[startIndex + size], 
+	          &buffer_[startIndex], 
+	          mask, 
+	          colour,
+	          drawMode, 
+	          startIndex);
+}
+		
+void Graphics::drawBuffer(int startIndex, 
+                          const size_t size, 
+                          const uint8_t* mask, 
+                          const size_t maskSize,
+                          const Colour colour,
+                          DrawMode drawMode)
+{	
+	if (startIndex < 0 || (startIndex + size) > getBufferSize())
+	{
+		return;
+	}
+			
+	drawArray(&buffer_[startIndex], 
+	          &buffer_[startIndex + size], 
+	          &buffer_[startIndex], 
+	          mask, 
+	          &mask[maskSize], 
+	          colour, 
+	          drawMode, 
+	          startIndex);
+}
+
+void Graphics::drawArray(const uint8_t* inBegin, 
+                         const uint8_t* inEnd, 
+                         uint8_t* outBegin,
+                         const uint8_t* maskBegin,
+                         const uint8_t* maskEnd,
+                         const Colour colour,
+                         const DrawMode drawMode,
+                         int patternIndex)
+{		
+	while (inBegin != inEnd && maskBegin != maskEnd)
+	{
+		*outBegin = drawByte(*inBegin, *maskBegin, colour, drawMode, patternIndex);
+		++outBegin; 
+		++inBegin;
+		++maskBegin;
+		++patternIndex;
+	}
+}
+		
+void Graphics::drawArray(const uint8_t* inBegin, 
+                         const uint8_t* inEnd, 
+                         uint8_t* outBegin,
+                         const uint8_t mask,
+                         const Colour colour,
+                         const DrawMode drawMode,
+                         int patternIndex)
+{		
+	while (inBegin != inEnd)
+	{
+		*outBegin = drawByte(*inBegin, mask, colour, drawMode, patternIndex);
+		++outBegin; 
+		++inBegin;
+		++patternIndex;
+	}
 }
 
 void Graphics::constrainRect(Rect* rect, const Size* constrainSize, const Size* quantiseBitShift)
@@ -362,4 +614,50 @@ void Graphics::constrainRect(Rect* rect, const Size* constrainSize, const Size* 
 		rect->location.y = constrainSize->height - rect->size.height;
 	}
 
+}
+
+Rect Graphics::initRect(const Rect* rect, const Size* constrainSize, const Font* font)
+{
+	Rect constrainedRect = Graphics::constrainRectGraphics(rect, constrainSize);
+	Graphics::constrainRect(&constrainedRect, constrainSize, font->getSizeBitShiftPtr());
+	return constrainedRect;
+}
+
+void Graphics::enlargeGridToIncludeLocation(Grid* grid, const GridLocation location)
+{
+	if (grid->size.columns == 0 && grid->size.rows == 0)
+	{
+		// Must be first cell
+		grid->location = location;
+		grid->size = { 1, 1 };
+		return;
+	}
+
+	GridLocation endLocation = 
+	{
+		grid->location.column + grid->size.columns - 1, 
+		grid->location.row + grid->size.rows - 1
+	};
+		
+	if (location.column < grid->location.column)
+	{
+		grid->location.column = location.column;
+	}
+	else if (location.column > endLocation.column)
+	{
+		endLocation.column = location.column;
+	}
+	
+	grid->size.columns = endLocation.column - grid->location.column + 1;
+	
+	if (location.row < grid->location.row)
+	{
+		grid->location.row = location.row;
+	}
+	else if (location.row > endLocation.row)
+	{
+		endLocation.row = location.row;
+	}
+	
+	grid->size.rows = endLocation.row - grid->location.row + 1;
 }

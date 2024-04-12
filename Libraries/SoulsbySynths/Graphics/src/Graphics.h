@@ -14,7 +14,7 @@ namespace graphics
 		public:
 		Graphics(const Rect rect, 
 		         const Size* constrainSize, 
-		const Colour initialiseColour = CO_BLACK);
+		         const Colour initialiseColour = CO_BLACK);
 	
 		~Graphics(void);
 		
@@ -45,8 +45,24 @@ namespace graphics
 			return buffer_;
 		}
 		
-		void drawLine(Point startPoint, 
-		              Point endPoint, 
+		inline static const uint8_t getColourPattern(const Colour colour, const int patternIndex = 0)
+		{
+			switch (colour)
+			{
+				case CO_WHITE:
+					return 0xFF;
+				case CO_LIGHTGREY:
+					return (patternIndex & 0x01) ? 0x77 : 0xDD;
+				case CO_GREY:
+					return (patternIndex & 0x01) ? 0xAA : 0x55;
+				case CO_DARKGREY:
+					return (patternIndex & 0x01) ? 0x88 : 0x22;
+				case CO_BLACK:
+					return 0x00;
+			}
+		}
+		
+		void drawLine(Line line, 
 		              Colour colour = CO_WHITE, 
 		              DrawMode drawMode = DM_OR_MASK);
 		void drawRect(Rect rect, 
@@ -57,9 +73,23 @@ namespace graphics
 		                   char character, 
 		                   Colour colour = CO_WHITE, 
 		                   DrawMode drawMode = DM_OR_MASK);
+		void drawCircle(Point location,
+		                int radius,
+		                CircleQuarter quarters,
+		                Colour colour = CO_WHITE,
+		                DrawMode drawMode = DM_OR_MASK);
+		void drawRoundRect(Rect rect,
+		                   int radius,
+		                   Colour colour = CO_WHITE,
+		                   DrawMode drawMode = DM_OR_MASK);
 		static void constrainRect(Rect* rect, 
 		                          const Size* constrainSize, 
 		                          const Size* quantiseBitShift);
+		static Rect initRect(const Rect* rect, 
+		                     const Size* constrainSize, 
+		                     const Font* font);
+		static void enlargeGridToIncludeLocation(Grid* grid, 
+		                                         const GridLocation location);
 		
 		private:
 		
@@ -67,85 +97,7 @@ namespace graphics
 		{
 			return (RECT_.size.width >> QUANTISE_BIT_SHIFT_.width) * (RECT_.size.height >> QUANTISE_BIT_SHIFT_.height);
 		}
-		
-		inline void drawBuffer(int startIndex, 
-		                       const size_t size, 
-		                       const uint8_t mask, 
-		                       const Colour colour = CO_WHITE,
-		                       DrawMode drawMode = DM_OR_MASK)
-		{	
-			if (startIndex < 0 || (startIndex + size) > getBufferSize())
-			{
-				return;
-			}
-			
-			drawArray(&buffer_[startIndex], 
-			          &buffer_[startIndex + size], 
-			          &buffer_[startIndex], 
-			          mask, 
-			          colour,
-			          drawMode, 
-			          startIndex);
-		}
-		
-		inline void drawBuffer(int startIndex, 
-		                       const size_t size, 
-		                       const uint8_t* mask, 
-		                       const size_t maskSize,
-		                       const Colour colour = CO_WHITE,
-		                       DrawMode drawMode = DM_OR_MASK)
-		{	
-			if (startIndex < 0 || (startIndex + size) > getBufferSize())
-			{
-				return;
-			}
-			
-			drawArray(&buffer_[startIndex], 
-			          &buffer_[startIndex + size], 
-			          &buffer_[startIndex], 
-			          mask, 
-			          &mask[maskSize], 
-			          colour, 
-			          drawMode, 
-			          startIndex);
-		}
-
-		inline static void drawArray(const uint8_t* inBegin, 
-		                             const uint8_t* inEnd, 
-		                             uint8_t* outBegin,
-		                             const uint8_t* maskBegin,
-		                             const uint8_t* maskEnd,
-		                             const Colour colour = CO_WHITE,
-		                             const DrawMode drawMode = DM_OR_MASK,
-		                             int patternIndex = 0)
-		{		
-			while (inBegin != inEnd && maskBegin != maskEnd)
-			{
-				*outBegin = drawByte(*inBegin, *maskBegin, colour, drawMode, patternIndex);
-				++outBegin; 
-				++inBegin;
-				++maskBegin;
-				++patternIndex;
-			}
-		}
-		
-		inline static void drawArray(const uint8_t* inBegin, 
-		                             const uint8_t* inEnd, 
-		                             uint8_t* outBegin,
-		                             const uint8_t mask,
-		                             const Colour colour = CO_WHITE,
-		                             const DrawMode drawMode = DM_OR_MASK,
-		                             int patternIndex = 0)
-		{		
-			while (inBegin != inEnd)
-			{
-				*outBegin = drawByte(*inBegin, mask, colour, drawMode, patternIndex);
-				++outBegin; 
-				++inBegin;
-				++patternIndex;
-			}
-		}
-		
+				
 		inline void drawPixel(Point* point, 
 		                      Colour colour = CO_WHITE,
 		                      DrawMode drawMode = DM_OR_MASK)
@@ -154,6 +106,13 @@ namespace graphics
 			           (1 << (point->y & 0x07)), 
 			           colour,
 			           drawMode);
+		}
+		
+		inline void drawPixel(Point point, 
+		                      Colour colour = CO_WHITE,
+		                      DrawMode drawMode = DM_OR_MASK)
+		{	
+			drawPixel(&point, colour, drawMode);
 		}
 		
 		inline void drawBuffer(int index, 
@@ -207,32 +166,40 @@ namespace graphics
 			}
 		}
 		
-		inline static const uint8_t getColourPattern(const Colour colour, const int patternIndex = 0)
-		{
-			switch (colour)
-			{
-				case CO_WHITE:
-					return 0xFF;
-				case CO_LIGHTGREY:
-					return (patternIndex & 0x01) ? 0x77 : 0xDD;
-				case CO_GREY:
-					return (patternIndex & 0x01) ? 0xAA : 0x55;
-				case CO_DARKGREY:
-					return (patternIndex & 0x01) ? 0x88 : 0x22;
-				case CO_BLACK:
-					return 0x00;
-			}
-		}
-		
+		static void drawArray(const uint8_t* inBegin, 
+		                      const uint8_t* inEnd, 
+		                      uint8_t* outBegin,
+		                      const uint8_t* maskBegin,
+		                      const uint8_t* maskEnd,
+		                      const Colour colour = CO_WHITE,
+		                      const DrawMode drawMode = DM_OR_MASK,
+		                      int patternIndex = 0);
+		static void drawArray(const uint8_t* inBegin, 
+		                      const uint8_t* inEnd, 
+		                      uint8_t* outBegin,
+		                      const uint8_t mask,
+		                      const Colour colour = CO_WHITE,
+		                      const DrawMode drawMode = DM_OR_MASK,
+		                      int patternIndex = 0);
 		void drawHorizontalLine(Point startPoint,
 		                        int width, 
 		                        Colour colour = CO_WHITE, 
 		                        DrawMode drawMode = DM_OR_MASK);
-		
 		void drawVerticalLine(Point startPoint,
 		                      int height, 
 		                      Colour colour = CO_WHITE, 
 		                      DrawMode drawMode = DM_OR_MASK);
+		void drawBuffer(int startIndex, 
+		                const size_t size, 
+		                const uint8_t mask, 
+		                const Colour colour = CO_WHITE,
+		                DrawMode drawMode = DM_OR_MASK);
+		void drawBuffer(int startIndex, 
+		                const size_t size, 
+		                const uint8_t* mask, 
+		                const size_t maskSize,
+		                const Colour colour = CO_WHITE,
+		                DrawMode drawMode = DM_OR_MASK);
 		
 		uint8_t* buffer_ = NULL;
 		const Rect RECT_;

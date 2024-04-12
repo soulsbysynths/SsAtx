@@ -73,5 +73,21 @@
         <Version>0.0.1</Version>
       </Key>
     </Dependency>
+    <Dependency>
+      <Type>Library</Type>
+      <Key>
+        <Packager>Paul Soulsby</Packager>
+        <Name>Control</Name>
+        <Version>0.0.1</Version>
+      </Key>
+    </Dependency>
+    <Dependency>
+      <Type>Library</Type>
+      <Key>
+        <Packager>Paul Soulsby</Packager>
+        <Name>Button</Name>
+        <Version>0.0.1</Version>
+      </Key>
+    </Dependency>
   </Dependencies>
 </ArduinoDependencyCollection>

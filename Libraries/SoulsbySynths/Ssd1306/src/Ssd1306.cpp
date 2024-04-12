@@ -61,7 +61,7 @@ void Ssd1306::clearDisplay()
 	writeCommand(0); // Page start address (0 = reset)
 	writeCommand(7); // Page end address (7 = reset)
 	
-	writeData(0x00, (uint16_t)1024);
+	writeData(CLEAR_DATA_, (uint16_t)1024);
 	
 }
 

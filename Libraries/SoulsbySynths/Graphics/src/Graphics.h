@@ -68,6 +68,9 @@ namespace graphics
 		void drawRect(Rect rect, 
 		              Colour colour = CO_WHITE, 
 		              DrawMode drawMode = DM_OR_MASK);
+		void fillRect(Rect rect, 
+		              Colour colour = CO_WHITE, 
+		              DrawMode drawMode = DM_OR_MASK);
 		void drawCharacter(Point location, 
 		                   const Font* font, 
 		                   char character, 
@@ -75,10 +78,20 @@ namespace graphics
 		                   DrawMode drawMode = DM_OR_MASK);
 		void drawCircle(Point location,
 		                int radius,
-		                CircleQuarter quarters,
+		                CircleQuarterFlags quarters,
 		                Colour colour = CO_WHITE,
 		                DrawMode drawMode = DM_OR_MASK);
+		void fillCircle(Point location,
+		                int radius,
+		                CircleQuarterFlags quarters,
+		                int delta = 0,
+		                Colour color = CO_WHITE,
+		                DrawMode drawMode = DM_OR_MASK);
 		void drawRoundRect(Rect rect,
+		                   int radius,
+		                   Colour colour = CO_WHITE,
+		                   DrawMode drawMode = DM_OR_MASK);
+		void fillRoundRect(Rect rect,
 		                   int radius,
 		                   Colour colour = CO_WHITE,
 		                   DrawMode drawMode = DM_OR_MASK);
@@ -88,8 +101,23 @@ namespace graphics
 		static Rect initRect(const Rect* rect, 
 		                     const Size* constrainSize, 
 		                     const Font* font);
-		static void enlargeGridToIncludeLocation(Grid* grid, 
-		                                         const GridLocation location);
+		static void enlargeGrid(Grid* grid, 
+		                        const GridLocation addLocation);
+		static void enlargeRect(Rect* rect, 
+		                        const Point* addPoint);
+		static void enlargeRect(Rect* rect, 
+		                        const Rect* addRect);
+		static void enlargeRect(Rect* rect, 
+		                        const Grid* addGrid, 
+		                        const Size* gridSizeBitShift);
+		static bool isInnerRectContainedInOuterRect(const Rect* outerRect, 
+		                                            const Rect* innerRect);
+		static const Rect getRoundRectCircleQuarterRect(const Rect* rect, 
+		                                                int radius, 
+		                                                CircleQuarter quarter);
+		static const Rect getRoundRectSideRect(const Rect* rect, 
+		                                       int radius, 
+		                                       Side side);
 		
 		private:
 		

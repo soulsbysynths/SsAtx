@@ -3,48 +3,67 @@
 #include <stdint.h>
 #include <stddef.h>
 
-class Control
+
+namespace graphics
 {
-	public:
-	Control(const uint8_t id,
-	        const graphics::Size* constrainSize, 
-	        const graphics::Rect rect,
-	        void(*paintControl)(Control*, graphics::Graphics*),
-	        const uint8_t zOrder = 0)
-		: ID_(id)
-		, CONSTRAIN_SIZE_(constrainSize)
-		, RECT_(rect)
-		, paintControl_(paintControl)
-		, Z_ORDER_(zOrder)
+	class Control
 	{
-	}
+		public:
+		Control(const uint8_t id,
+		        const Size* constrainSize, 
+		        const Rect rect,
+		        void(*paintControl)(Control*, Graphics*),
+		        const uint8_t zOrder = 0)
+			: ID_(id)
+			, CONSTRAIN_SIZE_(constrainSize)
+			, RECT_(rect)
+			, paintControl_(paintControl)
+			, Z_ORDER_(zOrder)
+		{
+		}
 	
-	~Control(void)
-	{
-	}
+		~Control(void)
+		{
+		}
 	
-	inline void paint()
-	{
-		graphics::Rect paintRect = 
-		{ 
-			{ 0, 0 },
-			RECT_.size		
-		};
+		inline void paint()
+		{
+			if (paintRect_.size.width == 0 || paintRect_.size.height == 0)
+			{
+				return;
+			}
 		
-		paint(&paintRect);
-	}
+			paint(&paintRect_);
+			
+			paintRect_ = { };
+		}
 	
-	inline const uint8_t getId() const 
-	{
-		return ID_;
-	}
+		inline const uint8_t getId() const 
+		{
+			return ID_;
+		}
 	
-	virtual void paint(graphics::Rect* rect) = 0;
+		protected:
+		inline virtual void paint(Rect* rect)
+		{
+			Graphics graphics( { 
+			                  {
+				                  RECT_.location.x + rect->location.x, 
+				                  RECT_.location.y + rect->location.y
+			                  }, 
+				                  rect->size
+			                  }, 
+			                  CONSTRAIN_SIZE_);
 	
-	protected:
-	void(*paintControl_)(Control*, graphics::Graphics*) = NULL;
-	const graphics::Size* CONSTRAIN_SIZE_;
-	const graphics::Rect RECT_;
-	const uint8_t ID_;
-	const uint8_t Z_ORDER_;
-};
+			paintGraphics(rect, &graphics);
+			paintControl_(this, &graphics);	
+		}
+		virtual void paintGraphics(Rect* rect, Graphics* graphics) = 0;
+		void(*paintControl_)(Control*, Graphics*) = NULL;
+		Rect paintRect_ = { };
+		const Size* CONSTRAIN_SIZE_;
+		const Rect RECT_;
+		const uint8_t ID_;
+		const uint8_t Z_ORDER_;
+	};
+}

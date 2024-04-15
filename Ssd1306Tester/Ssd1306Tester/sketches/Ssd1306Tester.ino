@@ -35,7 +35,8 @@ void writeRandomChar(Ssd1306* ssd);
 void writeRandomCharFullScreen(Ssd1306* ssd);
 void writeGraphicsTest();
 void writeRandomLabel(Ssd1306* ssd);
-void paintControl(Control* c, graphics::Graphics* g);
+void writeRandomButton(Ssd1306* ssd);
+void paintControl(graphics::Control* c, graphics::Graphics* g);
 graphics::Rect getRandomRect(Ssd1306* ssd);
 graphics::Colour getRandomColour();
 graphics::DrawMode getRandomDrawMode();
@@ -51,7 +52,8 @@ enum GraphicsTest
 	GT_CHAR,
 	GT_CHAR_FULLSCREEN,
 	GT_LABEL,
-	GT_ROUNDRECTS_FULLSCREEN
+	GT_ROUNDRECTS_FULLSCREEN,
+	GT_BUTTON
 };
 
 static const GraphicsTest GRAPHICS_TEST = GT_ROUNDRECTS_FULLSCREEN;
@@ -153,6 +155,11 @@ void writeGraphicsTest()
 					writeRandomRoundRectFullScreen(ssd);
 					break;
 				}
+			case GT_BUTTON:
+				{
+					writeRandomButton(ssd);
+					break;
+				}
 		}
 	}
 }
@@ -232,7 +239,8 @@ void writeRandomRoundRectFullScreen(Ssd1306* ssd)
 		radius = random(rect.size.height);
 	}
 	
-	graphics.drawRoundRect(rect,radius);
+	graphics.drawRoundRect(rect, radius);
+	graphics.fillRoundRect(rect,radius);
 	
 	ssd->writeGraphics(&graphics);
 	
@@ -276,24 +284,6 @@ void writeRandomLabel(Ssd1306* ssd)
 	ssd->clearDisplay();
 	
 	Rect rect = getRandomRect(ssd);
-	//		Rect rect = 		     
-	//		{
-	//			4,
-	//			8,
-	//			ssd->getWidth() - 4,
-	//			ssd->getHeight() - 8   
-	//		};
-	
-	//	Label label(ssd->ID, 
-	//	            &dinMittel8x16Regular, 
-	//	            ssd->getSizePtr(),
-	//	            &rect,
-	//	            getRandomString(&rect),
-	//	            &paintLabel,
-	//	            getRandomStringAlignment(),
-	//	            getRandomStringAlignment(),
-	//	            true);
-	
 
 	Label label(ssd->getId(), 
 	            &dinMittel8x16Regular, 
@@ -307,8 +297,24 @@ void writeRandomLabel(Ssd1306* ssd)
 	            CO_DARKGREY,
 	            CO_WHITE,
 	            DM_OR_MASK);
+	label.paint();
 }
 
+void writeRandomButton(Ssd1306* ssd)
+{
+	using namespace graphics;
+	ssd->clearDisplay();
+	
+	Rect rect = getRandomRect(ssd);
+
+	Button button(ssd->getId(), 
+	            &dinMittel8x16Regular, 
+	            ssd->getSizePtr(),
+	            &rect,
+	            "OK",
+	            &paintControl);
+	button.paint();
+}
 
 void initialiseDtrMux()
 {
@@ -356,7 +362,7 @@ void writeOledDc(Ssd1306* ssd, uint8_t value)
 	digitalWrite(PIN_DC, value);
 }
 
-void paintControl(Control* c, graphics::Graphics* g)
+void paintControl(graphics::Control* c, graphics::Graphics* g)
 {
 	oledGroup.getOledPtr(c->getId())->writeGraphics(g);
 }

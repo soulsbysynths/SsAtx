@@ -1,11 +1,13 @@
 #include "Button.h"
 
+using namespace graphics;
+
 Button::Button(const uint8_t id,
                const Font* font, 
-               const graphics::Size* constrainSize, 
-               const graphics::Rect* rect,
+               const Size* constrainSize, 
+               const Rect* rect,
                std::string text, 
-               void(*paintControl)(Control*, graphics::Graphics*),
+               void(*paintControl)(Control*, Graphics*),
                const bool pressed,
                const bool selected,
                const uint8_t zOrder)
@@ -15,11 +17,11 @@ Button::Button(const uint8_t id,
 	        rect, 
 	        text, 
 	        paintControl, 
-	        graphics::SA_CENTRE, 
-	        graphics::SA_CENTRE, 
+	        SA_CENTRE, 
+	        SA_CENTRE, 
 	        false, 
-	        graphics::CO_BLACK,
-	        graphics::CO_WHITE,
+	        CO_BLACK,
+	        CO_WHITE,
 	        getPressedDrawMode(),
 	        zOrder)
 	, pressed_(pressed)
@@ -27,34 +29,84 @@ Button::Button(const uint8_t id,
 {
 }
 
-void Button::paint(graphics::Rect* rect)
+void Button::paint(Rect* rect)
 {
-	using namespace graphics;
 	// Make sure rect conforms to size constraints
-	
 	Graphics::constrainRect(rect, &RECT_.size, FONT_->getSizeBitShiftPtr()); //constrain paint rect to label rect
 	
-	Graphics graphics( 
-	                  {
-	                  {
+	Graphics graphics( { 
+	                  { 
 		                  RECT_.location.x + rect->location.x, 
 		                  RECT_.location.y + rect->location.y
 	                  }, 
 		                  rect->size
 	                  }, 
-	                  CONSTRAIN_SIZE_,
-	                  CO_BLACK);
-	
-	Label::paint(rect, &graphics);
+	                  CONSTRAIN_SIZE_);
 
-	Line line;
-	line.start.x = 0;
-	line.start.y = 2;
-	line.end.x = 0;
-	line.end.y = RECT_.size.height - 3;
-	
-
-	//graphics.drawRect({ 0, 0, graphics.getRectPtr()->width, graphics.getRectPtr()->height }, CO_DARKGREY, DM_OR_MASK);
+	paintGraphics(rect, &graphics);
 	paintControl_(this, &graphics);	
 	
+}
+
+void Button::paintGraphics(Rect* rect, Graphics* graphics) 
+{
+	Rect buttonRect = 
+	{ 
+		{ 0, 0 },
+		RECT_.size 
+	};
+	
+	if (pressed_)
+	{
+		
+		return;		
+	}
+
+	Label::paintGraphics(rect, graphics);
+	
+	Colour colour = CO_WHITE;
+	
+	for (int i = 0; i < 2; i++)
+	{
+		for (int s = SI_TOP; s < SI_MAX; s++)
+		{
+			Rect sideRect = Graphics::getRoundRectSideRect(&buttonRect, RADIUS_, (Side)s);
+			if (Graphics::isInnerRectContainedInOuterRect(rect, &sideRect))
+			{
+				graphics->drawLine( {
+					                   sideRect.location,
+				                   {
+					                   sideRect.location.x + sideRect.size.width,
+					                   sideRect.location.y + sideRect.size.height
+				                   }
+				                   },
+				                   colour);
+			}
+		}
+	
+		for (int c = CQ_TOPLEFT; c < CQ_MAX; c++)
+		{
+			const Rect circleQuarterRect = Graphics::getRoundRectCircleQuarterRect(&buttonRect, RADIUS_, (CircleQuarter)c);
+			if (Graphics::isInnerRectContainedInOuterRect(rect, &circleQuarterRect))
+			{
+				graphics->drawCircle(circleQuarterRect.location, 
+				                     RADIUS_, 
+				                     (CircleQuarterFlags)(1 << c),
+				                     colour);
+			}
+		}
+		
+		if (selected_)
+		{
+			buttonRect.location.x++;
+			buttonRect.size.width -= 2;
+			buttonRect.location.y++;
+			buttonRect.size.height -= 2;
+			colour = CO_GREY;
+		}
+		else
+		{
+			return;
+		}
+	}	
 }

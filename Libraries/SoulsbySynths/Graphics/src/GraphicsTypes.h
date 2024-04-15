@@ -46,6 +46,15 @@ namespace graphics
 		GridSize size;
 	} Grid;
 	
+	enum Side : uint8_t
+	{
+		SI_TOP    = 0,
+		SI_RIGHT,
+		SI_BOTTOM,
+		SI_LEFT,
+		SI_MAX
+	};
+	
 	enum StringAlignment : uint8_t
 	{
 		SA_NEAR   = 0,
@@ -76,10 +85,19 @@ namespace graphics
 	
 	enum CircleQuarter : uint8_t
 	{
-		CQ_TOPLEFT = 1,
-		CQ_TOPRIGHT = 2,
-		CQ_BOTTOMRIGHT = 4,
-		CQ_BOTTOMLEFT = 8
+		CQ_TOPLEFT     = 0,
+		CQ_TOPRIGHT,    
+		CQ_BOTTOMRIGHT, 
+		CQ_BOTTOMLEFT,
+		CQ_MAX
+	};
+	
+	enum CircleQuarterFlags : uint8_t
+	{
+		CQF_TOPLEFT     = 1 << CQ_TOPLEFT,
+		CQF_TOPRIGHT    = 1 << CQ_TOPRIGHT,
+		CQF_BOTTOMRIGHT = 1 << CQ_BOTTOMRIGHT,
+		CQF_BOTTOMLEFT  = 1 << CQ_BOTTOMLEFT
 	};
 	
 }

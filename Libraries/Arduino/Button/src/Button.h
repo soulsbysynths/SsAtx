@@ -7,39 +7,45 @@
 #include <Font.h>
 #include <Label.h>
 
-class Button : public Label
+namespace graphics
 {
-	public:
-	Button(const uint8_t id,
-	      const Font* font, 
-	      const graphics::Size* constrainSize, 
-	      const graphics::Rect* rect,
-	      std::string text, 
-	      void(*paintControl)(Control*, graphics::Graphics*),
-	      const bool pressed = false,
-	      const bool selected = true,
-	      const uint8_t zOrder = 0);
-	
-	~Button(void)
+	class Button : public Label
 	{
-	}
+		public:
+		Button(const uint8_t id,
+		       const Font* font, 
+		       const Size* constrainSize, 
+		       const Rect* rect,
+		       std::string text, 
+		       void(*paintControl)(Control*, Graphics*),
+		       const bool pressed = false,
+		       const bool selected = true,
+		       const uint8_t zOrder = 0);
 	
-	void paint(graphics::Rect* rect);
+		~Button(void)
+		{
+		}
+		
+		using Control::paint;
+		void paint(Rect* rect);
 	
-	protected:
+		protected:
+		void paintGraphics(Rect* rect, Graphics* graphics) override;
+		
+		private:
 	
-	private:
+		inline const DrawMode getPressedDrawMode() const
+		{
+			return pressed_ ? DM_NOT_MASK : DM_MASK;
+		}
 	
-	inline const graphics::DrawMode getPressedDrawMode() const
-	{
-		return pressed_ ? graphics::DM_NOT_MASK : graphics::DM_MASK;
-	}
+		inline const Colour getSelectedColour() const
+		{
+			return selected_ ? CO_WHITE : CO_GREY;
+		}
 	
-	inline const graphics::Colour getSelectedColour() const
-	{
-		return selected_ ? graphics::CO_WHITE : graphics::CO_GREY;
-	}
-	
-	bool pressed_ = false;
-	bool selected_ = false;
-};
+		static const int RADIUS_ = 4;
+		bool pressed_ = false;
+		bool selected_ = false;
+	};	 
+}

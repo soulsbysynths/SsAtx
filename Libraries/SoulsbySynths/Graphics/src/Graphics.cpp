@@ -316,9 +316,25 @@ void Graphics::drawRect(Rect rect,
 	                 drawMode);
 }
 
+void Graphics::fillRect(Rect rect, 
+                        Colour colour, 
+                        DrawMode drawMode)
+{
+	for (int x = rect.location.x; x < (rect.location.x + rect.size.width); x++)
+	{
+		drawVerticalLine( {
+			                 x,
+			                 rect.location.y
+		                 },
+		                 rect.size.height,
+		                 colour,
+		                 drawMode);
+	}
+}
+
 void Graphics::drawCircle(Point location,
                           int radius,
-                          CircleQuarter quarters,
+                          CircleQuarterFlags quarters,
                           Colour colour,
                           DrawMode drawMode /* = DM_OR_MASK */)
 {
@@ -340,7 +356,7 @@ void Graphics::drawCircle(Point location,
 		x++;
 		ddF_x += 2;
 		f += ddF_x;
-		if (quarters & CQ_BOTTOMRIGHT)
+		if (quarters & CQF_BOTTOMRIGHT)
 		{
 			drawPixel( { 
 				          location.x + x, 
@@ -356,7 +372,7 @@ void Graphics::drawCircle(Point location,
 			          drawMode);
 		}
 		
-		if (quarters & CQ_TOPRIGHT)
+		if (quarters & CQF_TOPRIGHT)
 		{
 			drawPixel( {
 				          location.x + x, 
@@ -372,7 +388,7 @@ void Graphics::drawCircle(Point location,
 			          drawMode);
 		}
 		
-		if (quarters & CQ_BOTTOMLEFT)
+		if (quarters & CQF_BOTTOMLEFT)
 		{
 			drawPixel( {
 				          location.x - y, 
@@ -388,7 +404,7 @@ void Graphics::drawCircle(Point location,
 			          drawMode);
 		}
 		
-		if (quarters & CQ_TOPLEFT)
+		if (quarters & CQF_TOPLEFT)
 		{
 			drawPixel( {
 				          location.x - y, 
@@ -406,6 +422,93 @@ void Graphics::drawCircle(Point location,
 	}
 }
 
+void Graphics::fillCircle(Point location,
+                          int radius,
+                          CircleQuarterFlags quarters,
+                          int delta,
+                          Colour color,
+                          DrawMode drawMode)
+{
+	int f = 1 - radius;
+	int ddF_x = 1;
+	int ddF_y = -2 * radius;
+	int x = 0;
+	int y = radius;
+	int px = x;
+	int py = y;
+
+	delta++; // Avoid some +1's in the loop
+
+	while (x < y)
+	{
+		if (f >= 0)
+		{
+			y--;
+			ddF_y += 2;
+			f += ddF_y;
+		}
+		
+		x++;
+		ddF_x += 2;
+		f += ddF_x;
+		
+		// These checks avoid double-drawing certain lines
+		if (x < (y + 1))
+		{
+			if (quarters & CQF_TOPLEFT)
+			{
+				drawVerticalLine( {
+					                 location.x + x, 
+					                 location.y - y
+				                 },
+				                 2 * y + delta,
+				                 color,
+				                 drawMode);
+			}
+			
+			if (quarters & CQF_TOPRIGHT)
+			{
+				drawVerticalLine( { 
+					                 location.x - x, 
+					                 location.y - y 
+				                 },
+				                 2 * y + delta,
+				                 color,
+				                 drawMode);
+			}
+		}
+		
+		if (y != py)
+		{
+			if (quarters & CQF_TOPLEFT)
+			{
+				drawVerticalLine( {
+					                 location.x + py,
+					                 location.y - px
+				                 },
+				                 2 * px + delta,
+				                 color,
+				                 drawMode);
+			}
+			
+			if (quarters & CQF_TOPRIGHT)
+			{
+				drawVerticalLine( { 
+					                 location.x - py, 
+					                 location.y - px
+				                 },
+				                 2 * px + delta,
+				                 color,
+				                 drawMode);
+			}
+			
+			py = y;
+		}
+		
+		px = x;
+	}
+}
+
 void Graphics::drawRoundRect(Rect rect,
                              int radius,
                              Colour colour,
@@ -416,67 +519,187 @@ void Graphics::drawRoundRect(Rect rect,
 	{
 		radius = maxRadius;
 	}
+	
+	for (int s = SI_TOP; s < SI_MAX; s++)
+	{
+		const Rect r = getRoundRectSideRect(&rect, radius, (Side)s);
+		drawLine( {
+			         r.location,
+		         {
+			         r.location.x + r.size.width,
+			         r.location.y + r.size.height
+		         }
+		         });
+	}
+	
+	for (int c = CQ_TOPLEFT; c < CQ_MAX; c++)
+	{
+		drawCircle(getRoundRectCircleQuarterRect(&rect, 
+		                                         radius, 
+		                                         (CircleQuarter)c).location, 
+		           radius, 
+		           (CircleQuarterFlags)(1 << c), 
+		           colour, 
+		           drawMode);
+	}
+}
 
-	drawHorizontalLine( {
-		                   rect.location.x + radius, 
-		                   rect.location.y
-	                   }, 
-	                   rect.size.width - 2 * radius, 
-	                   colour,
-	                   drawMode); // Top
-	drawHorizontalLine( {
-		                   rect.location.x + radius, 
-		                   rect.location.y + rect.size.height - 1
-	                   },
-	                   rect.size.width - 2 * radius, 
-	                   colour,
-	                   drawMode); // Bottom
-	drawVerticalLine( {
-		                 rect.location.x, 
-		                 rect.location.y + radius
-	                 }, 
-	                 rect.size.height - 2 * radius, 
-	                 colour,
-	                 drawMode); // Left
-	drawVerticalLine( {
-		                 rect.location.x + rect.size.width - 1, 
-		                 rect.location.y + radius
-	                 }, 
-	                 rect.size.height - 2 * radius, 
-	                 colour,
-	                 drawMode); // Right
-	drawCircle( {
-		           rect.location.x + radius, 
-		           rect.location.y + radius
-	           },
-	           radius,
-	           CQ_TOPLEFT,
-	           colour,
-	           drawMode);
-	drawCircle( {
+void Graphics::fillRoundRect(Rect rect,
+                             int radius,
+                             Colour colour,
+                             DrawMode drawMode /* = DM_OR_MASK */)
+{
+	int16_t maxRadius = ((rect.size.width < rect.size.height) ? rect.size.width : rect.size.height) / 2; // 1/2 minor axis
+	if (radius > maxRadius)
+	{
+		radius = maxRadius;
+	}
+	
+	  // smarter version
+	fillRect( {
+	         {
+		         rect.location.x + radius, 
+		         rect.location.y
+	         },
+	         {
+		         rect.size.width - 2 * radius, 
+		         rect.size.height
+	         }
+	         }, 
+	         colour,
+	         drawMode);
+	
+	// draw four corners
+	fillCircle( {
 		           rect.location.x + rect.size.width - radius - 1, 
 		           rect.location.y + radius
-	           },
-	           radius, 
-	           CQ_TOPRIGHT, 
-	           colour,
-	           drawMode);
-	drawCircle( {
-		           rect.location.x + rect.size.width - radius - 1, 
-		           rect.location.y + rect.size.height - radius - 1
 	           }, 
 	           radius, 
-	           CQ_BOTTOMRIGHT, 
+	           CQF_TOPLEFT, 
+	           rect.size.height - 2 * radius - 1, 
 	           colour,
 	           drawMode);
-	drawCircle( {
+	
+	fillCircle( {
 		           rect.location.x + radius, 
-		           rect.location.y + rect.size.height - radius - 1
-	           },
+		           rect.location.y + radius
+	           }, 
 	           radius, 
-	           CQ_BOTTOMLEFT,
+	           CQF_TOPRIGHT, 
+	           rect.size.height - 2 * radius - 1, 
 	           colour,
 	           drawMode);
+}
+
+const Rect Graphics::getRoundRectSideRect(const Rect* rect, int radius, Side side)
+{
+	switch (side)
+	{
+		case SI_TOP:
+			return
+			{ 
+			{
+				rect->location.x + radius, 
+				rect->location.y
+			}, 
+			{
+				rect->size.width - 2 * radius,
+				0
+			}
+			};
+		case SI_RIGHT:
+			return
+			{ 
+			{
+				rect->location.x + rect->size.width - 1, 
+				rect->location.y + radius
+			}, 
+			{
+				0,
+				rect->size.height - 2 * radius
+			}
+			};
+		case SI_BOTTOM:
+			return
+			{ 
+			{
+				rect->location.x + radius, 
+				rect->location.y + rect->size.height - 1
+			},
+			{
+				rect->size.width - 2 * radius,
+				0
+			}
+			};
+		default:
+			return
+			{ 
+			{
+				rect->location.x, 
+				rect->location.y + radius
+			}, 
+			{
+				0,
+				rect->size.height - 2 * radius
+			}
+			};
+	}
+}
+
+const Rect Graphics::getRoundRectCircleQuarterRect(const Rect* rect, int radius, CircleQuarter quarter)
+{
+	switch (quarter)
+	{
+		case CQ_TOPLEFT:
+			return 
+			{
+			{
+				rect->location.x + radius, 
+				rect->location.y + radius
+			},
+			{
+				-radius,
+				-radius
+			}
+			};
+		case CQ_TOPRIGHT:
+			return 
+			{
+			{
+				rect->location.x + rect->size.width - radius - 1, 
+				rect->location.y + radius
+			},
+			{
+				radius,
+				-radius
+			}
+			};
+		case CQ_BOTTOMRIGHT:
+			return 
+			{
+			{
+				rect->location.x + rect->size.width - radius - 1, 
+				rect->location.y + rect->size.height - radius - 1
+			}, 
+			{ 
+				radius,
+				radius
+			}
+			};
+		default:
+			return 
+			{
+			{
+				rect->location.x + radius, 
+				rect->location.y + rect->size.height - radius - 1
+			},
+			{
+				-radius,
+				radius
+			}
+			};
+			
+	}
 }
 
 void Graphics::drawBuffer(int startIndex, 
@@ -623,12 +846,12 @@ Rect Graphics::initRect(const Rect* rect, const Size* constrainSize, const Font*
 	return constrainedRect;
 }
 
-void Graphics::enlargeGridToIncludeLocation(Grid* grid, const GridLocation location)
+void Graphics::enlargeGrid(Grid* grid, const GridLocation addLocation)
 {
 	if (grid->size.columns == 0 && grid->size.rows == 0)
 	{
 		// Must be first cell
-		grid->location = location;
+		grid->location = addLocation;
 		grid->size = { 1, 1 };
 		return;
 	}
@@ -639,25 +862,109 @@ void Graphics::enlargeGridToIncludeLocation(Grid* grid, const GridLocation locat
 		grid->location.row + grid->size.rows - 1
 	};
 		
-	if (location.column < grid->location.column)
+	if (addLocation.column < grid->location.column)
 	{
-		grid->location.column = location.column;
+		grid->location.column = addLocation.column;
 	}
-	else if (location.column > endLocation.column)
+	else if (addLocation.column > endLocation.column)
 	{
-		endLocation.column = location.column;
+		endLocation.column = addLocation.column;
 	}
 	
 	grid->size.columns = endLocation.column - grid->location.column + 1;
 	
-	if (location.row < grid->location.row)
+	if (addLocation.row < grid->location.row)
 	{
-		grid->location.row = location.row;
+		grid->location.row = addLocation.row;
 	}
-	else if (location.row > endLocation.row)
+	else if (addLocation.row > endLocation.row)
 	{
-		endLocation.row = location.row;
+		endLocation.row = addLocation.row;
 	}
 	
 	grid->size.rows = endLocation.row - grid->location.row + 1;
+}
+
+void Graphics::enlargeRect(Rect* rect, const Point* addPoint)
+{
+	if (rect->size.width == 0 && rect->size.height == 0)
+	{
+		// Must be first point
+		rect->location = *addPoint;
+		rect->size = { 1, 1 };
+		return;
+	}
+
+	Point endPoint = 
+	{
+		rect->location.x + rect->size.width - 1, 
+		rect->location.y + rect->size.height - 1
+	};
+		
+	if (addPoint->x < rect->location.x)
+	{
+		rect->location.x = addPoint->x;
+	}
+	else if (addPoint->x > endPoint.x)
+	{
+		endPoint.x = addPoint->x;
+	}
+	
+	rect->size.width = endPoint.x - rect->location.x + 1;
+	
+	if (addPoint->y < rect->location.y)
+	{
+		rect->location.y = addPoint->y;
+	}
+	else if (addPoint->y > endPoint.y)
+	{
+		endPoint.y = addPoint->y;
+	}
+	
+	rect->size.height = endPoint.y - rect->location.y + 1;
+}
+
+void Graphics::enlargeRect(Rect* rect, const Rect* addRect)
+{
+	const Point startPoint = addRect->location;
+	const Point endPoint = 
+	{ 
+		addRect->location.x + addRect->size.width,
+		addRect->location.y + addRect->size.height
+	};
+	enlargeRect(rect, &startPoint);
+	enlargeRect(rect, &endPoint);
+}
+
+void Graphics::enlargeRect(Rect* rect, const Grid* addGrid, const Size* gridSizeBitShift)
+{
+	const Point startPoint = 
+	{ 
+		addGrid->location.column << gridSizeBitShift->width,
+		addGrid->location.row << gridSizeBitShift->height
+	};
+	
+	const Point endPoint = 
+	{ 
+		(addGrid->location.column + addGrid->size.columns) << gridSizeBitShift->width,
+		(addGrid->location.row + addGrid->size.rows) << gridSizeBitShift->height
+	};
+	
+	enlargeRect(rect, &startPoint);
+	enlargeRect(rect, &endPoint);
+}
+
+bool Graphics::isInnerRectContainedInOuterRect(const Rect* outerRect, const Rect* innerRect)
+{
+	if (innerRect->location.x >= outerRect->location.x &&
+	   innerRect->location.y >= outerRect->location.y &&
+	   (innerRect->location.x + innerRect->size.width) <= (outerRect->location.x + outerRect->size.width) && 
+	   (innerRect->location.y + innerRect->size.height <= (outerRect->location.y + outerRect->size.height)))
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
 }

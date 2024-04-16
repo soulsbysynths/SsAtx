@@ -1,9 +1,7 @@
 #pragma once
 #include <Graphics.h>
 #include <Control.h>
-#include <string>
 #include <algorithm>
-#include <vector>
 #include <Font.h>
 #include <Label.h>
 
@@ -36,7 +34,7 @@ namespace graphics
 	
 		inline const DrawMode getPressedDrawMode() const
 		{
-			return pressed_ ? DM_NOT_MASK : DM_MASK;
+			return pressed_ ? DM_XOR_MASK : DM_MASK;
 		}
 	
 		inline const Colour getSelectedColour() const

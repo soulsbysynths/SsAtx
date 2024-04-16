@@ -81,6 +81,11 @@
   },
   {
     "Sourcefile": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Ssd1306Tester\\Ssd1306Tester\\Output\\Arduino_Zero__Native_USB_Port_\\Debug\\sketch\\Ssd1306Tester.ino.cpp",
+    "Include": "Slider.h",
+    "Includepath": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\Arduino\\Slider\\src"
+  },
+  {
+    "Sourcefile": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Ssd1306Tester\\Ssd1306Tester\\Output\\Arduino_Zero__Native_USB_Port_\\Debug\\sketch\\Ssd1306Tester.ino.cpp",
     "Include": "",
     "Includepath": null
   },
@@ -171,6 +176,11 @@
   },
   {
     "Sourcefile": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\Arduino\\Button\\src\\Button.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\Arduino\\Slider\\src\\Slider.cpp",
     "Include": "",
     "Includepath": null
   }

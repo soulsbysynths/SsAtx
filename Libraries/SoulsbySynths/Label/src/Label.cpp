@@ -17,7 +17,7 @@ Label::Label(const uint8_t id,
              const uint8_t zOrder)
 	: Control(id, 
 	          constrainSize, 
-	          Graphics::initRect(rect, constrainSize, font), 
+	          Graphics::constructRect(rect, constrainSize, font), 
 	          paintControl, 
 	          zOrder)
 	, FONT_(font)
@@ -27,7 +27,7 @@ Label::Label(const uint8_t id,
 	, backColour_(backColour)
 	, foreColour_(foreColour)
 	, drawMode_(drawMode)
-	, GRID_SIZE_( {
+	, GRID_SIZE_({
 	             RECT_.size.width >> font->getSizeBitShiftWidth(), 
 	             RECT_.size.height >> font->getSizeBitShiftHeight()
 	             })
@@ -45,7 +45,7 @@ void Label::setText(std::string text)
 {
 	size_t pos = 0;
 	std::vector<std::string> newText;
-	Grid paintGrid = {};
+	Grid paintGrid = { };
 	const char LF = '\n';
 
 	while ((pos = text.find(LF)) != std::string::npos)
@@ -82,7 +82,7 @@ void Label::setText(std::string text)
 				if (text_[r][c] != '\0')
 				{
 					text_[r][c] = '\0';
-					Graphics::enlargeGrid(&paintGrid, { c, r });
+					enlarge(&paintGrid, { c, r });
 				}
 				
 				c++;
@@ -121,7 +121,7 @@ void Label::setText(std::string text)
 					if (text_[r][c] != '\0')
 					{
 						text_[r][c] = '\0';
-						Graphics::enlargeGrid(&paintGrid, { c, r });
+						enlarge(&paintGrid, { c, r });
 					}
 				}
 				
@@ -136,7 +136,7 @@ void Label::setText(std::string text)
 					if (text_[r][c] != newText[newR][newC])
 					{
 						text_[r][c] = newText[newR][newC];
-						Graphics::enlargeGrid(&paintGrid, { c, r });
+						enlarge(&paintGrid, { c, r });
 					}
 				}
 				
@@ -149,7 +149,7 @@ void Label::setText(std::string text)
 				if (text_[r][c] != '\0')
 				{
 					text_[r][c] = '\0';
-					Graphics::enlargeGrid(&paintGrid, { c, r });
+					enlarge(&paintGrid, { c, r });
 				}
 				
 				c++;
@@ -168,7 +168,7 @@ void Label::setText(std::string text)
 			if (text_[r][c] != '\0')
 			{
 				text_[r][c] = '\0';
-				Graphics::enlargeGrid(&paintGrid, { c, r });
+				enlarge(&paintGrid, { c, r });
 			}
 			
 			c++;
@@ -177,10 +177,23 @@ void Label::setText(std::string text)
 		r++;
 	}
 	
-	Graphics::enlargeRect(&paintRect_, &paintGrid, FONT_->getSizeBitShiftPtr());
+	enlarge(&paintRect_, &paintGrid, FONT_->getSizeBitShiftPtr());
 }
 
-
+void Label::setDrawMode(DrawMode drawMode)
+{
+	if (drawMode == drawMode_)
+	{
+		return;
+	}
+	
+	drawMode_ = drawMode;
+	paintRect_ = 
+	{ 
+		{ 0, 0 },
+		RECT_.size
+	};
+}
 
 void Label::paintGraphics(Rect* rect, Graphics* graphics)
 {
@@ -222,7 +235,7 @@ void Label::paintGraphics(Rect* rect, Graphics* graphics)
 void Label::paint(Rect* rect)
 {
 	// Make sure rect conforms to size constraints
-	Graphics::constrainRect(rect, &RECT_.size, FONT_->getSizeBitShiftPtr()); //constrain paint rect to label rect
+	graphics::clip(rect, &RECT_.size, FONT_->getSizeBitShiftPtr()); //constrain paint rect to label rect
 	Graphics graphics( { 
 	                  {
 		                  RECT_.location.x + rect->location.x, 

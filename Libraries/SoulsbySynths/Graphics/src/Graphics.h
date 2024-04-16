@@ -1,5 +1,5 @@
 #pragma once
-#include <GraphicsTypes.h>
+#include <GraphicsDrawing.h>
 #include <stdint.h>
 #include <string.h>
 #include <stdlib.h> 
@@ -18,15 +18,15 @@ namespace graphics
 	
 		~Graphics(void);
 		
-		inline static void constrainRectGraphics(Rect* rect, const Size* constrainSize)
+		inline static void clip(Rect* rect, const Size* constrainSize)
 		{
-			constrainRect(rect, constrainSize, &QUANTISE_BIT_SHIFT_);	
+			graphics::clip(rect, constrainSize, &QUANTISE_BIT_SHIFT_);	
 		}
 		
-		inline static Rect constrainRectGraphics(const Rect* rect, const Size* constrainSize)
+		inline static Rect clip(const Rect* rect, const Size* constrainSize)
 		{
 			Rect r = *rect;
-			constrainRect(&r, constrainSize, &QUANTISE_BIT_SHIFT_);	
+			graphics::clip(&r, constrainSize, &QUANTISE_BIT_SHIFT_);	
 			return r;
 		}
 		
@@ -43,23 +43,6 @@ namespace graphics
 		inline const uint8_t* getBufferPtr() const
 		{
 			return buffer_;
-		}
-		
-		inline static const uint8_t getColourPattern(const Colour colour, const int patternIndex = 0)
-		{
-			switch (colour)
-			{
-				case CO_WHITE:
-					return 0xFF;
-				case CO_LIGHTGREY:
-					return (patternIndex & 0x01) ? 0x77 : 0xDD;
-				case CO_GREY:
-					return (patternIndex & 0x01) ? 0xAA : 0x55;
-				case CO_DARKGREY:
-					return (patternIndex & 0x01) ? 0x88 : 0x22;
-				case CO_BLACK:
-					return 0x00;
-			}
 		}
 		
 		void drawLine(Line line, 
@@ -95,29 +78,9 @@ namespace graphics
 		                   int radius,
 		                   Colour colour = CO_WHITE,
 		                   DrawMode drawMode = DM_OR_MASK);
-		static void constrainRect(Rect* rect, 
-		                          const Size* constrainSize, 
-		                          const Size* quantiseBitShift);
-		static Rect initRect(const Rect* rect, 
+		static Rect constructRect(const Rect* rect, 
 		                     const Size* constrainSize, 
 		                     const Font* font);
-		static void enlargeGrid(Grid* grid, 
-		                        const GridLocation addLocation);
-		static void enlargeRect(Rect* rect, 
-		                        const Point* addPoint);
-		static void enlargeRect(Rect* rect, 
-		                        const Rect* addRect);
-		static void enlargeRect(Rect* rect, 
-		                        const Grid* addGrid, 
-		                        const Size* gridSizeBitShift);
-		static bool isInnerRectContainedInOuterRect(const Rect* outerRect, 
-		                                            const Rect* innerRect);
-		static const Rect getRoundRectCircleQuarterRect(const Rect* rect, 
-		                                                int radius, 
-		                                                CircleQuarter quarter);
-		static const Rect getRoundRectSideRect(const Rect* rect, 
-		                                       int radius, 
-		                                       Side side);
 		
 		private:
 		
@@ -155,60 +118,7 @@ namespace graphics
 			
 			buffer_[index] = drawByte(buffer_[index], mask, colour, drawMode, index);
 		}
-		
-		inline static uint8_t drawByte(const uint8_t inByte, 
-		                               const uint8_t mask, 
-		                               const Colour colour, 
-		                               const DrawMode drawMode, 
-		                               int patternIndex = 0)
-		{
-			return maskByte(inByte, 
-			                maskByte(getColourPattern(colour, patternIndex), 
-			                         mask, 
-			                         graphics::DM_AND_MASK), 
-			                drawMode);
-		}
-		
-		inline static uint8_t maskByte(const uint8_t byte, 
-		                               const uint8_t mask, 
-		                               const DrawMode drawMode)
-		{
-			switch (drawMode)
-			{
-				case DM_MASK:
-					return mask;
-				case DM_NOT_MASK:
-					return ~mask;
-				case DM_AND_MASK:
-					return byte & mask;
-				case DM_AND_NOT_MASK:
-					return byte & ~mask;
-				case DM_OR_MASK:
-					return byte | mask;
-				case DM_OR_NOT_MASK:
-					return byte | ~mask;
-				case DM_XOR_MASK:
-					return byte ^ mask;
-				case DM_XOR_NOT_MASK:
-					return byte ^ ~mask;
-			}
-		}
-		
-		static void drawArray(const uint8_t* inBegin, 
-		                      const uint8_t* inEnd, 
-		                      uint8_t* outBegin,
-		                      const uint8_t* maskBegin,
-		                      const uint8_t* maskEnd,
-		                      const Colour colour = CO_WHITE,
-		                      const DrawMode drawMode = DM_OR_MASK,
-		                      int patternIndex = 0);
-		static void drawArray(const uint8_t* inBegin, 
-		                      const uint8_t* inEnd, 
-		                      uint8_t* outBegin,
-		                      const uint8_t mask,
-		                      const Colour colour = CO_WHITE,
-		                      const DrawMode drawMode = DM_OR_MASK,
-		                      int patternIndex = 0);
+				
 		void drawHorizontalLine(Point startPoint,
 		                        int width, 
 		                        Colour colour = CO_WHITE, 

@@ -20,6 +20,7 @@
 # 20 "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Ssd1306Tester\\Ssd1306Tester\\sketches\\Ssd1306Tester.ino" 2
 
 # 22 "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Ssd1306Tester\\Ssd1306Tester\\sketches\\Ssd1306Tester.ino" 2
+# 23 "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Ssd1306Tester\\Ssd1306Tester\\sketches\\Ssd1306Tester.ino" 2
 
 void initialiseDtrMux();
 void setDtrMuxInhibit(bool inhibit);
@@ -57,7 +58,7 @@ enum GraphicsTest
  GT_BUTTON
 };
 
-static const GraphicsTest GRAPHICS_TEST = GT_ROUNDRECTS_FULLSCREEN;
+static const GraphicsTest GRAPHICS_TEST = GT_BUTTON;
 static const int DELAY = 500;
 static const uint8_t PIN_CLK = 6;
 static const uint8_t PIN_DC = 7;
@@ -196,7 +197,7 @@ void writeRandomRectFullScreen(Ssd1306* ssd)
  Graphics graphics(Rect{ 0, 0, ssd->getWidth(), ssd->getHeight() }, ssd->getSizePtr());
 
  Rect rect = getRandomRect(ssd);
- Graphics::constrainRectGraphics(&rect, ssd->getSizePtr());
+ Graphics::clip(&rect, ssd->getSizePtr());
 
  graphics.drawRect(rect);
  graphics.drawLine( {
@@ -228,7 +229,7 @@ void writeRandomRoundRectFullScreen(Ssd1306* ssd)
  Graphics graphics(Rect{ 0, 0, ssd->getWidth(), ssd->getHeight() }, ssd->getSizePtr());
 
  Rect rect = getRandomRect(ssd);
- Graphics::constrainRectGraphics(&rect, ssd->getSizePtr());
+ Graphics::clip(&rect, ssd->getSizePtr());
 
  int radius;
  if (rect.size.width < rect.size.height)
@@ -244,7 +245,6 @@ void writeRandomRoundRectFullScreen(Ssd1306* ssd)
  graphics.fillRoundRect(rect,radius);
 
  ssd->writeGraphics(&graphics);
-
 }
 
 void writeRandomChar(Ssd1306* ssd)

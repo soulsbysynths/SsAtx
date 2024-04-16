@@ -113,5 +113,7 @@ C:\Users\info\Documents\GitHub\SsAtx\Ssd1306Tester\Ssd1306Tester\Output\Arduino_
  C:\Users\info\AppData\Local\Arduino15\packages\arduino\hardware\samd\1.8.14\cores\arduino/api/HardwareSPI.h \
  C:\Users\info\Documents\GitHub\SsAtx\Libraries\SoulsbySynths\Display\src/Display.h \
  C:\Users\info\Documents\GitHub\SsAtx\Libraries\SoulsbySynths\Graphics\src/Graphics.h \
+ C:\Users\info\Documents\GitHub\SsAtx\Libraries\SoulsbySynths\Graphics\src/GraphicsDrawing.h \
  C:\Users\info\Documents\GitHub\SsAtx\Libraries\SoulsbySynths\Graphics\src/GraphicsTypes.h \
+ C:\Users\info\Documents\GitHub\SsAtx\Libraries\SoulsbySynths\Graphics\src/GraphicsMaths.h \
  C:\Users\info\Documents\GitHub\SsAtx\Libraries\SoulsbySynths\Font\src/Font.h

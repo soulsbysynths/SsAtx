@@ -32,7 +32,7 @@ Button::Button(const uint8_t id,
 void Button::paint(Rect* rect)
 {
 	// Make sure rect conforms to size constraints
-	Graphics::constrainRect(rect, &RECT_.size, FONT_->getSizeBitShiftPtr()); //constrain paint rect to label rect
+	graphics::clip(rect, &RECT_.size, FONT_->getSizeBitShiftPtr()); //constrain paint rect to label rect
 	
 	Graphics graphics( { 
 	                  { 
@@ -45,7 +45,6 @@ void Button::paint(Rect* rect)
 
 	paintGraphics(rect, &graphics);
 	paintControl_(this, &graphics);	
-	
 }
 
 void Button::paintGraphics(Rect* rect, Graphics* graphics) 
@@ -56,9 +55,18 @@ void Button::paintGraphics(Rect* rect, Graphics* graphics)
 		RECT_.size 
 	};
 	
+	Label::setDrawMode(getPressedDrawMode());
+	
 	if (pressed_)
 	{
+		// Only paint if painting the whole button.
+		if (!isEqual(&buttonRect, rect))
+		{
+			return;
+		}
 		
+		graphics->fillRoundRect(buttonRect,RADIUS_);		
+		Label::paintGraphics(rect, graphics);
 		return;		
 	}
 
@@ -70,8 +78,8 @@ void Button::paintGraphics(Rect* rect, Graphics* graphics)
 	{
 		for (int s = SI_TOP; s < SI_MAX; s++)
 		{
-			Rect sideRect = Graphics::getRoundRectSideRect(&buttonRect, RADIUS_, (Side)s);
-			if (Graphics::isInnerRectContainedInOuterRect(rect, &sideRect))
+			Rect sideRect = getRoundRectSideRect(&buttonRect, RADIUS_, (Side)s);
+			if (isContained(rect, &sideRect))
 			{
 				graphics->drawLine( {
 					                   sideRect.location,
@@ -86,8 +94,8 @@ void Button::paintGraphics(Rect* rect, Graphics* graphics)
 	
 		for (int c = CQ_TOPLEFT; c < CQ_MAX; c++)
 		{
-			const Rect circleQuarterRect = Graphics::getRoundRectCircleQuarterRect(&buttonRect, RADIUS_, (CircleQuarter)c);
-			if (Graphics::isInnerRectContainedInOuterRect(rect, &circleQuarterRect))
+			const Rect circleQuarterRect = getRoundRectCircleQuarterRect(&buttonRect, RADIUS_, (CircleQuarter)c);
+			if (isContained(rect, &circleQuarterRect))
 			{
 				graphics->drawCircle(circleQuarterRect.location, 
 				                     RADIUS_, 

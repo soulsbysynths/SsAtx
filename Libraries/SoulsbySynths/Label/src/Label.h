@@ -30,6 +30,7 @@ namespace graphics
 		}
 		
 		void setText(std::string text);
+		void setDrawMode(DrawMode drawMode);
 		using Control::paint;
 		void paint(Rect* rect) override;
 	

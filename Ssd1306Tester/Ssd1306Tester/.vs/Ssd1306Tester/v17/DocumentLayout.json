@@ -1,0 +1,391 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Ssd1306Tester\\Ssd1306Tester\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{D068F12D-9386-46D6-9310-AE56AB493676}|Ssd1306Tester.vgdbproj|C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\Arduino\\Slider\\src\\Slider.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D068F12D-9386-46D6-9310-AE56AB493676}|Ssd1306Tester.vgdbproj|C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Graphics\\src\\GraphicsTypes.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D068F12D-9386-46D6-9310-AE56AB493676}|Ssd1306Tester.vgdbproj|C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Label\\src\\Label.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D068F12D-9386-46D6-9310-AE56AB493676}|Ssd1306Tester.vgdbproj|C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\Arduino\\Slider\\src\\Slider.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D068F12D-9386-46D6-9310-AE56AB493676}|Ssd1306Tester.vgdbproj|C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Graphics\\src\\Graphics.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D068F12D-9386-46D6-9310-AE56AB493676}|Ssd1306Tester.vgdbproj|C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\Arduino\\Control\\src\\Control.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D068F12D-9386-46D6-9310-AE56AB493676}|Ssd1306Tester.vgdbproj|C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Label\\src\\Label.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D068F12D-9386-46D6-9310-AE56AB493676}|Ssd1306Tester.vgdbproj|C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\ForSorting\\Shared\\Oled\\OledProgmem.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D068F12D-9386-46D6-9310-AE56AB493676}|Ssd1306Tester.vgdbproj|C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\Arduino\\Button\\src\\Button.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D068F12D-9386-46D6-9310-AE56AB493676}|Ssd1306Tester.vgdbproj|C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\Arduino\\Button\\src\\Button.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D068F12D-9386-46D6-9310-AE56AB493676}|Ssd1306Tester.vgdbproj|C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Font\\src\\Atx8x16Tiny.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D068F12D-9386-46D6-9310-AE56AB493676}|Ssd1306Tester.vgdbproj|C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Ssd1306Tester\\Ssd1306Tester\\sketches\\Ssd1306Tester.ino||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{D068F12D-9386-46D6-9310-AE56AB493676}|Ssd1306Tester.vgdbproj|solutionrelative:sketches\\Ssd1306Tester.ino||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D068F12D-9386-46D6-9310-AE56AB493676}|Ssd1306Tester.vgdbproj|C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Font\\src\\DinMittel8x16Regular.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D068F12D-9386-46D6-9310-AE56AB493676}|Ssd1306Tester.vgdbproj|C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Font\\src\\Font.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D068F12D-9386-46D6-9310-AE56AB493676}|Ssd1306Tester.vgdbproj|C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\Arduino\\Adafruit_GFX_Library\\Adafruit_GFX.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D068F12D-9386-46D6-9310-AE56AB493676}|Ssd1306Tester.vgdbproj|C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Display\\src\\Display.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D068F12D-9386-46D6-9310-AE56AB493676}|Ssd1306Tester.vgdbproj|C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Ssd1306\\src\\Ssd1306.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D068F12D-9386-46D6-9310-AE56AB493676}|Ssd1306Tester.vgdbproj|C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\Arduino\\Adafruit_GFX_Library\\Adafruit_GFX.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D068F12D-9386-46D6-9310-AE56AB493676}|Ssd1306Tester.vgdbproj|C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Ssd1306\\src\\Ssd1306.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D068F12D-9386-46D6-9310-AE56AB493676}|Ssd1306Tester.vgdbproj|C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Ssd1306Group\\src\\Ssd1306Group.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D068F12D-9386-46D6-9310-AE56AB493676}|Ssd1306Tester.vgdbproj|C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Graphics\\src\\GraphicsMaths.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D068F12D-9386-46D6-9310-AE56AB493676}|Ssd1306Tester.vgdbproj|C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Graphics\\src\\GraphicsDrawing.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D068F12D-9386-46D6-9310-AE56AB493676}|Ssd1306Tester.vgdbproj|C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Graphics\\src\\Graphics.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D068F12D-9386-46D6-9310-AE56AB493676}|Ssd1306Tester.vgdbproj|C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Canvas\\src\\Canvas.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Slider.h",
+              "DocumentMoniker": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\Arduino\\Slider\\src\\Slider.h",
+              "RelativeDocumentMoniker": "..\\..\\Libraries\\Arduino\\Slider\\src\\Slider.h",
+              "ToolTip": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\Arduino\\Slider\\src\\Slider.h",
+              "RelativeToolTip": "..\\..\\Libraries\\Arduino\\Slider\\src\\Slider.h",
+              "ViewState": "AQIAABAAAAAAAAAAAAAwwCEAAAAfAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-04-16T13:24:50.294Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Slider.cpp",
+              "DocumentMoniker": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\Arduino\\Slider\\src\\Slider.cpp",
+              "RelativeDocumentMoniker": "..\\..\\Libraries\\Arduino\\Slider\\src\\Slider.cpp",
+              "ToolTip": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\Arduino\\Slider\\src\\Slider.cpp",
+              "RelativeToolTip": "..\\..\\Libraries\\Arduino\\Slider\\src\\Slider.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-04-16T13:35:45.266Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Graphics.h",
+              "DocumentMoniker": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Graphics\\src\\Graphics.h",
+              "RelativeDocumentMoniker": "..\\..\\Libraries\\SoulsbySynths\\Graphics\\src\\Graphics.h",
+              "ToolTip": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Graphics\\src\\Graphics.h",
+              "RelativeToolTip": "..\\..\\Libraries\\SoulsbySynths\\Graphics\\src\\Graphics.h",
+              "ViewState": "AQIAAEgAAAAAAAAAAAAAAAUAAAAUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-03-25T23:01:42.21Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "DinMittel8x16Regular.h",
+              "DocumentMoniker": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Font\\src\\DinMittel8x16Regular.h",
+              "RelativeDocumentMoniker": "..\\..\\Libraries\\SoulsbySynths\\Font\\src\\DinMittel8x16Regular.h",
+              "ToolTip": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Font\\src\\DinMittel8x16Regular.h",
+              "RelativeToolTip": "..\\..\\Libraries\\SoulsbySynths\\Font\\src\\DinMittel8x16Regular.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAG0AAAACAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-03-25T23:00:15.926Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Font.h",
+              "DocumentMoniker": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Font\\src\\Font.h",
+              "RelativeDocumentMoniker": "..\\..\\Libraries\\SoulsbySynths\\Font\\src\\Font.h",
+              "ToolTip": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Font\\src\\Font.h",
+              "RelativeToolTip": "..\\..\\Libraries\\SoulsbySynths\\Font\\src\\Font.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAACAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-04-02T15:13:24.566Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Ssd1306Tester.ino",
+              "DocumentMoniker": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Ssd1306Tester\\Ssd1306Tester\\sketches\\Ssd1306Tester.ino",
+              "RelativeDocumentMoniker": "sketches\\Ssd1306Tester.ino",
+              "ToolTip": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Ssd1306Tester\\Ssd1306Tester\\sketches\\Ssd1306Tester.ino",
+              "RelativeToolTip": "sketches\\Ssd1306Tester.ino",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAASAAAA",
+              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKbSURBVDhPlVM9aFNRGD33vtf0pSZNYxpDKSQtsdoo1MFCEVTERRCsFAcLonZxVVxEJ8GtHZwLDg6Kq4KDk\u002BAgSNPW2kCxXVS00J/0NbF5TfJ\u002Br\u002Be1dauiF07uzXe/8/Gd870rvCDA49IC8u3xxHqjccJVQQp/WbqQlU7DKM2UNzYnhgaVePChiHTUKKw1GuN1zz\u002BjoIy93H2XAOyopk8dihr3v1vWnJgsLbTPm\u002BazquMMB0rtpf19CSGQiETeFjo6RsXtd\u002B/PfrVqr5q\u002BnxRh/X9aChGpWblYbFSWG42U2bSj7ACbto2NZnMXdhMVx95BeP4dD3MqzDVtu5XcTlllYMv1UHU86JqGi7ksxvqP4GQ6DXoCixhIpXCTsUs9ORi6vpO75bqo2g6kxUPd99CqSdwpHMVhoVBeXcHlTBpjfXlcy/fialcG1bVVZBHg7rF\u002BxHRttzi50vZ9uBzlQLIDfn0bk4tLmLa2Mf7xE44faMOp9hgmpmfwU2p4/uUbqtsWBpMJcnw45EqbZBW673mwGBCaDoMaXTpd415jm06kFTq9AO8tyg0oO\u002BSEXOmGJP4pmSYUCRe6u5CIx3GjN4el5WXMEtd7sqgw7zSltLHQ7HoZkrMIu9CSwyMFXwVXGp6vfzY3cJB\u002BZHg5t7KCN2UT81YdzVoN2RYdW9xf/lhGWUhIIQKp1GuRf/J0xFXqBTlG2FbAAsKnLE5E0qzw2wvCLhlXPAsWkiwQNtAixC2pXLciXLcJOirog0Y7pJTcmU69vIMWaiVJoy\u002BS7u/kuq4TkBsWmIfjTIHG/CfmWKioxc\u002BdbyIIFpTn9REZQhA\u002BEewDRdicRpFjuOc7zqLofviIb1Tn563SFDnEQyf1/elV8bGITf4WIeQqfA\u002B/AN6Qto\u002BLDNA3AAAAAElFTkSuQmCC",
+              "WhenOpened": "2024-03-25T23:10:16.437Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Button.cpp",
+              "DocumentMoniker": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\Arduino\\Button\\src\\Button.cpp",
+              "RelativeDocumentMoniker": "..\\..\\Libraries\\Arduino\\Button\\src\\Button.cpp",
+              "ToolTip": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\Arduino\\Button\\src\\Button.cpp",
+              "RelativeToolTip": "..\\..\\Libraries\\Arduino\\Button\\src\\Button.cpp",
+              "ViewState": "AQIAAGYAAAAAAAAAAAAAAHcAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-04-12T08:18:19.103Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "OledProgmem.h",
+              "DocumentMoniker": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\ForSorting\\Shared\\Oled\\OledProgmem.h",
+              "RelativeDocumentMoniker": "..\\..\\Libraries\\ForSorting\\Shared\\Oled\\OledProgmem.h",
+              "ToolTip": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\ForSorting\\Shared\\Oled\\OledProgmem.h",
+              "RelativeToolTip": "..\\..\\Libraries\\ForSorting\\Shared\\Oled\\OledProgmem.h",
+              "ViewState": "AQIAAB4AAAAAAAAAAAAAACgAAAAmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-04-16T18:20:41.28Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Label.cpp",
+              "DocumentMoniker": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Label\\src\\Label.cpp",
+              "RelativeDocumentMoniker": "..\\..\\Libraries\\SoulsbySynths\\Label\\src\\Label.cpp",
+              "ToolTip": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Label\\src\\Label.cpp",
+              "RelativeToolTip": "..\\..\\Libraries\\SoulsbySynths\\Label\\src\\Label.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-03-25T23:00:15.925Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Label.h",
+              "DocumentMoniker": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Label\\src\\Label.h",
+              "RelativeDocumentMoniker": "..\\..\\Libraries\\SoulsbySynths\\Label\\src\\Label.h",
+              "ToolTip": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Label\\src\\Label.h",
+              "RelativeToolTip": "..\\..\\Libraries\\SoulsbySynths\\Label\\src\\Label.h",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAkAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-03-25T23:00:15.924Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Control.h",
+              "DocumentMoniker": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\Arduino\\Control\\src\\Control.h",
+              "RelativeDocumentMoniker": "..\\..\\Libraries\\Arduino\\Control\\src\\Control.h",
+              "ToolTip": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\Arduino\\Control\\src\\Control.h",
+              "RelativeToolTip": "..\\..\\Libraries\\Arduino\\Control\\src\\Control.h",
+              "ViewState": "AQIAACQAAAAAAAAAAAAAABQAAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-04-11T17:52:52.657Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "GraphicsTypes.h",
+              "DocumentMoniker": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Graphics\\src\\GraphicsTypes.h",
+              "RelativeDocumentMoniker": "..\\..\\Libraries\\SoulsbySynths\\Graphics\\src\\GraphicsTypes.h",
+              "ToolTip": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Graphics\\src\\GraphicsTypes.h",
+              "RelativeToolTip": "..\\..\\Libraries\\SoulsbySynths\\Graphics\\src\\GraphicsTypes.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAACAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-04-16T08:46:49.74Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Atx8x16Tiny.h",
+              "DocumentMoniker": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Font\\src\\Atx8x16Tiny.h",
+              "RelativeDocumentMoniker": "..\\..\\Libraries\\SoulsbySynths\\Font\\src\\Atx8x16Tiny.h",
+              "ToolTip": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Font\\src\\Atx8x16Tiny.h",
+              "RelativeToolTip": "..\\..\\Libraries\\SoulsbySynths\\Font\\src\\Atx8x16Tiny.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAABZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-04-16T15:27:12.645Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Button.h",
+              "DocumentMoniker": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\Arduino\\Button\\src\\Button.h",
+              "RelativeDocumentMoniker": "..\\..\\Libraries\\Arduino\\Button\\src\\Button.h",
+              "ToolTip": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\Arduino\\Button\\src\\Button.h",
+              "RelativeToolTip": "..\\..\\Libraries\\Arduino\\Button\\src\\Button.h",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABYAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-04-11T20:03:00.128Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Adafruit_GFX.cpp",
+              "DocumentMoniker": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\Arduino\\Adafruit_GFX_Library\\Adafruit_GFX.cpp",
+              "RelativeDocumentMoniker": "..\\..\\Libraries\\Arduino\\Adafruit_GFX_Library\\Adafruit_GFX.cpp",
+              "ToolTip": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\Arduino\\Adafruit_GFX_Library\\Adafruit_GFX.cpp",
+              "RelativeToolTip": "..\\..\\Libraries\\Arduino\\Adafruit_GFX_Library\\Adafruit_GFX.cpp",
+              "ViewState": "AQIAADUCAAAAAAAAAAAQwEICAAAUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-04-12T20:24:16.967Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Display.h",
+              "DocumentMoniker": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Display\\src\\Display.h",
+              "RelativeDocumentMoniker": "..\\..\\Libraries\\SoulsbySynths\\Display\\src\\Display.h",
+              "ToolTip": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Display\\src\\Display.h",
+              "RelativeToolTip": "..\\..\\Libraries\\SoulsbySynths\\Display\\src\\Display.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAACAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-04-02T12:47:04.466Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Ssd1306.cpp",
+              "DocumentMoniker": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Ssd1306\\src\\Ssd1306.cpp",
+              "RelativeDocumentMoniker": "..\\..\\Libraries\\SoulsbySynths\\Ssd1306\\src\\Ssd1306.cpp",
+              "ToolTip": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Ssd1306\\src\\Ssd1306.cpp",
+              "RelativeToolTip": "..\\..\\Libraries\\SoulsbySynths\\Ssd1306\\src\\Ssd1306.cpp",
+              "ViewState": "AQIAAC4AAAAAAAAAAAAgwD4AAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-03-25T23:00:15.927Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Adafruit_GFX.h",
+              "DocumentMoniker": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\Arduino\\Adafruit_GFX_Library\\Adafruit_GFX.h",
+              "RelativeDocumentMoniker": "..\\..\\Libraries\\Arduino\\Adafruit_GFX_Library\\Adafruit_GFX.h",
+              "ToolTip": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\Arduino\\Adafruit_GFX_Library\\Adafruit_GFX.h",
+              "RelativeToolTip": "..\\..\\Libraries\\Arduino\\Adafruit_GFX_Library\\Adafruit_GFX.h",
+              "ViewState": "AQIAAGsBAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-04-12T20:31:38.269Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Ssd1306.h",
+              "DocumentMoniker": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Ssd1306\\src\\Ssd1306.h",
+              "RelativeDocumentMoniker": "..\\..\\Libraries\\SoulsbySynths\\Ssd1306\\src\\Ssd1306.h",
+              "ToolTip": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Ssd1306\\src\\Ssd1306.h",
+              "RelativeToolTip": "..\\..\\Libraries\\SoulsbySynths\\Ssd1306\\src\\Ssd1306.h",
+              "ViewState": "AQIAABUAAAAAAAAAAAAAAAcAAAAeAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-03-25T23:00:15.927Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Ssd1306Group.h",
+              "DocumentMoniker": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Ssd1306Group\\src\\Ssd1306Group.h",
+              "RelativeDocumentMoniker": "..\\..\\Libraries\\SoulsbySynths\\Ssd1306Group\\src\\Ssd1306Group.h",
+              "ToolTip": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Ssd1306Group\\src\\Ssd1306Group.h",
+              "RelativeToolTip": "..\\..\\Libraries\\SoulsbySynths\\Ssd1306Group\\src\\Ssd1306Group.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-03-25T23:00:15.926Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "GraphicsMaths.h",
+              "DocumentMoniker": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Graphics\\src\\GraphicsMaths.h",
+              "RelativeDocumentMoniker": "..\\..\\Libraries\\SoulsbySynths\\Graphics\\src\\GraphicsMaths.h",
+              "ToolTip": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Graphics\\src\\GraphicsMaths.h",
+              "RelativeToolTip": "..\\..\\Libraries\\SoulsbySynths\\Graphics\\src\\GraphicsMaths.h",
+              "ViewState": "AQIAAL8AAAAAAAAAAAAAwMwAAAADAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-04-16T09:10:08.909Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "GraphicsDrawing.h",
+              "DocumentMoniker": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Graphics\\src\\GraphicsDrawing.h",
+              "RelativeDocumentMoniker": "..\\..\\Libraries\\SoulsbySynths\\Graphics\\src\\GraphicsDrawing.h",
+              "ToolTip": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Graphics\\src\\GraphicsDrawing.h",
+              "RelativeToolTip": "..\\..\\Libraries\\SoulsbySynths\\Graphics\\src\\GraphicsDrawing.h",
+              "ViewState": "AQIAAEUAAAAAAAAAAAAAACwAAAASAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-04-16T10:24:49.16Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "Graphics.cpp",
+              "DocumentMoniker": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Graphics\\src\\Graphics.cpp",
+              "RelativeDocumentMoniker": "..\\..\\Libraries\\SoulsbySynths\\Graphics\\src\\Graphics.cpp",
+              "ToolTip": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Graphics\\src\\Graphics.cpp",
+              "RelativeToolTip": "..\\..\\Libraries\\SoulsbySynths\\Graphics\\src\\Graphics.cpp",
+              "ViewState": "AQIAAHYCAAAAAAAAAAAAAHsCAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-03-25T23:00:17.107Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "Canvas.h",
+              "DocumentMoniker": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Canvas\\src\\Canvas.h",
+              "RelativeDocumentMoniker": "..\\..\\Libraries\\SoulsbySynths\\Canvas\\src\\Canvas.h",
+              "ToolTip": "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Libraries\\SoulsbySynths\\Canvas\\src\\Canvas.h",
+              "RelativeToolTip": "..\\..\\Libraries\\SoulsbySynths\\Canvas\\src\\Canvas.h",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-03-25T21:44:18.492Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

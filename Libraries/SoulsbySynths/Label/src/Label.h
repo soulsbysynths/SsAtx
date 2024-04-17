@@ -13,7 +13,7 @@ namespace graphics
 		public:
 		Label(const uint8_t id,
 		      const Font* font, 
-		      const Size* constrainSize, 
+		      const Size* clipSize, 
 		      const Rect* rect,
 		      std::string text, 
 		      void(*paintControl)(Control*, Graphics*),

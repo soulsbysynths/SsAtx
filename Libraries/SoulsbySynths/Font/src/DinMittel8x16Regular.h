@@ -108,5 +108,3 @@ static const Font dinMittel8x16Regular =
 	' ',
 	96
 };
-
-

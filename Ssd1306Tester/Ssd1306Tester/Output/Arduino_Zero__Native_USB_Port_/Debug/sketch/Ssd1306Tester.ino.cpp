@@ -16,6 +16,7 @@
 #include <Ssd1306Group.h>
 #include <Font.h>
 #include "DinMittel8x16Regular.h"
+#include "Atx8x16Tiny.h"
 #include <Label.h>
 #include <Display.h>
 #include <string>
@@ -76,11 +77,11 @@ Sn74hc138d dtrMux(4, 3, 2, &initialiseDtrMux, &setDtrMuxInhibit);
 
 Ssd1306Group oledGroup(&initialiseOledPins, &writeOledGroupVcc, &writeOledGroupReset);
 
-#line 77 "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Ssd1306Tester\\Ssd1306Tester\\sketches\\Ssd1306Tester.ino"
+#line 78 "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Ssd1306Tester\\Ssd1306Tester\\sketches\\Ssd1306Tester.ino"
 void setup();
-#line 107 "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Ssd1306Tester\\Ssd1306Tester\\sketches\\Ssd1306Tester.ino"
+#line 108 "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Ssd1306Tester\\Ssd1306Tester\\sketches\\Ssd1306Tester.ino"
 void loop();
-#line 77 "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Ssd1306Tester\\Ssd1306Tester\\sketches\\Ssd1306Tester.ino"
+#line 78 "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Ssd1306Tester\\Ssd1306Tester\\sketches\\Ssd1306Tester.ino"
 void setup()
 {
 	using namespace graphics;

@@ -4,7 +4,7 @@ using namespace graphics;
 
 Label::Label(const uint8_t id,
              const Font* font, 
-             const Size* constrainSize, 
+             const Size* clipSize, 
              const Rect* rect,
              std::string text, 
              void(*paintControl)(Control*, Graphics*),
@@ -16,8 +16,8 @@ Label::Label(const uint8_t id,
              DrawMode drawMode,
              const uint8_t zOrder)
 	: Control(id, 
-	          constrainSize, 
-	          Graphics::constructRect(rect, constrainSize, font), 
+	          clipSize, 
+	          Graphics::constructRect(rect, clipSize, font), 
 	          paintControl, 
 	          zOrder)
 	, FONT_(font)

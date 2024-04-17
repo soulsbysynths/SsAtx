@@ -7,7 +7,7 @@
 
 namespace graphics
 {
-	class Button : public Label
+	class Button : virtual public Label
 	{
 		public:
 		Button(const uint8_t id,
@@ -25,7 +25,7 @@ namespace graphics
 		}
 		
 		using Control::paint;
-		void paint(Rect* rect);
+		void paint(Rect* rect) override;
 	
 		protected:
 		void paintGraphics(Rect* rect, Graphics* graphics) override;

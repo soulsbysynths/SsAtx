@@ -14,6 +14,7 @@
 #include <Ssd1306Group.h>
 #include <Font.h>
 #include "DinMittel8x16Regular.h"
+#include "Atx8x16Tiny.h"
 #include <Label.h>
 #include <Display.h>
 #include <string>

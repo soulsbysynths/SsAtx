@@ -10,6 +10,10 @@ namespace graphics
 	class Slider : private Label
 	{
 		public:
+		Slider()
+		{
+		}
+		
 		Slider(const uint8_t id,
 		       const Size* constrainSize, 
 		       const Rect* rect,
@@ -23,12 +27,11 @@ namespace graphics
 		{
 		}
 		
-		using Control::paint;
-		void paint(Rect* rect) override;
+		using Control::paintAll;
 		void setValue(int value);
 		
 		protected:
-		void paintGraphics(Rect* rect, Graphics* graphics) override;
+		void paintGraphics(Graphics* graphics) override;
 		
 		private:
 		inline const Rect clip(const Rect* rect)
@@ -43,8 +46,8 @@ namespace graphics
 		}
 		
 		std::string parseValue(int value);
-		const int MIN_VALUE_;
-		const int MAX_VALUE_;
+		const int MIN_VALUE_ = INT16_MIN;
+		const int MAX_VALUE_ = INT16_MAX;
 		static const Font* FONT_;
 		int value_;
 	};

@@ -5,6 +5,41 @@
 
 namespace graphics
 {
+	inline static void clip(Rect* rect, const Rect* clipRect)
+	{
+		if (rect->location.x < clipRect->location.x)
+		{
+			rect->size.width += (rect->location.x - clipRect->location.x);
+			rect->location.x = clipRect->location.x;
+		}
+		
+		if (rect->location.y < clipRect->location.y)
+		{
+			rect->size.height += (rect->location.y - clipRect->location.y);
+			rect->location.y = clipRect->location.y;
+		}
+		
+		if ((rect->location.x + rect->size.width) > (clipRect->location.x + clipRect->size.width))
+		{
+			rect->size.width = (clipRect->location.x + clipRect->size.width) - rect->location.x;
+		}
+		
+		if ((rect->location.y + rect->size.height) > (clipRect->location.y + clipRect->size.height))
+		{
+			rect->size.height = (clipRect->location.y + clipRect->size.height) - rect->location.y;
+		}
+		
+		if (rect->size.width < 0)
+		{
+			rect->size.width = 0;
+		}
+		
+		if (rect->size.height < 0)
+		{
+			rect->size.height = 0;
+		}
+	}
+	
 	inline static void clip(Rect* rect, 
 	                        const Size* clipSize, 
 	                        const Size* quantiseBitShift)

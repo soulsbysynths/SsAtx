@@ -29,48 +29,26 @@ Button::Button(const uint8_t id,
 {
 }
 
-void Button::paint(Rect* rect)
+void Button::paintGraphics(Graphics* graphics) 
 {
-	// Make sure rect conforms to size constraints
-	graphics::clip(rect, &RECT_.size, FONT_->getSizeBitShiftPtr()); //constrain paint rect to label rect
-	
-	Graphics graphics( { 
-	                  { 
-		                  RECT_.location.x + rect->location.x, 
-		                  RECT_.location.y + rect->location.y
-	                  }, 
-		                  rect->size
-	                  }, 
-	                  CONSTRAIN_SIZE_);
-
-	paintGraphics(rect, &graphics);
-	paintControl_(this, &graphics);	
-}
-
-void Button::paintGraphics(Rect* rect, Graphics* graphics) 
-{
-	Rect buttonRect = 
-	{ 
-		{ 0, 0 },
-		RECT_.size 
-	};
+	// Only paint if painting the whole button.
+	if (!isAllChanged())
+	{
+		return;
+	}
 	
 	Label::setDrawMode(getPressedDrawMode());
 	
+	Rect buttonRect = getControlRect();
+	
 	if (pressed_)
-	{
-		// Only paint if painting the whole button.
-		if (!isEqual(&buttonRect, rect))
-		{
-			return;
-		}
-		
-		graphics->fillRoundRect(buttonRect,RADIUS_);		
-		Label::paintGraphics(rect, graphics);
+	{	
+		graphics->fillRoundRect(buttonRect, RADIUS_);		
+		Label::paintGraphics(graphics);
 		return;		
 	}
 
-	Label::paintGraphics(rect, graphics);
+	Label::paintGraphics(graphics);
 	
 	Colour colour = CO_WHITE;
 	
@@ -79,29 +57,23 @@ void Button::paintGraphics(Rect* rect, Graphics* graphics)
 		for (int s = SI_TOP; s < SI_MAX; s++)
 		{
 			Rect sideRect = getRoundRectSideRect(&buttonRect, RADIUS_, (Side)s);
-			if (isContained(rect, &sideRect))
-			{
-				graphics->drawLine( {
-					                   sideRect.location,
-				                   {
-					                   sideRect.location.x + sideRect.size.width,
-					                   sideRect.location.y + sideRect.size.height
-				                   }
-				                   },
-				                   colour);
-			}
+			graphics->drawLine( {
+				                   sideRect.location,
+			                   {
+				                   sideRect.location.x + sideRect.size.width,
+				                   sideRect.location.y + sideRect.size.height
+			                   }
+			                   },
+			                   colour);
 		}
 	
 		for (int c = CQ_TOPLEFT; c < CQ_MAX; c++)
 		{
 			const Rect circleQuarterRect = getRoundRectCircleQuarterRect(&buttonRect, RADIUS_, (CircleQuarter)c);
-			if (isContained(rect, &circleQuarterRect))
-			{
-				graphics->drawCircle(circleQuarterRect.location, 
-				                     RADIUS_, 
-				                     (CircleQuarterFlags)(1 << c),
-				                     colour);
-			}
+			graphics->drawCircle(circleQuarterRect.location, 
+			                     RADIUS_, 
+			                     (CircleQuarterFlags)(1 << c),
+			                     colour);
 		}
 		
 		if (selected_)

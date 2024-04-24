@@ -31,15 +31,18 @@ void writeOledGroupVcc(uint8_t value);
 void writeOledGroupReset(uint8_t value);
 void writeOledSelect(Ssd1306* ssd, uint8_t value);
 void writeOledDc(Ssd1306* ssd, uint8_t value);
-void writeRandomBuffer(Ssd1306* ssd, graphics::Colour colour);
-void writeRandomRect(Ssd1306* ssd);
-void writeRandomRectFullScreen(Ssd1306* ssd);
-void writeRandomRoundRectFullScreen(Ssd1306* ssd);
-void writeRandomChar(Ssd1306* ssd);
-void writeRandomCharFullScreen(Ssd1306* ssd);
+void setupGraphicsTest();
 void writeGraphicsTest();
-void writeRandomLabel(Ssd1306* ssd);
-void writeRandomButton(Ssd1306* ssd);
+void drawRandomBuffer(Ssd1306* ssd, graphics::Colour colour);
+void drawRandomRect(Ssd1306* ssd);
+void drawRandomRectFullScreen(Ssd1306* ssd);
+void drawRandomRoundRectFullScreen(Ssd1306* ssd);
+void drawRandomChar(Ssd1306* ssd);
+void drawRandomCharFullScreen(Ssd1306* ssd);
+void drawRandomLabel(Ssd1306* ssd);
+void drawRandomButton(Ssd1306* ssd);
+void drawSlider(Ssd1306* ssd);
+void updateSlider(Ssd1306* ssd);
 void paintControl(graphics::Control* c, graphics::Graphics* g);
 graphics::Rect getRandomRect(Ssd1306* ssd);
 graphics::Colour getRandomColour();
@@ -57,10 +60,11 @@ enum GraphicsTest
 	GT_CHAR_FULLSCREEN,
 	GT_LABEL,
 	GT_ROUNDRECTS_FULLSCREEN,
-	GT_BUTTON
+	GT_BUTTON,
+	GT_SLIDER
 };
 
-static const GraphicsTest GRAPHICS_TEST = GT_BUTTON;
+static const GraphicsTest GRAPHICS_TEST = GT_SLIDER;
 static const int DELAY = 500;
 static const uint8_t PIN_CLK = 6;
 static const uint8_t PIN_DC = 7;
@@ -69,6 +73,7 @@ static const uint8_t MCP_PIN_RESET = 14;
 static const uint8_t MCP_PIN_VCC = 15;
 static const uint8_t WIDE_OLEDS = 6;
 static const uint8_t TALL_OLEDS = 2;
+static const uint8_t OLEDS = WIDE_OLEDS + TALL_OLEDS;
 
 Adafruit_MCP23X17 mcp;
 Sn74hc138d selectMux(4, 3, 2, 5);
@@ -76,12 +81,13 @@ Sn74hc138d commandMux(4, 3, 2, 5, 7);
 Sn74hc138d dtrMux(4, 3, 2, &initialiseDtrMux, &setDtrMuxInhibit);
 
 Ssd1306Group oledGroup(&initialiseOledPins, &writeOledGroupVcc, &writeOledGroupReset);
+graphics::Slider* slider[OLEDS];
 
-#line 78 "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Ssd1306Tester\\Ssd1306Tester\\sketches\\Ssd1306Tester.ino"
+#line 84 "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Ssd1306Tester\\Ssd1306Tester\\sketches\\Ssd1306Tester.ino"
 void setup();
-#line 108 "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Ssd1306Tester\\Ssd1306Tester\\sketches\\Ssd1306Tester.ino"
+#line 114 "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Ssd1306Tester\\Ssd1306Tester\\sketches\\Ssd1306Tester.ino"
 void loop();
-#line 78 "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Ssd1306Tester\\Ssd1306Tester\\sketches\\Ssd1306Tester.ino"
+#line 84 "C:\\Users\\info\\Documents\\GitHub\\SsAtx\\Ssd1306Tester\\Ssd1306Tester\\sketches\\Ssd1306Tester.ino"
 void setup()
 {
 	using namespace graphics;
@@ -109,7 +115,7 @@ void setup()
 	}
 	
 	oledGroup.initialise();
-	
+	setupGraphicsTest();
 }
 
 void loop()
@@ -122,58 +128,81 @@ void loop()
 	delay(DELAY);
 }
 
+void setupGraphicsTest()
+{
+	for (uint8_t i = 0; i < OLEDS; i++)
+	{
+		Ssd1306* ssd = oledGroup.getOledPtr(i);
+		switch (GRAPHICS_TEST)
+		{
+			case GT_SLIDER:
+				{
+					drawSlider(ssd);
+					break;
+				}
+			default:
+				break;
+		}
+	}
+}
+
 void writeGraphicsTest()
 {
-	for (uint8_t i = 0; i < (WIDE_OLEDS + TALL_OLEDS); i++)
+	for (uint8_t i = 0; i < OLEDS; i++)
 	{
 		Ssd1306* ssd = oledGroup.getOledPtr(i);
 		switch (GRAPHICS_TEST)
 		{
 			case GT_CANVAS:
 				{
-					writeRandomBuffer(ssd, getRandomColour());
+					drawRandomBuffer(ssd, getRandomColour());
 					break;
 				}
 			case GT_RECTS:
 				{
-					writeRandomRect(ssd);
+					drawRandomRect(ssd);
 					break;
 				}
 			case GT_RECTS_FULLSCREEN:
 				{
-					writeRandomRectFullScreen(ssd);
+					drawRandomRectFullScreen(ssd);
 					break;
 				}
 			case GT_CHAR:
 				{
-					writeRandomChar(ssd);
+					drawRandomChar(ssd);
 					break;
 				}
 			case GT_CHAR_FULLSCREEN:
 				{
-					writeRandomCharFullScreen(ssd);
+					drawRandomCharFullScreen(ssd);
 					break;
 				}
 			case GT_LABEL:
 				{
-					writeRandomLabel(ssd);
+					drawRandomLabel(ssd);
 					break;
 				}
 			case GT_ROUNDRECTS_FULLSCREEN:
 				{
-					writeRandomRoundRectFullScreen(ssd);
+					drawRandomRoundRectFullScreen(ssd);
 					break;
 				}
 			case GT_BUTTON:
 				{
-					writeRandomButton(ssd);
+					drawRandomButton(ssd);
+					break;
+				}
+			case GT_SLIDER:
+				{
+					updateSlider(ssd);
 					break;
 				}
 		}
 	}
 }
 
-void writeRandomBuffer(Ssd1306* ssd, graphics::Colour colour)
+void drawRandomBuffer(Ssd1306* ssd, graphics::Colour colour)
 {
 	using namespace graphics;
 	
@@ -182,7 +211,7 @@ void writeRandomBuffer(Ssd1306* ssd, graphics::Colour colour)
 	ssd->writeGraphics(&graphics);	
 }
 
-void writeRandomRect(Ssd1306* ssd)
+void drawRandomRect(Ssd1306* ssd)
 {
 	using namespace graphics;
 
@@ -197,7 +226,7 @@ void writeRandomRect(Ssd1306* ssd)
 	
 }
 
-void writeRandomRectFullScreen(Ssd1306* ssd)
+void drawRandomRectFullScreen(Ssd1306* ssd)
 {
 	using namespace graphics;
 
@@ -207,14 +236,14 @@ void writeRandomRectFullScreen(Ssd1306* ssd)
 	Graphics::clip(&rect, ssd->getSizePtr());
 	
 	graphics.drawRect(rect);
-	graphics.drawLine( { 
+	graphics.drawLine({ 
 		                  rect.location, 
 	                  {
 		                  rect.location.x + rect.size.width - 1, 
 		                  rect.location.y + rect.size.height - 1
 	                  }
 	                  });
-	graphics.drawLine( {
+	graphics.drawLine({
 	                  { 
 		                  rect.location.x, 
 		                  rect.location.y + rect.size.height - 1 
@@ -229,7 +258,7 @@ void writeRandomRectFullScreen(Ssd1306* ssd)
 	
 }
 
-void writeRandomRoundRectFullScreen(Ssd1306* ssd)
+void drawRandomRoundRectFullScreen(Ssd1306* ssd)
 {
 	using namespace graphics;
 
@@ -249,12 +278,12 @@ void writeRandomRoundRectFullScreen(Ssd1306* ssd)
 	}
 	
 	graphics.drawRoundRect(rect, radius);
-	graphics.fillRoundRect(rect,radius);
+	graphics.fillRoundRect(rect, radius);
 	
 	ssd->writeGraphics(&graphics);
 }
 
-void writeRandomChar(Ssd1306* ssd)
+void drawRandomChar(Ssd1306* ssd)
 {
 	using namespace graphics;
 
@@ -270,7 +299,7 @@ void writeRandomChar(Ssd1306* ssd)
 	ssd->writeGraphics(&graphics);
 }
 
-void writeRandomCharFullScreen(Ssd1306* ssd)
+void drawRandomCharFullScreen(Ssd1306* ssd)
 {
 	using namespace graphics;
 
@@ -286,7 +315,7 @@ void writeRandomCharFullScreen(Ssd1306* ssd)
 	ssd->writeGraphics(&graphics);
 }
 
-void writeRandomLabel(Ssd1306* ssd)
+void drawRandomLabel(Ssd1306* ssd)
 {
 	using namespace graphics;
 	ssd->clearDisplay();
@@ -305,10 +334,10 @@ void writeRandomLabel(Ssd1306* ssd)
 	            CO_DARKGREY,
 	            CO_WHITE,
 	            DM_OR_MASK);
-	label.paint();
+	label.paintAll();
 }
 
-void writeRandomButton(Ssd1306* ssd)
+void drawRandomButton(Ssd1306* ssd)
 {
 	using namespace graphics;
 	ssd->clearDisplay();
@@ -316,12 +345,34 @@ void writeRandomButton(Ssd1306* ssd)
 	Rect rect = getRandomRect(ssd);
 
 	Button button(ssd->getId(), 
-	            &dinMittel8x16Regular, 
-	            ssd->getSizePtr(),
-	            &rect,
-	            "OK",
-	            &paintControl);
-	button.paint();
+	              &dinMittel8x16Regular, 
+	              ssd->getSizePtr(),
+	              &rect,
+	              "OK",
+	              &paintControl);
+	button.paintAll();
+}
+
+void drawSlider(Ssd1306* ssd)
+{
+	using namespace graphics;
+	int id = ssd->getId();
+	
+	Rect rect = getRandomRect(ssd);
+	
+	slider[id] = new Slider(id,
+	                              ssd->getSizePtr(),
+	                              &rect,
+	                              0,
+	                              100,
+	                              &paintControl,
+	                              50);
+	slider[id]->paintAll();
+}
+
+void updateSlider(Ssd1306* ssd)
+{
+	
 }
 
 void initialiseDtrMux()

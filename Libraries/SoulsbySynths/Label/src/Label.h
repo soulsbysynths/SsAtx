@@ -11,6 +11,10 @@ namespace graphics
 	class Label : public Control
 	{
 		public:
+		Label()
+		{
+		}
+		
 		Label(const uint8_t id,
 		      const Font* font, 
 		      const Size* clipSize, 
@@ -31,16 +35,15 @@ namespace graphics
 		
 		void setText(std::string text);
 		void setDrawMode(DrawMode drawMode);
-		using Control::paint;
-		void paint(Rect* rect) override;
+		using Control::paintAll;
 	
 		protected:
-		void paintGraphics(Rect* rect, Graphics* graphics) override;
+		void paintGraphics(Graphics* graphics) override;
 		const Font* FONT_ = NULL;
-	
+		const GridSize GRID_SIZE_ = { };
+		
 		private:
 		void drawBorder(Graphics* g, Point location, int column, int row);
-		const GridSize GRID_SIZE_;
 		bool border_ = false;
 		std::vector<std::string> text_;
 		StringAlignment alignment_ = SA_NEAR;

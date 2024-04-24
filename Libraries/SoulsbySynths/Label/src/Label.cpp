@@ -19,6 +19,7 @@ Label::Label(const uint8_t id,
 	          clipSize, 
 	          Graphics::constructRect(rect, clipSize, font), 
 	          paintControl, 
+	          font->getSizeBitShiftPtr(),
 	          zOrder)
 	, FONT_(font)
 	, alignment_(alignment)
@@ -27,15 +28,12 @@ Label::Label(const uint8_t id,
 	, backColour_(backColour)
 	, foreColour_(foreColour)
 	, drawMode_(drawMode)
-	, GRID_SIZE_({
-	             RECT_.size.width >> font->getSizeBitShiftWidth(), 
-	             RECT_.size.height >> font->getSizeBitShiftHeight()
-	             })
+	, GRID_SIZE_(getGridSize())
 
 {
 	for (int r = 0; r < GRID_SIZE_.rows; r++)
 	{
-		text_.push_back(std::string(GRID_SIZE_.columns, '\a')); //fill with an unused char to force update when setting text.
+		text_.push_back(std::string(GRID_SIZE_.columns, 0)); //'\a')); //fill with an unused char to force update when setting text.
 	}
 	
 	setText(text);
@@ -177,7 +175,7 @@ void Label::setText(std::string text)
 		r++;
 	}
 	
-	enlarge(&paintRect_, &paintGrid, FONT_->getSizeBitShiftPtr());
+	addChanged(&paintGrid);
 }
 
 void Label::setDrawMode(DrawMode drawMode)
@@ -188,26 +186,19 @@ void Label::setDrawMode(DrawMode drawMode)
 	}
 	
 	drawMode_ = drawMode;
-	paintRect_ = 
-	{ 
-		{ 0, 0 },
-		RECT_.size
-	};
+	setChangedAll();
 }
 
-void Label::paintGraphics(Rect* rect, Graphics* graphics)
+void Label::paintGraphics(Graphics* graphics)
 {
-	uint8_t r = rect->location.y >> FONT_->getSizeBitShiftHeight();
-	const GridSize GRID_SIZE = 
-	{ 
-		rect->size.width >> FONT_->getSizeBitShiftWidth(),
-		rect->size.height >> FONT_->getSizeBitShiftHeight()
-	};
+	const Grid CHANGED_GRID = getChangedGrid();
 	
-	for (uint8_t j = 0; j < GRID_SIZE.rows; j++)
+	uint8_t r = CHANGED_GRID.location.row;
+	
+	for (uint8_t j = 0; j < CHANGED_GRID.size.rows; j++)
 	{
-		uint8_t c = rect->location.x >> FONT_->getSizeBitShiftWidth();
-		for (uint8_t i = 0; i < GRID_SIZE.columns; i++)
+		uint8_t c = CHANGED_GRID.location.column;
+		for (uint8_t i = 0; i < CHANGED_GRID.size.columns; i++)
 		{
 			Point location = 
 			{
@@ -229,25 +220,6 @@ void Label::paintGraphics(Rect* rect, Graphics* graphics)
 		}
 		r++;
 	}
-
-}
-
-void Label::paint(Rect* rect)
-{
-	// Make sure rect conforms to size constraints
-	graphics::clip(rect, &RECT_.size, FONT_->getSizeBitShiftPtr()); //constrain paint rect to label rect
-	Graphics graphics( { 
-	                  {
-		                  RECT_.location.x + rect->location.x, 
-		                  RECT_.location.y + rect->location.y
-	                  }, 
-		                  rect->size
-	                  }, 
-	                  CONSTRAIN_SIZE_,
-	                  backColour_);
-	
-	paintGraphics(rect, &graphics);
-	paintControl_(this, &graphics);	
 }
 
 void Label::drawBorder(Graphics* g, Point location, int column, int row)

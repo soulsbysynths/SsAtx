@@ -46,6 +46,14 @@ namespace graphics
 		GridSize size;
 	} Grid;
 	
+	typedef struct BoundingBox
+	{
+		int top;
+		int right;
+		int bottom;
+		int left;
+	} BoundingBox;
+	
 	enum Side : uint8_t
 	{
 		SI_TOP    = 0,

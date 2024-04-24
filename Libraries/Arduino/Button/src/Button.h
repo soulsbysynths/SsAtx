@@ -24,11 +24,10 @@ namespace graphics
 		{
 		}
 		
-		using Control::paint;
-		void paint(Rect* rect) override;
+		using Control::paintAll;
 	
 		protected:
-		void paintGraphics(Rect* rect, Graphics* graphics) override;
+		void paintGraphics(Graphics* graphics) override;
 		
 		private:
 	
